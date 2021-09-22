@@ -45,7 +45,7 @@ namespace QLVT_Nhom38.Forms
             }
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại Tên Server của Publisher và tên CSDL trong chuỗi kết nối.\n" + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại Tên Server của Publisher và tên CSDL trong chuỗi kết nối.\n" + e.Message, "Error Message", MessageBoxButtons.OK);
                 return 0;
             }
         }
@@ -101,7 +101,7 @@ namespace QLVT_Nhom38.Forms
             Program.username = Program.myReader.GetString(0); //lấy username
             if (Convert.IsDBNull(Program.username))
             {
-                MessageBox.Show("Login của bạn không có quyền truy cập dữ liệu.\nBạn xem lại username và password.", "", MessageBoxButtons.OK);
+                MessageBox.Show("Login của bạn không có quyền truy cập dữ liệu.\nBạn xem lại username và password.", "Error Message", MessageBoxButtons.OK);
                 return;
             }
 
@@ -115,7 +115,7 @@ namespace QLVT_Nhom38.Forms
             Program.formMain.HOTEN.Text = "Họ tên NV: " + Program.mHoten;
             Program.formMain.NHOM.Text = "Nhóm: " + Program.mGroup;
             Program.formMain.HienThiMenu();
-            MessageBox.Show("Đăng nhập thành công!", "", MessageBoxButtons.OK);
+            MessageBox.Show("Đăng nhập thành công!", "Message", MessageBoxButtons.OK);
         }
 
         private void FormLogin_Load_1(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace QLVT_Nhom38
         /// </summary>
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstr_publisher = "Data Source=DESKTOP-PQNFTKR;Initial Catalog=QLVT;Integrated Security=True";
+        public static String connstr_publisher = "Data Source=.;Initial Catalog=QLVT;Integrated Security=True";
         //public static String connstr_publisher = "Data Source=DESKTOP-PQNFTKR;Initial Catalog=QLVT;Integrated Security=True";
         //public static String connstr_publisher = "Data Source=DESKTOP-PQNFTKR;Initial Catalog=QLVT;Integrated Security=True";
 
@@ -60,7 +60,7 @@ namespace QLVT_Nhom38
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại chi nhánh, user name và password.\n" + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n" + e.Message, "Error Message", MessageBoxButtons.OK);
                 return 0;
             }
         }
