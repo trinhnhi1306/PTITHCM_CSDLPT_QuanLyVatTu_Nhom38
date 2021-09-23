@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using QLVT_Nhom38.SimpleForm;
 
 namespace QLVT_Nhom38
 {
@@ -15,6 +17,12 @@ namespace QLVT_Nhom38
         public FormMain()
         {
             InitializeComponent();
+        }
+
+        public void skins()
+        {
+            DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            themes.LookAndFeel.SkinName = "Summer 2008";
         }
 
         private Form CheckExists(Type ftype)
@@ -43,10 +51,37 @@ namespace QLVT_Nhom38
             ribDanhMuc.Visible = ribNghiepVu.Visible = ribBaoCao.Visible = true;
             //if trên Program.mGroup để bật tắt menu
             if(Program.mGroup.Equals("CONGTY") || Program.mGroup.Equals("CHINHANH"))
-            {
+            { 
                 btnTaoTaiKhoan.Enabled = true;
             }
             btnDangXuat.Enabled = true;
-        }    
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            skins();
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr;
+            dr = XtraMessageBox.Show("Bạn có muốn thoát không?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormNhanVien f = new FormNhanVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using DevExpress.XtraEditors;
 
 namespace QLVT_Nhom38
 {
@@ -16,7 +17,7 @@ namespace QLVT_Nhom38
         /// </summary>
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstr_publisher = "Data Source=.;Initial Catalog=QLVT;Integrated Security=True";
+        public static String connstr_publisher = "Data Source=.;Initial Catalog=QLVT;Integrated Security=True"; // kết nối csdl với mode Windows
         //public static String connstr_publisher = "Data Source=DESKTOP-PQNFTKR;Initial Catalog=QLVT;Integrated Security=True";
         //public static String connstr_publisher = "Data Source=DESKTOP-PQNFTKR;Initial Catalog=QLVT;Integrated Security=True";
 
@@ -60,7 +61,7 @@ namespace QLVT_Nhom38
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n" + e.Message, "Error Message", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n" + e.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
         }
@@ -79,7 +80,7 @@ namespace QLVT_Nhom38
             catch (SqlException ex)
             {
                 Program.conn.Close();
-                MessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }

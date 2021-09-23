@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DevExpress.XtraEditors;
 
 namespace QLVT_Nhom38.Forms
 {
     public partial class FormLogin : Form
     {
+        private int isHided = 1;
         private SqlConnection conn_publisher = new SqlConnection();
 
         public FormLogin()
@@ -45,7 +47,7 @@ namespace QLVT_Nhom38.Forms
             }
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại Tên Server của Publisher và tên CSDL trong chuỗi kết nối.\n" + e.Message, "Error Message", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại Tên Server của Publisher và tên CSDL trong chuỗi kết nối.\n" + e.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
         }
@@ -65,20 +67,19 @@ namespace QLVT_Nhom38.Forms
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
-            Program.formMain.Close();
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (txtLogin.Text.Trim() == "")
             {
-                MessageBox.Show("Vui lòng điền login name!", "Error message", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Vui lòng điền login name!", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtLogin.Focus();
                 return;
             }
             if (txtPass.Text.Trim() == "")
             {
-                MessageBox.Show("Vui lòng điền password!", "Error message", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Vui lòng điền password!", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPass.Focus();
                 return;
             }
@@ -101,7 +102,7 @@ namespace QLVT_Nhom38.Forms
             Program.username = Program.myReader.GetString(0); //lấy username
             if (Convert.IsDBNull(Program.username))
             {
-                MessageBox.Show("Login của bạn không có quyền truy cập dữ liệu.\nBạn xem lại username và password.", "Error Message", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Login của bạn không có quyền truy cập dữ liệu.\nBạn xem lại username và password.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -115,15 +116,31 @@ namespace QLVT_Nhom38.Forms
             Program.formMain.HOTEN.Text = "Họ tên NV: " + Program.mHoten;
             Program.formMain.NHOM.Text = "Nhóm: " + Program.mGroup;
             Program.formMain.HienThiMenu();
-            MessageBox.Show("Đăng nhập thành công!", "Message", MessageBoxButtons.OK);
+            XtraMessageBox.Show("Đăng nhập thành công!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
         }
 
-        private void FormLogin_Load_1(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (isHided == 1)
+            {
+                txtPass.UseSystemPasswordChar = false;
+                isHided = 0;
+            }    
+            else
+            {
+                txtPass.UseSystemPasswordChar = true;
+                isHided = 1;
+            }    
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
         {
             if (KetNoi_CSDLGOC() == 0) return;
             Lay_DSPM("select * from Get_Subscribes");
             cmbChiNhanh.SelectedIndex = 0;
             Program.serverName = cmbChiNhanh.SelectedValue.ToString();
+            txtPass.UseSystemPasswordChar = true;
         }
     }
 }
