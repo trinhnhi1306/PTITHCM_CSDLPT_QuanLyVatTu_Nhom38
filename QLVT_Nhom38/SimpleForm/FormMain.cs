@@ -55,6 +55,7 @@ namespace QLVT_Nhom38
                 btnTaoTaiKhoan.Enabled = true;
             }
             btnDangXuat.Enabled = true;
+            btnDangNhap.Enabled = false;
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -82,6 +83,18 @@ namespace QLVT_Nhom38
                 f.MdiParent = this;
                 f.Show();
             }
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+                f.Dispose();
+            btnDangNhap.Enabled = true;
+            btnDangXuat.Enabled = false;
+
+            Program.formMain.MANV.Text = "MANV";
+            Program.formMain.HOTEN.Text = "HOTEN";
+            Program.formMain.NHOM.Text = "NHOM";
         }
     }
 }

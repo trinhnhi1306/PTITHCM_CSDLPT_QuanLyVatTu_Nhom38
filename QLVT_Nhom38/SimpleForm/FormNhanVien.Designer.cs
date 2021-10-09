@@ -278,6 +278,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.btnChuyenChiNhanh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenChiNhanh.ImageOptions.Image")));
             this.btnChuyenChiNhanh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChuyenChiNhanh.ImageOptions.LargeImage")));
             this.btnChuyenChiNhanh.Name = "btnChuyenChiNhanh";
+            this.btnChuyenChiNhanh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChuyenChiNhanh_ItemClick);
             // 
             // btnThoat
             // 
@@ -286,6 +287,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -365,11 +367,17 @@ namespace QLVT_Nhom38.SimpleForm
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChiNhanhTableAdapter = null;
+            this.tableAdapterManager.CTDDHTableAdapter = null;
+            this.tableAdapterManager.CTPNTableAdapter = null;
+            this.tableAdapterManager.CTPXTableAdapter = null;
             this.tableAdapterManager.DatHangTableAdapter = null;
+            this.tableAdapterManager.KhoTableAdapter = null;
             this.tableAdapterManager.NhanVienTableAdapter = this.NhanVienTableAdapter;
             this.tableAdapterManager.PhieuNhapTableAdapter = null;
             this.tableAdapterManager.PhieuXuatTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLVT_Nhom38.QLVTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VattuTableAdapter = null;
             // 
             // gcNhanVien
             // 
@@ -511,26 +519,21 @@ namespace QLVT_Nhom38.SimpleForm
             // txtLuong
             // 
             this.txtLuong.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bdsNV, "LUONG", true));
-            this.txtLuong.DecimalPlaces = 2;
             this.txtLuong.Increment = new decimal(new int[] {
-            1,
+            500000,
             0,
             0,
-            65536});
+            0});
             this.txtLuong.Location = new System.Drawing.Point(115, 156);
             this.txtLuong.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
-            this.txtLuong.Minimum = new decimal(new int[] {
-            4000000,
-            0,
-            0,
-            0});
             this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(120, 21);
-            this.txtLuong.TabIndex = 30;
+            this.txtLuong.Size = new System.Drawing.Size(153, 21);
+            this.txtLuong.TabIndex = 32;
+            this.txtLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLuong.ThousandsSeparator = true;
             this.txtLuong.Value = new decimal(new int[] {
             4000000,
@@ -703,7 +706,7 @@ namespace QLVT_Nhom38.SimpleForm
         private DevExpress.XtraEditors.TextEdit txtTen;
         private DevExpress.XtraEditors.TextEdit txtHo;
         private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.NumericUpDown txtLuong;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.NumericUpDown txtLuong;
     }
 }

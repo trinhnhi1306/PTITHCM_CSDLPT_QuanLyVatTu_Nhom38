@@ -66,11 +66,14 @@ namespace QLVT_Nhom38
             }
         }
 
+        // ExecSqlDataReader thực hiện câu lệnh mà dữ liệu trả về chỉ dùng
+        // để xem & không thao tác với nó.
         public static SqlDataReader ExecSqlDataReader(String strLenh)
         {
             SqlDataReader myreader;
             SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
             sqlcmd.CommandType = CommandType.Text;
+            sqlcmd.CommandTimeout = 600;// 10 phut
             if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
             try
             {
@@ -82,6 +85,28 @@ namespace QLVT_Nhom38
                 Program.conn.Close();
                 XtraMessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
+            }
+        }
+
+        //Cập nhật trên một stored procedure và không trả về giá trị
+        public static int ExecSqlNonQuery(String strlenh)
+        {
+            SqlCommand Sqlcmd = new SqlCommand(strlenh, conn);
+            Sqlcmd.CommandType = CommandType.Text;
+            Sqlcmd.CommandTimeout = 600;// 10 phut
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            try
+            {
+                Sqlcmd.ExecuteNonQuery();
+                conn.Close();
+                return 0;
+            }
+            catch (SqlException ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+                conn.Close();
+                return ex.State;
+
             }
         }
 

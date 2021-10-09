@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SubForm\FormChuyenChiNhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\FormChuyenChiNhanh.Designer.cs">
+      <DependentUpon>FormChuyenChiNhanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLVTDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,6 +89,9 @@
     <Compile Include="SimpleForm\FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SubForm\FormChuyenChiNhanh.resx">
+      <DependentUpon>FormChuyenChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
