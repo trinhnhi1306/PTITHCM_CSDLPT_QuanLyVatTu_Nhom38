@@ -96,5 +96,17 @@ namespace QLVT_Nhom38
             Program.formMain.HOTEN.Text = "HOTEN";
             Program.formMain.NHOM.Text = "NHOM";
         }
+
+        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormVatTu));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormVatTu f = new FormVatTu();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
