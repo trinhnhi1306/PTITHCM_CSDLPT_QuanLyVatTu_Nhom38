@@ -237,7 +237,6 @@ namespace QLVT_Nhom38.SimpleForm
             {
                 errorProviderVT.SetError(txtMaVT, "Mã vật tư này đã được sử dụng !");
                 MessageBox.Show("Mã vật tư này đã được sử dụng !", "Thông báo", MessageBoxButtons.OK);
-                
                 txtMaVT.Focus();
             }
             var regexItem = new Regex("^[a-zA-Z0-9 ]*$");

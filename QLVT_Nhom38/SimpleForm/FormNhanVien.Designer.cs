@@ -349,6 +349,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi nhánh";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // QLVTDataSet
             // 

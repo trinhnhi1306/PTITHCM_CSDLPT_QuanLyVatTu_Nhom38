@@ -1,0 +1,3 @@
+SELECT HO + '  ' + TEN + ' - ' + CAST(MANV as varchar(10))  AS HOTEN, MANV
+FROM dbo.NHANVIEN
+ORDER BY TEN,HO
