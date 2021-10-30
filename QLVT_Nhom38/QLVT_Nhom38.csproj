@@ -77,6 +77,12 @@
     <Compile Include="QLVTDataSet.cs">
       <DependentUpon>QLVTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReportForm\FormInDSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\FormInDSNhanVien.Designer.cs">
+      <DependentUpon>FormInDSNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm\HoatDongNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     <Compile Include="SimpleForm\FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_DanhSachNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachNhanVien.Designer.cs">
+      <DependentUpon>Xrpt_DanhSachNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xrpt_HoatDongNhanVien.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -150,6 +162,9 @@
     <Compile Include="Xrpt_RePort_TongHopNhapXuat.Designer.cs">
       <DependentUpon>Xrpt_RePort_TongHopNhapXuat.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportForm\FormInDSNhanVien.resx">
+      <DependentUpon>FormInDSNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\HoatDongNhanVien.resx">
       <DependentUpon>HoatDongNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </Compile>
     <EmbeddedResource Include="SimpleForm\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DanhSachNhanVien.resx">
+      <DependentUpon>Xrpt_DanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_HoatDongNhanVien.resx">
       <DependentUpon>Xrpt_HoatDongNhanVien.cs</DependentUpon>

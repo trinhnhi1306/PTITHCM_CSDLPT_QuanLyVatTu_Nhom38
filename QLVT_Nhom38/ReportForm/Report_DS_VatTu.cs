@@ -38,7 +38,7 @@ namespace QLVT_Nhom38.ReportForm
                     if (dr == DialogResult.Yes)
                     {
                         report.ExportToPdf(@"E:\FileReport\ReportDanhSachVatTu.pdf");
-                        MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại ổ D",
+                        MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại folder FileReport trong ổ E",
                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -46,7 +46,7 @@ namespace QLVT_Nhom38.ReportForm
                 else
                 {
                     report.ExportToPdf(@"E:\FileReport\ReportDanhSachVatTu.pdf");
-                    MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại ổ D",
+                    MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại folder FileReport trong ổ E",
                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

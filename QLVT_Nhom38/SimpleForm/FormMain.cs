@@ -145,5 +145,17 @@ namespace QLVT_Nhom38
                 f.Show();
             }
         }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormInDSNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormInDSNhanVien f = new FormInDSNhanVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

@@ -141,7 +141,7 @@ namespace QLVT_Nhom38.ReportForm
                     if (dr == DialogResult.Yes)
                     {
                         reportHDNV.ExportToPdf(@"E:\FileReport\ReportHoatDongNhanVien.pdf");
-                        MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại ổ D",
+                        MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder FileReport trong ổ E",
                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -149,7 +149,7 @@ namespace QLVT_Nhom38.ReportForm
                 else
                 {
                     reportHDNV.ExportToPdf(@"E:\FileReport\ReportHoatDongNhanVien.pdf");
-                    MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại ổ D",
+                    MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder FileReport trong ổ E",
                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -159,6 +159,11 @@ namespace QLVT_Nhom38.ReportForm
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
