@@ -221,11 +221,13 @@
             // tableCell2
             // 
             this.tableCell2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(159)))), ((int)(((byte)(228)))));
+            this.tableCell2.Font = new System.Drawing.Font("Arial", 8.57F, System.Drawing.FontStyle.Bold);
             this.tableCell2.Name = "tableCell2";
             this.tableCell2.StyleName = "DetailCaption1";
             this.tableCell2.StylePriority.UseBackColor = false;
+            this.tableCell2.StylePriority.UseFont = false;
             this.tableCell2.Text = "Ngày lập";
-            this.tableCell2.Weight = 0.0980195031363586D;
+            this.tableCell2.Weight = 0.1220579814346581D;
             // 
             // tableCell3
             // 
@@ -234,7 +236,7 @@
             this.tableCell3.StyleName = "DetailCaption1";
             this.tableCell3.StylePriority.UseBackColor = false;
             this.tableCell3.Text = "Nhà cung cấp  ";
-            this.tableCell3.Weight = 0.15527411743028505D;
+            this.tableCell3.Weight = 0.13123563913198555D;
             // 
             // tableCell4
             // 
@@ -252,7 +254,7 @@
             this.tableCell5.StyleName = "DetailCaption1";
             this.tableCell5.StylePriority.UseBackColor = false;
             this.tableCell5.Text = "Tên vật tư";
-            this.tableCell5.Weight = 0.12219373262845552D;
+            this.tableCell5.Weight = 0.14783478866667327D;
             // 
             // tableCell6
             // 
@@ -263,7 +265,7 @@
             this.tableCell6.StylePriority.UseTextAlignment = false;
             this.tableCell6.Text = "Số lượng đặt";
             this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell6.Weight = 0.17039512047400843D;
+            this.tableCell6.Weight = 0.1447540644357907D;
             // 
             // tableCell7
             // 
@@ -313,15 +315,17 @@
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.StyleName = "DetailData1";
             this.tableCell8.StylePriority.UseBorders = false;
-            this.tableCell8.Weight = 0.168899172269381D;
+            this.tableCell8.Weight = 0.14646323755178076D;
             // 
             // tableCell9
             // 
             this.tableCell9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ngay]")});
+            this.tableCell9.Multiline = true;
             this.tableCell9.Name = "tableCell9";
             this.tableCell9.StyleName = "DetailData1";
-            this.tableCell9.Weight = 0.099622075007512023D;
+            this.tableCell9.TextFormatString = "{0:dd-MM-yyyy}";
+            this.tableCell9.Weight = 0.12205800972511226D;
             // 
             // tableCell10
             // 
@@ -345,7 +349,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TENVT]")});
             this.tableCell12.Name = "tableCell12";
             this.tableCell12.StyleName = "DetailData1";
-            this.tableCell12.Weight = 0.12219373262845552D;
+            this.tableCell12.Weight = 0.14783479920035164D;
             // 
             // tableCell13
             // 
@@ -355,7 +359,7 @@
             this.tableCell13.StyleName = "DetailData1";
             this.tableCell13.StylePriority.UseTextAlignment = false;
             this.tableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.tableCell13.Weight = 0.17039513221153846D;
+            this.tableCell13.Weight = 0.14475406563964233D;
             // 
             // tableCell14
             // 

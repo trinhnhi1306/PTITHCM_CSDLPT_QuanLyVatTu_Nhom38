@@ -30,8 +30,10 @@ namespace QLVT_Nhom38.SimpleForm
         int checkThem = 0;
         /* vị trí của con trỏ trên grid view*/
         int viTri = 0;
-        Stack viTriList = new Stack();
+       
         int position = 0; // vị trí trên grid view
+        // lưu vị trí và lệnh hoàn tác
+        Stack viTriList = new Stack();
         Stack undoList = new Stack();
         public FormVatTu()
         {
@@ -301,7 +303,7 @@ namespace QLVT_Nhom38.SimpleForm
             int viTriTENVT = bdsVatTu.Find("TENVT", txtMaVT.Text);
             if (viTriTENVT != -1 && checkThem == 1)
             {
-                errorProviderVT.SetError(txtMaVT, "Tên vật tư này đã được sử dụng !");
+                
                 MessageBox.Show("Tên vật tư này đã được sử dụng !", "Thông báo", MessageBoxButtons.OK);
 
                 txtMaVT.Focus();

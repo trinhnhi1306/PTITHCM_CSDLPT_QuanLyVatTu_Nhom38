@@ -73,6 +73,7 @@
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -506,6 +507,11 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(101.6863F, 23F);
             this.xrLabel2.Text = "xrLabel2";
             // 
+            // calculatedField1
+            // 
+            this.calculatedField1.DataMember = "SP_RePort_TongHopNhapXuat";
+            this.calculatedField1.Name = "calculatedField1";
+            // 
             // Xrpt_RePort_TongHopNhapXuat
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -522,7 +528,8 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.SumNhap,
-            this.calculatedField2});
+            this.calculatedField2,
+            this.calculatedField1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
             this.DataMember = "SP_RePort_TongHopNhapXuat";
@@ -586,5 +593,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         public DevExpress.XtraReports.UI.XRLabel lblEnd;
         public DevExpress.XtraReports.UI.XRLabel lblStart;
+        private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
     }
 }

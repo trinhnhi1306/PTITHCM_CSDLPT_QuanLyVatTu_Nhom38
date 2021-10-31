@@ -49,6 +49,11 @@ namespace QLVT_Nhom38.ReportForm
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+                  
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             String role = Program.mGroup;
             String loai = cmbLoai.SelectedItem.ToString();
             DateTime fromDate = (DateTime)dateFrom.DateTime;
@@ -83,7 +88,6 @@ namespace QLVT_Nhom38.ReportForm
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
-        
-    }
+        }
     }
 }
