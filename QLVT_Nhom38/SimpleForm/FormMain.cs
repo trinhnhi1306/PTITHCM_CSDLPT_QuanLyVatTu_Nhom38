@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QLVT_Nhom38.SimpleForm;
+using QLVT_Nhom38.ReportForm;
 
 namespace QLVT_Nhom38
 {
@@ -104,6 +105,73 @@ namespace QLVT_Nhom38
             else
             {
                 FormVatTu f = new FormVatTu();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnReportVT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Report_DS_VatTu frm = new Report_DS_VatTu();
+            frm.Show();
+            
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(RePort_TongHopNhapXuat));
+            if (frm != null) frm.Activate();
+            else
+            {
+                RePort_TongHopNhapXuat f = new RePort_TongHopNhapXuat();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(HoatDongNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                HoatDongNhanVien f = new HoatDongNhanVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormInDSNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormInDSNhanVien f = new FormInDSNhanVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormChiTietPhieu));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormChiTietPhieu f = new FormChiTietPhieu();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormDSDH_Chua_Co_PN));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormDSDH_Chua_Co_PN f = new FormDSDH_Chua_Co_PN();
                 f.MdiParent = this;
                 f.Show();
             }
