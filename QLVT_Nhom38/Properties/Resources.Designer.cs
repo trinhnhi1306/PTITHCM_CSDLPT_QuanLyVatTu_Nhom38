@@ -59,5 +59,25 @@ namespace QLVT_Nhom38.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _244268683_606545733710616_7437074407777029452_n {
+            get {
+                object obj = ResourceManager.GetObject("244268683_606545733710616_7437074407777029452_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gia_tri_hang_hoa_nhap_kho {
+            get {
+                object obj = ResourceManager.GetObject("gia-tri-hang-hoa-nhap-kho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

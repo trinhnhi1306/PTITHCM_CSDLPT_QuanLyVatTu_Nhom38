@@ -57,5 +57,10 @@ namespace QLVT_Nhom38.ReportForm
                 return;
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

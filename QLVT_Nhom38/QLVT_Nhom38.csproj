@@ -77,6 +77,18 @@
     <Compile Include="QLVTDataSet.cs">
       <DependentUpon>QLVTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReportForm\FormChiTietPhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\FormChiTietPhieu.Designer.cs">
+      <DependentUpon>FormChiTietPhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\FormDSDH_Chua_Co_PN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\FormDSDH_Chua_Co_PN.Designer.cs">
+      <DependentUpon>FormDSDH_Chua_Co_PN.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm\FormInDSNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,11 +156,23 @@
     <Compile Include="Xrpt_DanhSachNhanVien.Designer.cs">
       <DependentUpon>Xrpt_DanhSachNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_DonhangkhongcoPhieuNhap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DonhangkhongcoPhieuNhap.Designer.cs">
+      <DependentUpon>Xrpt_DonhangkhongcoPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xrpt_HoatDongNhanVien.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Xrpt_HoatDongNhanVien.Designer.cs">
       <DependentUpon>Xrpt_HoatDongNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_Report_ChiTietPhieu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_Report_ChiTietPhieu.Designer.cs">
+      <DependentUpon>Xrpt_Report_ChiTietPhieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Xrpt_Report_DS_VatTu.cs">
       <SubType>Component</SubType>
@@ -162,6 +186,12 @@
     <Compile Include="Xrpt_RePort_TongHopNhapXuat.Designer.cs">
       <DependentUpon>Xrpt_RePort_TongHopNhapXuat.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportForm\FormChiTietPhieu.resx">
+      <DependentUpon>FormChiTietPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\FormDSDH_Chua_Co_PN.resx">
+      <DependentUpon>FormDSDH_Chua_Co_PN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\FormInDSNhanVien.resx">
       <DependentUpon>FormInDSNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,8 +233,14 @@
     <EmbeddedResource Include="Xrpt_DanhSachNhanVien.resx">
       <DependentUpon>Xrpt_DanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DonhangkhongcoPhieuNhap.resx">
+      <DependentUpon>Xrpt_DonhangkhongcoPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_HoatDongNhanVien.resx">
       <DependentUpon>Xrpt_HoatDongNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_Report_ChiTietPhieu.resx">
+      <DependentUpon>Xrpt_Report_ChiTietPhieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_Report_DS_VatTu.resx">
       <DependentUpon>Xrpt_Report_DS_VatTu.cs</DependentUpon>
@@ -233,6 +269,12 @@
     <None Include="QLVTDataSet.xss">
       <DependentUpon>QLVTDataSet.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gia-tri-hang-hoa-nhap-kho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\244268683_606545733710616_7437074407777029452_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

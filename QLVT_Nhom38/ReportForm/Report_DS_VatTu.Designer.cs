@@ -36,17 +36,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(358, 67);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(159)))), ((int)(((byte)(228)))));
+            this.label1.Location = new System.Drawing.Point(142, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.Size = new System.Drawing.Size(186, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Report Vật Tư";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnReview
             // 
-            this.btnReview.Location = new System.Drawing.Point(206, 156);
+            this.btnReview.Location = new System.Drawing.Point(102, 121);
             this.btnReview.Name = "btnReview";
-            this.btnReview.Size = new System.Drawing.Size(75, 23);
+            this.btnReview.Size = new System.Drawing.Size(100, 30);
             this.btnReview.TabIndex = 1;
             this.btnReview.Text = "Review";
             this.btnReview.UseVisualStyleBackColor = true;
@@ -54,9 +57,9 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(512, 155);
+            this.btnPrint.Location = new System.Drawing.Point(290, 121);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.Size = new System.Drawing.Size(100, 30);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -66,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 315);
+            this.ClientSize = new System.Drawing.Size(505, 211);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnReview);
             this.Controls.Add(this.label1);

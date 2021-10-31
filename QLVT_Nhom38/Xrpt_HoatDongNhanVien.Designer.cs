@@ -501,7 +501,7 @@
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StyleName = "DetailCaption1";
             this.xrTableCell1.StylePriority.UseBorders = false;
-            this.xrTableCell1.Text = "NGÀY";
+            this.xrTableCell1.Text = "Ngày";
             this.xrTableCell1.Weight = 0.11696534376878005D;
             // 
             // tableCell3
@@ -510,28 +510,28 @@
             this.tableCell3.Name = "tableCell3";
             this.tableCell3.StyleName = "DetailCaption1";
             this.tableCell3.StylePriority.UseBorders = false;
-            this.tableCell3.Text = "LOAI";
+            this.tableCell3.Text = "Loại";
             this.tableCell3.Weight = 0.093811027112173082D;
             // 
             // tableCell4
             // 
             this.tableCell4.Name = "tableCell4";
             this.tableCell4.StyleName = "DetailCaption1";
-            this.tableCell4.Text = "MAPHIEU";
+            this.tableCell4.Text = "Mã phiếu";
             this.tableCell4.Weight = 0.14306980644026082D;
             // 
             // tableCell5
             // 
             this.tableCell5.Name = "tableCell5";
             this.tableCell5.StyleName = "DetailCaption1";
-            this.tableCell5.Text = "TENVT";
+            this.tableCell5.Text = "Tên vật tư";
             this.tableCell5.Weight = 0.2723499708909255D;
             // 
             // tableCell6
             // 
             this.tableCell6.Name = "tableCell6";
             this.tableCell6.StyleName = "DetailCaption1";
-            this.tableCell6.Text = "TENKHO";
+            this.tableCell6.Text = "Tên kho";
             this.tableCell6.Weight = 0.14980123271717405D;
             // 
             // tableCell7
@@ -539,7 +539,7 @@
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.StyleName = "DetailCaption1";
             this.tableCell7.StylePriority.UseTextAlignment = false;
-            this.tableCell7.Text = "SOLUONG";
+            this.tableCell7.Text = "Số lượng";
             this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.tableCell7.Weight = 0.11868637438952748D;
             // 
@@ -548,7 +548,7 @@
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.StyleName = "DetailCaption1";
             this.tableCell8.StylePriority.UseTextAlignment = false;
-            this.tableCell8.Text = "DONGIA";
+            this.tableCell8.Text = "Đơn giá";
             this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.tableCell8.Weight = 0.11292261101857445D;
             // 
