@@ -640,5 +640,10 @@ namespace QLVT_Nhom38.SimpleForm
 
             this.btnUndo.Enabled = true;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

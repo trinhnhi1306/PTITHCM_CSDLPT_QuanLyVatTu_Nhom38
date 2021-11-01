@@ -117,11 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gia-tri-hang-hoa-nhap-kho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gia-tri-hang-hoa-nhap-kho.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="244268683_606545733710616_7437074407777029452_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\244268683_606545733710616_7437074407777029452_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Ik5oYW5WaWVuIj48RmllbGQgTmFtZT0iTUFOViIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkhPIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRFTiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJESUFDSEkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTkdBWVNJTkgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJMVU9ORyIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJNQUNOIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRyYW5nVGhhaVhvYSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9InJvd2d1aWQiIFR5cGU9Ikd1aWQiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
 </root>

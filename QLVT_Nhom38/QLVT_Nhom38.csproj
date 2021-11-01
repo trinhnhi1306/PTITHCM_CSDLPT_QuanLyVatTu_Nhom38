@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLVT_Nhom38</RootNamespace>
     <AssemblyName>QLVT_Nhom38</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,17 +34,32 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v19.2" />
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v19.2.Core" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.2" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v19.2" />
     <Reference Include="DevExpress.Sparkline.v19.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraDialogs.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -58,6 +74,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QLVTDataSet.cs">
+      <DependentUpon>QLVTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\FormChiTietPhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\FormChiTietPhieu.Designer.cs">
+      <DependentUpon>FormChiTietPhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\FormDSDH_Chua_Co_PN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\FormDSDH_Chua_Co_PN.Designer.cs">
+      <DependentUpon>FormDSDH_Chua_Co_PN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\FormInDSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\FormInDSNhanVien.Designer.cs">
+      <DependentUpon>FormInDSNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\HoatDongNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\HoatDongNhanVien.Designer.cs">
+      <DependentUpon>HoatDongNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\Report_DS_VatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\Report_DS_VatTu.Designer.cs">
+      <DependentUpon>Report_DS_VatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\RePort_TongHopNhapXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\RePort_TongHopNhapXuat.Designer.cs">
+      <DependentUpon>RePort_TongHopNhapXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimpleForm\FormVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +150,60 @@
     <Compile Include="SimpleForm\FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_DanhSachNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DanhSachNhanVien.Designer.cs">
+      <DependentUpon>Xrpt_DanhSachNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_DonhangkhongcoPhieuNhap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DonhangkhongcoPhieuNhap.Designer.cs">
+      <DependentUpon>Xrpt_DonhangkhongcoPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_HoatDongNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_HoatDongNhanVien.Designer.cs">
+      <DependentUpon>Xrpt_HoatDongNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_Report_ChiTietPhieu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_Report_ChiTietPhieu.Designer.cs">
+      <DependentUpon>Xrpt_Report_ChiTietPhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_Report_DS_VatTu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_Report_DS_VatTu.Designer.cs">
+      <DependentUpon>Xrpt_Report_DS_VatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_RePort_TongHopNhapXuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_RePort_TongHopNhapXuat.Designer.cs">
+      <DependentUpon>Xrpt_RePort_TongHopNhapXuat.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReportForm\FormChiTietPhieu.resx">
+      <DependentUpon>FormChiTietPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\FormDSDH_Chua_Co_PN.resx">
+      <DependentUpon>FormDSDH_Chua_Co_PN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\FormInDSNhanVien.resx">
+      <DependentUpon>FormInDSNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\HoatDongNhanVien.resx">
+      <DependentUpon>HoatDongNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\Report_DS_VatTu.resx">
+      <DependentUpon>Report_DS_VatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\RePort_TongHopNhapXuat.resx">
+      <DependentUpon>RePort_TongHopNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\FormVatTu.resx">
       <DependentUpon>FormVatTu.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,9 +225,28 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SimpleForm\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DanhSachNhanVien.resx">
+      <DependentUpon>Xrpt_DanhSachNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DonhangkhongcoPhieuNhap.resx">
+      <DependentUpon>Xrpt_DonhangkhongcoPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_HoatDongNhanVien.resx">
+      <DependentUpon>Xrpt_HoatDongNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_Report_ChiTietPhieu.resx">
+      <DependentUpon>Xrpt_Report_ChiTietPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_Report_DS_VatTu.resx">
+      <DependentUpon>Xrpt_Report_DS_VatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_RePort_TongHopNhapXuat.resx">
+      <DependentUpon>Xrpt_RePort_TongHopNhapXuat.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
@@ -141,6 +269,12 @@
     <None Include="QLVTDataSet.xss">
       <DependentUpon>QLVTDataSet.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gia-tri-hang-hoa-nhap-kho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\244268683_606545733710616_7437074407777029452_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
