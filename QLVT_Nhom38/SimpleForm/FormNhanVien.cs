@@ -361,9 +361,19 @@ namespace QLVT_Nhom38.SimpleForm
             if(checkThem == 1)
             {
                 /* kiểm tra mã nhân viên có trùng không 
+                 * kiểm tra trên phân mảnh hiện tại trước, nếu không có mới lên server3 để tra cứu
                  * soạn sẵn câu lệnh để đưa vào hàm ExecSqlDataReader
                  * sau đó đọc kết quả trong myReader
                  */
+
+                int viTriMaNV = bdsNV.Find("MANV", txtMaNV.Text);
+                if (viTriMaNV != -1)
+                {
+                    XtraMessageBox.Show("Mã nhân viên này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
+                    Console.WriteLine("Mã nhân viên này đã được sử dụng ở chi nhánh này!");
+                    return;
+                }
+
                 String strLenh = "DECLARE @return_value int " +
                                  "EXEC @return_value = [dbo].[sp_TraCuu_NhanVien_Kho] " +
                                  txtMaNV.Text.Trim() + ", 'MANV' " +
@@ -377,7 +387,8 @@ namespace QLVT_Nhom38.SimpleForm
 
                 if (result == 1)
                 {
-                    XtraMessageBox.Show("Mã nhân viên này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Mã nhân viên này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
+                    Console.WriteLine("Mã nhân viên này đã được sử dụng ở chi nhánh khác!");
                     return;
                 }
                 strLenhUndo = "DELETE DBO.NHANVIEN WHERE MANV = " + txtMaNV.Text.Trim();
