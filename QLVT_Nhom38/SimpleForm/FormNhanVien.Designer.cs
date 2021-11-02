@@ -413,6 +413,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colMANV.Name = "colMANV";
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 0;
+            this.colMANV.Width = 73;
             // 
             // colHO
             // 
@@ -420,6 +421,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colHO.Name = "colHO";
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
+            this.colHO.Width = 155;
             // 
             // colTEN
             // 
@@ -427,6 +429,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colTEN.Name = "colTEN";
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
+            this.colTEN.Width = 90;
             // 
             // colDIACHI
             // 
@@ -434,6 +437,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 3;
+            this.colDIACHI.Width = 117;
             // 
             // colNGAYSINH
             // 
@@ -441,6 +445,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colNGAYSINH.Name = "colNGAYSINH";
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 4;
+            this.colNGAYSINH.Width = 117;
             // 
             // colLUONG
             // 
@@ -450,6 +455,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colLUONG.Name = "colLUONG";
             this.colLUONG.Visible = true;
             this.colLUONG.VisibleIndex = 5;
+            this.colLUONG.Width = 117;
             // 
             // colMACN
             // 
@@ -457,6 +463,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colMACN.Name = "colMACN";
             this.colMACN.Visible = true;
             this.colMACN.VisibleIndex = 6;
+            this.colMACN.Width = 117;
             // 
             // colTrangThaiXoa
             // 
@@ -464,6 +471,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colTrangThaiXoa.Name = "colTrangThaiXoa";
             this.colTrangThaiXoa.Visible = true;
             this.colTrangThaiXoa.VisibleIndex = 7;
+            this.colTrangThaiXoa.Width = 138;
             // 
             // bdsPX
             // 

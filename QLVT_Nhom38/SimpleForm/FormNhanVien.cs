@@ -392,7 +392,7 @@ namespace QLVT_Nhom38.SimpleForm
                     return;
                 }
                 strLenhUndo = "DELETE DBO.NHANVIEN WHERE MANV = " + txtMaNV.Text.Trim();
-                checkThem = 0;
+                
             }
 
             // Trường hợp sửa thì lưu lại dữ liệu cũ để đưa vào stack
@@ -433,6 +433,7 @@ namespace QLVT_Nhom38.SimpleForm
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnUndo.Enabled = true;
                 undoList.Push(strLenhUndo);
+                checkThem = 0;
             }
             catch (Exception ex)
             {
@@ -507,6 +508,8 @@ namespace QLVT_Nhom38.SimpleForm
                 this.DatHangTableAdapter.Fill(this.QLVTDataSet.DatHang);
                 this.PhieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.PhieuNhapTableAdapter.Fill(this.QLVTDataSet.PhieuNhap);
+                this.PhieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.PhieuXuatTableAdapter.Fill(this.QLVTDataSet.PhieuXuat);
                 //maCN = ((DataRowView)bdsNV[0])["MACN"].ToString();
             }
         }
@@ -583,7 +586,7 @@ namespace QLVT_Nhom38.SimpleForm
            
             // bỏ câu lệnh chuyển lại về chi nhánh hiện tại vào undoList
             String strLenhUndo = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhHienTai + "'";
-            undoList.Push(strLenhUndo);
+            //undoList.Push(strLenhUndo);
             tenServerChuyenToi = server; // Lấy tên server tới để làm tính năng hoàn tác
 
             // tạo chuỗi lệnh để chuyển nhân viên đến chi nhánh mới
@@ -593,7 +596,7 @@ namespace QLVT_Nhom38.SimpleForm
             {
                 
                 MessageBox.Show("Chuyển chi nhánh thành công!", "Thông báo", MessageBoxButtons.OK);
-                btnUndo.Enabled = true;
+                //btnUndo.Enabled = true;
                 this.NhanVienTableAdapter.Fill(this.QLVTDataSet.NhanVien);
                 return;
             }

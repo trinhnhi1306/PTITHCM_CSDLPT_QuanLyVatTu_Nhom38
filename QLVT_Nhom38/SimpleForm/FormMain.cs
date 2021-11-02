@@ -176,5 +176,17 @@ namespace QLVT_Nhom38
                 f.Show();
             }
         }
+
+        private void btnKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormKho));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormKho f = new FormKho();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

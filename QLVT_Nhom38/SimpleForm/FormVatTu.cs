@@ -222,7 +222,7 @@ namespace QLVT_Nhom38.SimpleForm
             }
             else
             {
-                XtraMessageBox.Show("Lỗi xảy ra trong quá trình ghi nhân viên. Vui lòng thử lại!\n" , "Thông báo lỗi",
+                XtraMessageBox.Show("Lỗi xảy ra trong quá trình ghi vật tư. Vui lòng thử lại!\n" , "Thông báo lỗi",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -514,6 +514,11 @@ namespace QLVT_Nhom38.SimpleForm
             this.vattuTableAdapter.Fill(this.qLVTDataSet.Vattu);
             bdsVatTu.Position = int.Parse(viTriList.Pop().ToString());
             Console.WriteLine("line 486:" + bdsVatTu.Position);
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

@@ -113,6 +113,12 @@
     <Compile Include="ReportForm\RePort_TongHopNhapXuat.Designer.cs">
       <DependentUpon>RePort_TongHopNhapXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="SimpleForm\FormKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\FormKho.Designer.cs">
+      <DependentUpon>FormKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimpleForm\FormVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\RePort_TongHopNhapXuat.resx">
       <DependentUpon>RePort_TongHopNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\FormKho.resx">
+      <DependentUpon>FormKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\FormVatTu.resx">
       <DependentUpon>FormVatTu.cs</DependentUpon>
