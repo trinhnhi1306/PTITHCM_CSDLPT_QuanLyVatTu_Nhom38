@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QLVT_Nhom38.SimpleForm;
 using QLVT_Nhom38.ReportForm;
+using QLVT_Nhom38.SubForm;
 
 namespace QLVT_Nhom38
 {
@@ -184,6 +185,42 @@ namespace QLVT_Nhom38
             else
             {
                 FormKho f = new FormKho();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDonDatHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormDonDatHang));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormDonDatHang f = new FormDonDatHang();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormPhieuNhap));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormPhieuNhap f = new FormPhieuNhap();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnPhieuXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormPhieuXuat));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormPhieuXuat f = new FormPhieuXuat();
                 f.MdiParent = this;
                 f.Show();
             }

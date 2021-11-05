@@ -78,8 +78,8 @@ namespace QLVT_Nhom38.SimpleForm
             }
             else
             {
-                cmbChiNhanh.Enabled = btnUndo.Enabled = false;
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = true;
+                cmbChiNhanh.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = true;
             }
 
         }
@@ -367,81 +367,78 @@ namespace QLVT_Nhom38.SimpleForm
             // Trường hợp đang thêm mới
             if (checkThem == 1)
             {
-                /* kiểm tra mã nhân viên có trùng không 
-                 * kiểm tra trên phân mảnh hiện tại trước, nếu không có mới lên server3 để tra cứu
-                 * soạn sẵn câu lệnh để đưa vào hàm ExecSqlDataReader
-                 * sau đó đọc kết quả trong myReader
-                 */
-
-                int viTriMaKho = bdsKho.Find("MAKHO", txtMaKho.Text);
-                if (viTriMaKho != -1)
+                var regexItem = new Regex("^[a-zA-Z0-9 ]*$");
+                if (string.IsNullOrWhiteSpace(txtMaKho.Text))
                 {
-                    XtraMessageBox.Show("Mã kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
+                    e.Cancel = true;
                     txtMaKho.Focus();
-                    errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng ở chi nhánh này!");
+                    errorProviderKho.SetError(txtMaKho, "Mã kho không được để trống!");
+                }
+                else if (txtMaKho.Text.Length > 4)
+                {
+                    e.Cancel = true;
+                    txtMaKho.Focus();
+                    errorProviderKho.SetError(txtMaKho, "Mã kho không được quá 4 kí tự!");
+
+                }                
+                else if (txtMaKho.Text.Trim().Contains(" "))
+                {
+                    e.Cancel = true;
+                    txtMaKho.Focus();
+                    errorProviderKho.SetError(txtMaKho, "Mã kho không được chứa khoảng trắng!");
+                }
+                else if (!regexItem.IsMatch(txtMaKho.Text.Trim()))
+                {
+                    e.Cancel = true;
+                    txtMaKho.Focus();
+                    errorProviderKho.SetError(txtMaKho, "Mã kho chỉ được gồm chữ cái và số!");
                 }
                 else
                 {
-                    String strLenh = "DECLARE @return_value int " +
-                                     "EXEC @return_value = [dbo].[sp_TraCuu_NhanVien_Kho] " +
-                                     txtMaKho.Text.Trim() + ", 'MAKHO' " +
-                                     "SELECT 'Return Value' = @return_value";
-                    Program.myReader = Program.ExecSqlDataReader(strLenh);
-                    if (Program.myReader == null) return;
+                    /* kiểm tra mã nhân viên có trùng không 
+                     * kiểm tra trên phân mảnh hiện tại trước, nếu không có mới lên server3 để tra cứu
+                     * soạn sẵn câu lệnh để đưa vào hàm ExecSqlDataReader
+                     * sau đó đọc kết quả trong myReader
+                     */
 
-                    Program.myReader.Read();
-                    int result = int.Parse(Program.myReader.GetValue(0).ToString());
-                    Program.myReader.Close();
-
-                    if (result == 1)
+                    int viTriMaKho = bdsKho.Find("MAKHO", txtMaKho.Text);
+                    if (viTriMaKho != -1)
                     {
-                        XtraMessageBox.Show("Mã kho này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Mã kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
                         txtMaKho.Focus();
-                        errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng ở chi nhánh khác!");
+                        errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng ở chi nhánh này!");
                     }
-                }
+                    else
+                    {
+                        String strLenh = "DECLARE @return_value int " +
+                                         "EXEC @return_value = [dbo].[sp_TraCuu_NhanVien_Kho] '" +
+                                         txtMaKho.Text.Trim() + "', 'MAKHO' " +
+                                         "SELECT 'Return Value' = @return_value";
+                        Program.myReader = Program.ExecSqlDataReader(strLenh);
+                        if (Program.myReader == null) return;
 
-            }
-            var regexItem = new Regex("^[a-zA-Z0-9 ]*$");
-            if (txtMaKho.Text.Length > 4)
-            {
-                e.Cancel = true;
-                txtMaKho.Focus();
-                errorProviderKho.SetError(txtMaKho, "Mã kho không được quá 4 kí tự!");
+                        Program.myReader.Read();
+                        int result = int.Parse(Program.myReader.GetValue(0).ToString());
+                        Program.myReader.Close();
 
-            }
-            if (string.IsNullOrWhiteSpace(txtMaKho.Text))
-            {
-                e.Cancel = true;
-                txtMaKho.Focus();
-                errorProviderKho.SetError(txtMaKho, "Mã kho không được để trống!");
-            }
-            else if (txtMaKho.Text.Trim().Contains(" "))
-            {
-                e.Cancel = true;
-                txtMaKho.Focus();
-                errorProviderKho.SetError(txtMaKho, "Mã kho không được chứa khoảng trắng!");
-            }
-            else if (!regexItem.IsMatch(txtMaKho.Text.Trim()))
-            {
-                e.Cancel = true;
-                txtMaKho.Focus();
-                errorProviderKho.SetError(txtMaKho, "Mã kho chỉ được gồm chữ cái và số!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProviderKho.SetError(txtMaKho, null);
-            }
+                        if (result == 1)
+                        {
+                            XtraMessageBox.Show("Mã kho này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
+                            txtMaKho.Focus();
+                            errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng ở chi nhánh khác!");
+                        }
+                    }
+                }              
+            }            
         }
 
         private void txtTenKho_Validating(object sender, CancelEventArgs e)
-        {
+        {            
             /* kiểm tra mã nhân viên có trùng không 
-                 * kiểm tra trên phân mảnh hiện tại trước, nếu không có mới lên server3 để tra cứu
-                 * soạn sẵn câu lệnh để đưa vào hàm ExecSqlDataReader
-                 * sau đó đọc kết quả trong myReader
-                 */
+            * kiểm tra trên phân mảnh hiện tại trước, nếu không có mới lên server3 để tra cứu
+            * soạn sẵn câu lệnh để đưa vào hàm ExecSqlDataReader
+            * sau đó đọc kết quả trong myReader
+            */
             if (string.IsNullOrWhiteSpace(txtTenKho.Text))
             {
                 e.Cancel = true;
@@ -451,34 +448,41 @@ namespace QLVT_Nhom38.SimpleForm
             else
             {
                 int viTriTenKho = bdsKho.Find("TENKHO", txtTenKho.Text);
-                if (viTriTenKho != -1)
+
+                if (checkThem == 1 && viTriTenKho != -1)
                 {
                     //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
                     txtTenKho.Focus();
                     errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng ở chi nhánh này!");
+                    return;
                 }
-                else
+
+                if (checkThem == 0 && viTriTenKho != -1 && viTriTenKho != bdsKho.Position)
                 {
-                    String strLenh = "DECLARE @return_value int " +
-                                     "EXEC @return_value = [dbo].[sp_TraCuu_NhanVien_Kho] " +
-                                     txtMaKho.Text.Trim() + ", 'TENKHO' " +
-                                     "SELECT 'Return Value' = @return_value";
-                    Program.myReader = Program.ExecSqlDataReader(strLenh);
-                    if (Program.myReader == null) return;
+                    //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
+                    txtTenKho.Focus();
+                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng ở chi nhánh này!");
+                    return;
+                }
 
-                    Program.myReader.Read();
-                    int result = int.Parse(Program.myReader.GetValue(0).ToString());
-                    Program.myReader.Close();
+                String strLenh = "DECLARE @return_value int " +
+                                "EXEC @return_value = [dbo].[sp_TraCuu_NhanVien_Kho] '" +
+                                txtTenKho.Text.Trim() + "', 'TENKHO' " +
+                                "SELECT 'Return Value' = @return_value";
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                if (Program.myReader == null) return;
 
-                    if (result == 1)
-                    {
-                        //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
-                        txtTenKho.Focus();
-                        errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng ở chi nhánh khác!");
-                    }
+                Program.myReader.Read();
+                int result = int.Parse(Program.myReader.GetValue(0).ToString());
+                Program.myReader.Close();
+
+                if (result == 1)
+                {
+                    //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
+                    txtTenKho.Focus();
+                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng ở chi nhánh khác!");
                 }
             }
-            
         }
 
         private void txtDiaChi_Validating(object sender, CancelEventArgs e)
@@ -493,6 +497,10 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void txtTenKho_KeyPress(object sender, KeyPressEventArgs e)
         {
+            String maKho = txtMaKho.Text.Trim();// Trim() de loai bo khoang trang thua
+            DataRowView drv = ((DataRowView)bdsKho[bdsKho.Position]);
+            String tenKho = drv["TENKHO"].ToString();
+            Console.WriteLine(tenKho);
             if (Char.IsLetter(e.KeyChar) || e.KeyChar == '\b' || char.IsDigit(e.KeyChar))
                 e.Handled = false;
             else if (e.KeyChar == ' ')

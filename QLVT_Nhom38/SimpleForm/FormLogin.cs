@@ -97,7 +97,15 @@ namespace QLVT_Nhom38.Forms
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null) return;
 
-            Program.myReader.Read();
+            try
+            {
+                Program.myReader.Read();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Program.username = Program.myReader.GetString(0); //lấy username
             if (Convert.IsDBNull(Program.username))

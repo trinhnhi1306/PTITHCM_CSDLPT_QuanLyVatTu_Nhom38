@@ -79,8 +79,8 @@ namespace QLVT_Nhom38.SimpleForm
             }
             else
             {
-                cmbChiNhanh.Enabled = btnUndo.Enabled = false;
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnChuyenChiNhanh.Enabled = true;
+                cmbChiNhanh.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnChuyenChiNhanh.Enabled = true;
             }
 
         }

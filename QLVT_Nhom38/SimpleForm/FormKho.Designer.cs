@@ -43,12 +43,12 @@ namespace QLVT_Nhom38.SimpleForm
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnChuyenChiNhanh = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnChuyenChiNhanh = new DevExpress.XtraBars.BarButtonItem();
             this.QLVTDataSet = new QLVT_Nhom38.QLVTDataSet();
             this.bdsKho = new System.Windows.Forms.BindingSource(this.components);
             this.KhoTableAdapter = new QLVT_Nhom38.QLVTDataSetTableAdapters.KhoTableAdapter();
@@ -226,14 +226,6 @@ namespace QLVT_Nhom38.SimpleForm
             this.btnReload.Name = "btnReload";
             this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
-            // btnChuyenChiNhanh
-            // 
-            this.btnChuyenChiNhanh.Caption = "Chuyển chi nhánh";
-            this.btnChuyenChiNhanh.Id = 7;
-            this.btnChuyenChiNhanh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenChiNhanh.ImageOptions.Image")));
-            this.btnChuyenChiNhanh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChuyenChiNhanh.ImageOptions.LargeImage")));
-            this.btnChuyenChiNhanh.Name = "btnChuyenChiNhanh";
-            // 
             // btnThoat
             // 
             this.btnThoat.Caption = "Thoát";
@@ -274,6 +266,14 @@ namespace QLVT_Nhom38.SimpleForm
             this.barDockControlRight.Location = new System.Drawing.Point(811, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 481);
+            // 
+            // btnChuyenChiNhanh
+            // 
+            this.btnChuyenChiNhanh.Caption = "Chuyển chi nhánh";
+            this.btnChuyenChiNhanh.Id = 7;
+            this.btnChuyenChiNhanh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenChiNhanh.ImageOptions.Image")));
+            this.btnChuyenChiNhanh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChuyenChiNhanh.ImageOptions.LargeImage")));
+            this.btnChuyenChiNhanh.Name = "btnChuyenChiNhanh";
             // 
             // QLVTDataSet
             // 
@@ -394,6 +394,7 @@ namespace QLVT_Nhom38.SimpleForm
             // txtMaCN
             // 
             this.txtMaCN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKho, "MACN", true));
+            this.txtMaCN.Enabled = false;
             this.txtMaCN.Location = new System.Drawing.Point(529, 53);
             this.txtMaCN.MenuManager = this.barManager1;
             this.txtMaCN.Name = "txtMaCN";
