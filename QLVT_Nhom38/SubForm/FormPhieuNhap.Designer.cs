@@ -192,7 +192,7 @@ namespace QLVT_Nhom38.SubForm
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormPhieuNhap";
-            this.Text = "FormPhieuNhap";
+            this.Text = "Phiếu Nhập";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -79,7 +79,7 @@ namespace QLVT_Nhom38.SimpleForm
             else
             {
                 cmbChiNhanh.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnReload.Enabled = true;
             }
 
         }
@@ -202,6 +202,7 @@ namespace QLVT_Nhom38.SimpleForm
             try
             {
                 this.KhoTableAdapter.Fill(this.QLVTDataSet.Kho);
+                bdsKho.Position = position;
             }
             catch (Exception ex)
             {
@@ -404,9 +405,9 @@ namespace QLVT_Nhom38.SimpleForm
                     int viTriMaKho = bdsKho.Find("MAKHO", txtMaKho.Text);
                     if (viTriMaKho != -1)
                     {
-                        XtraMessageBox.Show("Mã kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Mã kho này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
                         txtMaKho.Focus();
-                        errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng ở chi nhánh này!");
+                        errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng!");
                     }
                     else
                     {
@@ -423,9 +424,9 @@ namespace QLVT_Nhom38.SimpleForm
 
                         if (result == 1)
                         {
-                            XtraMessageBox.Show("Mã kho này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
+                            XtraMessageBox.Show("Mã kho này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
                             txtMaKho.Focus();
-                            errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng ở chi nhánh khác!");
+                            errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng!");
                         }
                     }
                 }              
@@ -453,7 +454,7 @@ namespace QLVT_Nhom38.SimpleForm
                 {
                     //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
                     txtTenKho.Focus();
-                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng ở chi nhánh này!");
+                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng!");
                     return;
                 }
 
@@ -461,7 +462,7 @@ namespace QLVT_Nhom38.SimpleForm
                 {
                     //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
                     txtTenKho.Focus();
-                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng ở chi nhánh này!");
+                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng!");
                     return;
                 }
 

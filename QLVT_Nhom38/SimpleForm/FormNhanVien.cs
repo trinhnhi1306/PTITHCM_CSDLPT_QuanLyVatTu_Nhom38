@@ -80,7 +80,7 @@ namespace QLVT_Nhom38.SimpleForm
             else
             {
                 cmbChiNhanh.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnChuyenChiNhanh.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnChuyenChiNhanh.Enabled = btnReload.Enabled = true;
             }
 
         }
@@ -219,6 +219,7 @@ namespace QLVT_Nhom38.SimpleForm
             try
             {
                 this.NhanVienTableAdapter.Fill(this.QLVTDataSet.NhanVien);
+                bdsNV.Position = position;
             }
             catch (Exception ex)
             {
@@ -369,8 +370,8 @@ namespace QLVT_Nhom38.SimpleForm
                 int viTriMaNV = bdsNV.Find("MANV", txtMaNV.Text);
                 if (viTriMaNV != -1)
                 {
-                    XtraMessageBox.Show("Mã nhân viên này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
-                    Console.WriteLine("Mã nhân viên này đã được sử dụng ở chi nhánh này!");
+                    XtraMessageBox.Show("Mã nhân viên này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
+                    Console.WriteLine("Mã nhân viên này đã được sử dụng!");
                     return;
                 }
 
@@ -387,8 +388,8 @@ namespace QLVT_Nhom38.SimpleForm
 
                 if (result == 1)
                 {
-                    XtraMessageBox.Show("Mã nhân viên này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
-                    Console.WriteLine("Mã nhân viên này đã được sử dụng ở chi nhánh khác!");
+                    XtraMessageBox.Show("Mã nhân viên này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
+                    Console.WriteLine("Mã nhân viên này đã được sử dụng!");
                     return;
                 }
                 strLenhUndo = "DELETE DBO.NHANVIEN WHERE MANV = " + txtMaNV.Text.Trim();

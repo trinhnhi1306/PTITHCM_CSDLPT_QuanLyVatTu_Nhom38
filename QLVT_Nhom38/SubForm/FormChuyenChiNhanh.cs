@@ -25,7 +25,7 @@ namespace QLVT_Nhom38
 
         private void FormChuyenChiNhanh_Load(object sender, EventArgs e)
         {
-            /*Lấy dữ liệu từ form đăng nhập đổ vào nhưng chỉ lấn đúng danh sách
+            /*Lấy dữ liệu từ form đăng nhập đổ vào nhưng chỉ lấy đúng danh sách
              phân mảnh mà thôi*/
             cmbChiNhanh1.DataSource = Program.bds_dspm.DataSource;
             cmbChiNhanh1.DisplayMember = "TENCN";

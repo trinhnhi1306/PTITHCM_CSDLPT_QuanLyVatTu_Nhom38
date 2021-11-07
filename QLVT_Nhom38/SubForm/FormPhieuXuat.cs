@@ -16,5 +16,10 @@ namespace QLVT_Nhom38.SubForm
         {
             InitializeComponent();
         }
+
+        private void switchCheDo_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

@@ -45,6 +45,7 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnChuyenChiNhanh = new DevExpress.XtraBars.BarButtonItem();
+            this.switchCheDo = new DevExpress.XtraBars.BarToggleSwitchItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +66,10 @@ namespace QLVT_Nhom38.SubForm
             this.btnReload,
             this.btnGhi,
             this.btnThoat,
-            this.btnChuyenChiNhanh});
+            this.btnChuyenChiNhanh,
+            this.switchCheDo});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 8;
+            this.barManager1.MaxItemId = 9;
             // 
             // bar2
             // 
@@ -81,7 +83,8 @@ namespace QLVT_Nhom38.SubForm
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnUndo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.switchCheDo)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -182,6 +185,13 @@ namespace QLVT_Nhom38.SubForm
             this.btnChuyenChiNhanh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChuyenChiNhanh.ImageOptions.LargeImage")));
             this.btnChuyenChiNhanh.Name = "btnChuyenChiNhanh";
             // 
+            // switchCheDo
+            // 
+            this.switchCheDo.Caption = "Phiếu xuất/Chi tiết phiếu xuất";
+            this.switchCheDo.Id = 8;
+            this.switchCheDo.Name = "switchCheDo";
+            this.switchCheDo.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.switchCheDo_CheckedChanged);
+            // 
             // FormPhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,7 +202,7 @@ namespace QLVT_Nhom38.SubForm
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormPhieuXuat";
-            this.Text = "FormPhieuXuat";
+            this.Text = "Phiếu Xuất";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,5 +225,6 @@ namespace QLVT_Nhom38.SubForm
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnSua;
         private DevExpress.XtraBars.BarButtonItem btnChuyenChiNhanh;
+        private DevExpress.XtraBars.BarToggleSwitchItem switchCheDo;
     }
 }
