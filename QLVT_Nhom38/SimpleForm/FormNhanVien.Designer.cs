@@ -388,7 +388,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.gcNhanVien.MainView = this.gridView1;
             this.gcNhanVien.MenuManager = this.barManager1;
             this.gcNhanVien.Name = "gcNhanVien";
-            this.gcNhanVien.Size = new System.Drawing.Size(949, 220);
+            this.gcNhanVien.Size = new System.Drawing.Size(949, 205);
             this.gcNhanVien.TabIndex = 6;
             this.gcNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -409,66 +409,82 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             // colMANV
             // 
+            this.colMANV.Caption = "Mã nhân viên";
             this.colMANV.FieldName = "MANV";
             this.colMANV.Name = "colMANV";
+            this.colMANV.OptionsColumn.AllowEdit = false;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 0;
             this.colMANV.Width = 73;
             // 
             // colHO
             // 
+            this.colHO.Caption = "Họ";
             this.colHO.FieldName = "HO";
             this.colHO.Name = "colHO";
+            this.colHO.OptionsColumn.AllowEdit = false;
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
             this.colHO.Width = 155;
             // 
             // colTEN
             // 
+            this.colTEN.Caption = "Tên";
             this.colTEN.FieldName = "TEN";
             this.colTEN.Name = "colTEN";
+            this.colTEN.OptionsColumn.AllowEdit = false;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
             this.colTEN.Width = 90;
             // 
             // colDIACHI
             // 
+            this.colDIACHI.Caption = "Địa chỉ";
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 3;
             this.colDIACHI.Width = 117;
             // 
             // colNGAYSINH
             // 
+            this.colNGAYSINH.Caption = "Ngày sinh";
             this.colNGAYSINH.FieldName = "NGAYSINH";
             this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.OptionsColumn.AllowEdit = false;
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 4;
             this.colNGAYSINH.Width = 117;
             // 
             // colLUONG
             // 
+            this.colLUONG.Caption = "Lương";
             this.colLUONG.DisplayFormat.FormatString = "n0";
             this.colLUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colLUONG.FieldName = "LUONG";
             this.colLUONG.Name = "colLUONG";
+            this.colLUONG.OptionsColumn.AllowEdit = false;
             this.colLUONG.Visible = true;
             this.colLUONG.VisibleIndex = 5;
             this.colLUONG.Width = 117;
             // 
             // colMACN
             // 
+            this.colMACN.Caption = "Mã chi nhánh";
             this.colMACN.FieldName = "MACN";
             this.colMACN.Name = "colMACN";
+            this.colMACN.OptionsColumn.AllowEdit = false;
             this.colMACN.Visible = true;
             this.colMACN.VisibleIndex = 6;
             this.colMACN.Width = 117;
             // 
             // colTrangThaiXoa
             // 
+            this.colTrangThaiXoa.Caption = "Trạng thái xóa";
             this.colTrangThaiXoa.FieldName = "TrangThaiXoa";
             this.colTrangThaiXoa.Name = "colTrangThaiXoa";
+            this.colTrangThaiXoa.OptionsColumn.AllowEdit = false;
             this.colTrangThaiXoa.Visible = true;
             this.colTrangThaiXoa.VisibleIndex = 7;
             this.colTrangThaiXoa.Width = 138;
@@ -519,9 +535,9 @@ namespace QLVT_Nhom38.SimpleForm
             this.infoNhanVien.Controls.Add(this.txtMaNV);
             this.infoNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoNhanVien.Enabled = false;
-            this.infoNhanVien.Location = new System.Drawing.Point(0, 281);
+            this.infoNhanVien.Location = new System.Drawing.Point(0, 266);
             this.infoNhanVien.Name = "infoNhanVien";
-            this.infoNhanVien.Size = new System.Drawing.Size(949, 324);
+            this.infoNhanVien.Size = new System.Drawing.Size(949, 339);
             this.infoNhanVien.TabIndex = 12;
             this.infoNhanVien.Text = "Thông tin";
             // 
@@ -544,11 +560,6 @@ namespace QLVT_Nhom38.SimpleForm
             this.txtLuong.TabIndex = 32;
             this.txtLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLuong.ThousandsSeparator = true;
-            this.txtLuong.Value = new decimal(new int[] {
-            4000000,
-            0,
-            0,
-            0});
             // 
             // txtMaCN
             // 

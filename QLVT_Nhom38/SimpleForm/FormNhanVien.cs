@@ -94,7 +94,7 @@ namespace QLVT_Nhom38.SimpleForm
 
             // đặt các giá trị mặc định
             txtMaCN.Text = maCN;
-            txtLuong.Value = 4000000;
+            txtLuong.Value = 0;
             dteNgaySinh.EditValue = "";
             cbTrangThaiXoa.Checked = false;
 

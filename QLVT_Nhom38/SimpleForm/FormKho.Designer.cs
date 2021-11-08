@@ -332,6 +332,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colMAKHO.Caption = "Mã kho";
             this.colMAKHO.FieldName = "MAKHO";
             this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.OptionsColumn.AllowEdit = false;
             this.colMAKHO.Visible = true;
             this.colMAKHO.VisibleIndex = 0;
             this.colMAKHO.Width = 104;
@@ -341,6 +342,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colTENKHO.Caption = "Tên kho";
             this.colTENKHO.FieldName = "TENKHO";
             this.colTENKHO.Name = "colTENKHO";
+            this.colTENKHO.OptionsColumn.AllowEdit = false;
             this.colTENKHO.Visible = true;
             this.colTENKHO.VisibleIndex = 1;
             this.colTENKHO.Width = 199;
@@ -350,6 +352,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colDIACHI.Caption = "Địa chỉ";
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 2;
             this.colDIACHI.Width = 375;
@@ -359,6 +362,7 @@ namespace QLVT_Nhom38.SimpleForm
             this.colMACN.Caption = "Mã chi nhánh";
             this.colMACN.FieldName = "MACN";
             this.colMACN.Name = "colMACN";
+            this.colMACN.OptionsColumn.AllowEdit = false;
             this.colMACN.Visible = true;
             this.colMACN.VisibleIndex = 3;
             this.colMACN.Width = 108;
