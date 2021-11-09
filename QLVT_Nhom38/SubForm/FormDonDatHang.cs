@@ -249,10 +249,19 @@ namespace QLVT_Nhom38.SubForm
 
         private bool kiemTraCTDDH()
         {
-            String maVT = ((DataRowView)bdsCTDDH[0])["MAVT"].ToString();
+            String maVT = txtMaVT.Text.ToString();
             Console.WriteLine(maVT);
-            //int vt = bds.Find("MAVT", txtMaVT.Text);
-           // Console.WriteLine(vt);
+           /* for (int index = 0; index < bdsCTDDH.Count - 1; index++)
+            {
+                if (((DataRowView)bdsCTDDH[index])["MAVT"].ToString().Equals(maVT))
+                {
+                    XtraMessageBox.Show("Vui lòng chọn vật tư", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }*/
+           
+            int vt = bds.Find("colMAVT", txtMaVT.Text);
+            
+            Console.WriteLine(vt);
             if (txtMaVT.Text.Equals(""))
             {
                 XtraMessageBox.Show("Vui lòng chọn vật tư", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

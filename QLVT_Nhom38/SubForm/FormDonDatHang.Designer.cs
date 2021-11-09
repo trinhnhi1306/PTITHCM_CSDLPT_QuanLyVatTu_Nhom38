@@ -911,8 +911,8 @@ namespace QLVT_Nhom38.SubForm
         private System.Windows.Forms.NumericUpDown txtSoLuong;
         private DevExpress.XtraEditors.TextEdit txtMaVT;
         private DevExpress.XtraGrid.Columns.GridColumn colMasoDDH1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
+        public DevExpress.XtraGrid.Columns.GridColumn colMAVT;
     }
 }
