@@ -164,6 +164,20 @@ namespace QLVT_Nhom38.SubForm
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (cheDo == 2)
+            {
+                if (txtMaNV.Text != Program.username)
+                {
+                    XtraMessageBox.Show("Không thể thêm chi tiết đơn hàng trên phiếu người khác lập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (bdsPN.Count > 0)
+                {
+                    XtraMessageBox.Show("Không thể sửa vì đơn hàng đã được lập phiếu nhập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
             checkThem = 1; // bật trạng thái đang thêm mới lên           
             position = bds.Position;
             info.Enabled = true;
@@ -183,8 +197,8 @@ namespace QLVT_Nhom38.SubForm
             else if (cheDo == 2)
             {             
                 txtMaDDHCuaCTDDH.Text = txtMaSoDDH.Text;
-                txtSoLuong.Value = 1;
-                txtDonGia.Value = 10000;
+                txtSoLuong.Value = 0;
+                txtDonGia.Value = 0;
             }
 
             // vô hiệu hóa các nút chức năng
@@ -249,29 +263,44 @@ namespace QLVT_Nhom38.SubForm
 
         private bool kiemTraCTDDH()
         {
-            String maVT = txtMaVT.Text.ToString();
+           String maVT = txtMaVT.Text.ToString();
             Console.WriteLine(maVT);
-           /* for (int index = 0; index < bdsCTDDH.Count - 1; index++)
+            for (int index = 0; index < bdsCTDDH.Count - 1; index++)
             {
                 if (((DataRowView)bdsCTDDH[index])["MAVT"].ToString().Equals(maVT))
                 {
-                    XtraMessageBox.Show("Vui lòng chọn vật tư", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("vật tư đã có", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }*/
+            }
            
-            int vt = bds.Find("colMAVT", txtMaVT.Text);
+           
             
-            Console.WriteLine(vt);
+            //Console.WriteLine(vt);
+
             if (txtMaVT.Text.Equals(""))
             {
                 XtraMessageBox.Show("Vui lòng chọn vật tư", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            /*if (vt != -1)
+            else
             {
-                XtraMessageBox.Show("Vật tư này đã có trong đơn đặt hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }   */
+                String strLenh = "DECLARE @return_value int " +
+                                "EXEC @return_value = [dbo].[sp_Kiem_Tra_CTDDH] '" +
+                                txtMaVT.Text.Trim() + "' " +
+                                "SELECT 'Return Value' = @return_value";
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                if (Program.myReader == null) return false;
+
+                Program.myReader.Read();
+                int result = int.Parse(Program.myReader.GetValue(0).ToString());
+                Program.myReader.Close();
+
+                if (result == 1)
+                {
+                    XtraMessageBox.Show("Vật tư này đã có trong đơn đặt hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
             if (txtSoLuong.Value <= 0)
             {
                 XtraMessageBox.Show("Số lượng phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -292,16 +321,33 @@ namespace QLVT_Nhom38.SubForm
             if (txtMaSoDDH.Text.Equals(""))
             {
                 XtraMessageBox.Show("Vui lòng điền mã đơn đặt hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaSoDDH.Focus();
                 return false;
             }
-            if (vt != -1)
+            else
             {
-                XtraMessageBox.Show("Mã đơn hàng này đã được sử dụng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                String strLenh = "DECLARE @return_value int " +
+                                "EXEC @return_value = [dbo].[sp_Kiem_Tra_MasoDDH] '" +
+                                txtMaSoDDH.Text.Trim() + "' " +
+                                "SELECT 'Return Value' = @return_value";
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                if (Program.myReader == null) return false;
+
+                Program.myReader.Read();
+                int result = int.Parse(Program.myReader.GetValue(0).ToString());
+                Program.myReader.Close();
+
+                if (result == 1)
+                {
+                    XtraMessageBox.Show("Mã đơn hàng này đã được sử dụng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaSoDDH.Focus();
+                    return false;
+                }                
             }
             if (txtNhaCC.Text.Equals(""))
             {
                 XtraMessageBox.Show("Vui lòng điền nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNhaCC.Focus();
                 return false;
             }
             if (txtMaKho.Text.Equals(""))
@@ -347,7 +393,6 @@ namespace QLVT_Nhom38.SubForm
                 // Khi Update database lỗi thì xóa record vừa thêm trong bds
                 //bdsNV.RemoveCurrent();
                 reload();
-                return;
             }
 
             gc.Enabled = true;
@@ -361,15 +406,20 @@ namespace QLVT_Nhom38.SubForm
         {
             if (cheDo == 1)
             {
+                if (txtMaNV.Text != Program.username)
+                {
+                    XtraMessageBox.Show("Không thể xóa đơn hàng người khác lập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (bdsCTDDH.Count > 0)
                 {
-                    XtraMessageBox.Show("Không thể xóa vì kho đã được lập chi tiết đơn đặt hàng", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Không thể xóa vì đơn hàng đã được lập chi tiết đơn đặt hàng", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 if (bdsPN.Count > 0)
                 {
-                    XtraMessageBox.Show("Không thể xóa vì kho đã được lập phiếu nhập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Không thể xóa vì đơn hàng đã được lập phiếu nhập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -381,6 +431,12 @@ namespace QLVT_Nhom38.SubForm
                     XtraMessageBox.Show("Không thể xóa chi tiết đơn hàng trên phiếu người khác lập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                if (bdsPN.Count > 0)
+                {
+                    XtraMessageBox.Show("Không thể sửa vì đơn hàng đã được lập phiếu nhập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
             DialogResult dr = XtraMessageBox.Show("Bạn có thực sự muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -389,7 +445,7 @@ namespace QLVT_Nhom38.SubForm
                 int currentPosition = -1;
                 try
                 {
-                    currentPosition = bds.Position; // giữ lại mã kho để phòng trường hợp xóa lỗi
+                    currentPosition = bds.Position; // giữ lại vị trí grid để phòng trường hợp xóa lỗi
                     bds.RemoveCurrent(); // xóa trên máy hiện tại trước
                     if (cheDo == 1)
                     {

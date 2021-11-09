@@ -326,7 +326,7 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1129, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1166, 24);
             // 
             // barDockControlBottom
             // 
@@ -334,7 +334,7 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 749);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1129, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1166, 0);
             // 
             // barDockControlLeft
             // 
@@ -348,7 +348,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1129, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1166, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 725);
             // 
@@ -375,7 +375,7 @@ namespace QLVT_Nhom38.SubForm
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1129, 37);
+            this.panelControl1.Size = new System.Drawing.Size(1166, 37);
             this.panelControl1.TabIndex = 5;
             // 
             // cmbChiNhanh
@@ -459,6 +459,7 @@ namespace QLVT_Nhom38.SubForm
             this.colMasoDDH.Caption = "Mã số ĐĐH";
             this.colMasoDDH.FieldName = "MasoDDH";
             this.colMasoDDH.Name = "colMasoDDH";
+            this.colMasoDDH.OptionsColumn.AllowEdit = false;
             this.colMasoDDH.Visible = true;
             this.colMasoDDH.VisibleIndex = 0;
             this.colMasoDDH.Width = 122;
@@ -468,6 +469,7 @@ namespace QLVT_Nhom38.SubForm
             this.colNGAY.Caption = "Ngày";
             this.colNGAY.FieldName = "NGAY";
             this.colNGAY.Name = "colNGAY";
+            this.colNGAY.OptionsColumn.AllowEdit = false;
             this.colNGAY.Visible = true;
             this.colNGAY.VisibleIndex = 1;
             this.colNGAY.Width = 100;
@@ -477,6 +479,7 @@ namespace QLVT_Nhom38.SubForm
             this.colNhaCC.Caption = "Nhà cung cấp";
             this.colNhaCC.FieldName = "NhaCC";
             this.colNhaCC.Name = "colNhaCC";
+            this.colNhaCC.OptionsColumn.AllowEdit = false;
             this.colNhaCC.Visible = true;
             this.colNhaCC.VisibleIndex = 2;
             this.colNhaCC.Width = 217;
@@ -486,6 +489,7 @@ namespace QLVT_Nhom38.SubForm
             this.colMANV.Caption = "Mã nhân viên";
             this.colMANV.FieldName = "MANV";
             this.colMANV.Name = "colMANV";
+            this.colMANV.OptionsColumn.AllowEdit = false;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 3;
             this.colMANV.Width = 93;
@@ -495,6 +499,7 @@ namespace QLVT_Nhom38.SubForm
             this.colMAKHO.Caption = "Mã kho";
             this.colMAKHO.FieldName = "MAKHO";
             this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.OptionsColumn.AllowEdit = false;
             this.colMAKHO.Visible = true;
             this.colMAKHO.VisibleIndex = 4;
             this.colMAKHO.Width = 91;
@@ -603,21 +608,20 @@ namespace QLVT_Nhom38.SubForm
             this.panel2.Controls.Add(this.gcCTDDH);
             this.panel2.Controls.Add(this.infoCTDDH);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(667, 61);
+            this.panel2.Location = new System.Drawing.Point(661, 61);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(462, 688);
+            this.panel2.Size = new System.Drawing.Size(505, 688);
             this.panel2.TabIndex = 17;
             // 
             // gcCTDDH
             // 
             this.gcCTDDH.DataSource = this.bdsCTDDH;
             this.gcCTDDH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCTDDH.Enabled = false;
             this.gcCTDDH.Location = new System.Drawing.Point(0, 0);
             this.gcCTDDH.MainView = this.gridView2;
             this.gcCTDDH.MenuManager = this.barManager1;
             this.gcCTDDH.Name = "gcCTDDH";
-            this.gcCTDDH.Size = new System.Drawing.Size(462, 438);
+            this.gcCTDDH.Size = new System.Drawing.Size(505, 438);
             this.gcCTDDH.TabIndex = 12;
             this.gcCTDDH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -639,33 +643,43 @@ namespace QLVT_Nhom38.SubForm
             // 
             // colMasoDDH1
             // 
+            this.colMasoDDH1.Caption = "Mã ĐĐH";
             this.colMasoDDH1.FieldName = "MasoDDH";
             this.colMasoDDH1.Name = "colMasoDDH1";
+            this.colMasoDDH1.OptionsColumn.AllowEdit = false;
             this.colMasoDDH1.Visible = true;
             this.colMasoDDH1.VisibleIndex = 0;
+            this.colMasoDDH1.Width = 131;
             // 
             // colMAVT
             // 
+            this.colMAVT.Caption = "Mã VT";
             this.colMAVT.FieldName = "MAVT";
             this.colMAVT.Name = "colMAVT";
+            this.colMAVT.OptionsColumn.AllowEdit = false;
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 1;
+            this.colMAVT.Width = 104;
             // 
             // colSOLUONG
             // 
+            this.colSOLUONG.Caption = "Số lượng";
             this.colSOLUONG.FieldName = "SOLUONG";
             this.colSOLUONG.Name = "colSOLUONG";
+            this.colSOLUONG.OptionsColumn.AllowEdit = false;
             this.colSOLUONG.Visible = true;
             this.colSOLUONG.VisibleIndex = 2;
+            this.colSOLUONG.Width = 98;
             // 
             // colDONGIA
             // 
-            this.colDONGIA.DisplayFormat.FormatString = "n0";
-            this.colDONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colDONGIA.Caption = "Đơn giá";
             this.colDONGIA.FieldName = "DONGIA";
             this.colDONGIA.Name = "colDONGIA";
+            this.colDONGIA.OptionsColumn.AllowEdit = false;
             this.colDONGIA.Visible = true;
             this.colDONGIA.VisibleIndex = 3;
+            this.colDONGIA.Width = 147;
             // 
             // infoCTDDH
             // 
@@ -682,7 +696,7 @@ namespace QLVT_Nhom38.SubForm
             this.infoCTDDH.Enabled = false;
             this.infoCTDDH.Location = new System.Drawing.Point(0, 438);
             this.infoCTDDH.Name = "infoCTDDH";
-            this.infoCTDDH.Size = new System.Drawing.Size(462, 250);
+            this.infoCTDDH.Size = new System.Drawing.Size(505, 250);
             this.infoCTDDH.TabIndex = 12;
             this.infoCTDDH.Text = "Thông tin chi tiết phiếu";
             // 
@@ -692,11 +706,6 @@ namespace QLVT_Nhom38.SubForm
             this.txtDonGia.Location = new System.Drawing.Point(103, 199);
             this.txtDonGia.Maximum = new decimal(new int[] {
             999999999,
-            0,
-            0,
-            0});
-            this.txtDonGia.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -727,11 +736,6 @@ namespace QLVT_Nhom38.SubForm
             this.txtSoLuong.Location = new System.Drawing.Point(103, 148);
             this.txtSoLuong.Maximum = new decimal(new int[] {
             999999,
-            0,
-            0,
-            0});
-            this.txtSoLuong.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -779,7 +783,7 @@ namespace QLVT_Nhom38.SubForm
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(648, 61);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(19, 688);
+            this.panel3.Size = new System.Drawing.Size(13, 688);
             this.panel3.TabIndex = 18;
             // 
             // VatTuTableAdapter
@@ -804,7 +808,7 @@ namespace QLVT_Nhom38.SubForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1129, 749);
+            this.ClientSize = new System.Drawing.Size(1166, 749);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -902,14 +906,14 @@ namespace QLVT_Nhom38.SubForm
         private System.Windows.Forms.BindingSource bdsPN;
         private QLVTDataSetTableAdapters.PhieuNhapTableAdapter PhieuNhapTableAdapter;
         private DevExpress.XtraBars.BarToggleSwitchItem switchCheDo;
-        private System.Windows.Forms.BindingSource bdsCTDDH;
-        private QLVTDataSetTableAdapters.CTDDHTableAdapter CTDDHTableAdapter;
-        private DevExpress.XtraGrid.GridControl gcCTDDH;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.NumericUpDown txtDonGia;
         private DevExpress.XtraEditors.TextEdit txtMaDDHCuaCTDDH;
         private System.Windows.Forms.NumericUpDown txtSoLuong;
         private DevExpress.XtraEditors.TextEdit txtMaVT;
+        private System.Windows.Forms.BindingSource bdsCTDDH;
+        private QLVTDataSetTableAdapters.CTDDHTableAdapter CTDDHTableAdapter;
+        private DevExpress.XtraGrid.GridControl gcCTDDH;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colMasoDDH1;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
