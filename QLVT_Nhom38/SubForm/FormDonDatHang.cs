@@ -102,7 +102,7 @@ namespace QLVT_Nhom38.SubForm
         }
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            reload();
         }
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,6 +178,7 @@ namespace QLVT_Nhom38.SubForm
                     return;
                 }
             }
+            switchCheDo.Enabled = false;
             checkThem = 1; // bật trạng thái đang thêm mới lên           
             position = bds.Position;
             info.Enabled = true;
@@ -219,12 +220,12 @@ namespace QLVT_Nhom38.SubForm
                     checkThem = 0;
                 }
                 bds.Position = position;
-
+                switchCheDo.Enabled = true;
 
                 gc.Enabled = true;
                 info.Enabled = false;
 
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
                 btnGhi.Enabled = false;
 
 
@@ -233,6 +234,32 @@ namespace QLVT_Nhom38.SubForm
                     btnUndo.Enabled = false;
                 }
 
+                return;
+            }
+
+            // Danh sách undoList trống
+            if (undoList.Count == 0)
+            {
+                XtraMessageBox.Show("Không còn thao tác nào để khôi phục", "Thông báo", MessageBoxButtons.OK);
+                btnUndo.Enabled = false;
+                return;
+            }
+
+            // Bắt đầu hoàn tác
+            bdsKho.CancelEdit();
+            String strLenhUndo = undoList.Pop().ToString();
+            Console.WriteLine(strLenhUndo);
+
+            if (Program.KetNoi() == 0)
+                return;
+            int n = Program.ExecSqlNonQuery(strLenhUndo);
+            reload();
+            bds.Position = position;
+
+            // Nếu sau khi undo mà danh sách undoList trống thì disable nút undo đi
+            if (undoList.Count == 0)
+            {
+                btnUndo.Enabled = false;
                 return;
             }
         }
@@ -272,7 +299,7 @@ namespace QLVT_Nhom38.SubForm
             {
                 String strLenh = "DECLARE @return_value int " +
                                 "EXEC @return_value = [dbo].[sp_Kiem_Tra_CTDDH] '" +
-                                txtMaVT.Text.Trim() + "' " +
+                                txtMaSoDDH.Text.Trim() + "', '" + txtMaVT.Text.Trim() + "' " +
                                 "SELECT 'Return Value' = @return_value";
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader == null) return false;
@@ -307,6 +334,12 @@ namespace QLVT_Nhom38.SubForm
             if (txtMaSoDDH.Text.Equals(""))
             {
                 XtraMessageBox.Show("Vui lòng điền mã đơn đặt hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaSoDDH.Focus();
+                return false;
+            }
+            else if (txtMaSoDDH.Text.Length > 8)
+            {
+                XtraMessageBox.Show("Mã đơn đặt hàng không quá 8 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaSoDDH.Focus();
                 return false;
             }
@@ -351,26 +384,30 @@ namespace QLVT_Nhom38.SubForm
             if (cheDo == 2)
                 if (!kiemTraCTDDH()) return;
 
+            String strLenhUndo = "";
             try
             {
                 bds.EndEdit(); // kết thúc quá trình hiệu chỉnh và ghi vào BindingSource
                 bds.ResetCurrentItem(); // đưa thông tin vào grid
                 if (cheDo == 1)
                 {
+                    strLenhUndo = "DELETE DBO.DatHang WHERE MasoDDH = '" + txtMaSoDDH.Text.Trim() + "'";
                     this.DatHangTableAdapter.Connection.ConnectionString = Program.connstr; // đường kết nối đã đăng nhập
                     this.DatHangTableAdapter.Update(this.QLVTDataSet.DatHang); // update xuống csdl
                 }
                 else
                 {
+                    strLenhUndo = "DELETE DBO.CTDDH WHERE MasoDDH = '" + txtMaSoDDH.Text.Trim() + "' AND MAVT = '" + txtMaVT.Text.Trim() + "'";
                     this.CTDDHTableAdapter.Connection.ConnectionString = Program.connstr; // đường kết nối đã đăng nhập
                     this.CTDDHTableAdapter.Update(this.QLVTDataSet.CTDDH); // update xuống csdl   
                 }
 
                 XtraMessageBox.Show("Ghi thông tin thành công!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //btnUndo.Enabled = true;
-                //undoList.Push(strLenhUndo);
+                btnUndo.Enabled = true;
+                undoList.Push(strLenhUndo);
                 checkThem = 0;
+                switchCheDo.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -390,6 +427,7 @@ namespace QLVT_Nhom38.SubForm
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            String strLenhUndo = "";
             if (cheDo == 1)
             {
                 if (txtMaNV.Text != Program.username)
@@ -408,7 +446,10 @@ namespace QLVT_Nhom38.SubForm
                     XtraMessageBox.Show("Không thể xóa vì đơn hàng đã được lập phiếu nhập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                DateTime ngay = (DateTime)((DataRowView)bds[bds.Position])["NGAY"];
+                strLenhUndo = string.Format("INSERT INTO DBO.DatHang (MasoDDH, NGAY, NhaCC, MANV, MAKHO) " +
+                    "VALUES ('{0}', CAST('{1}' AS DATETIME), N'{2}', {3}, '{4}')", txtMaSoDDH.Text, ngay.ToString("yyyy-MM-dd"),
+                    txtNhaCC.Text, txtMaNV.Text, txtMaKho.Text);
             }
             if (cheDo == 2)
             {
@@ -423,6 +464,8 @@ namespace QLVT_Nhom38.SubForm
                     XtraMessageBox.Show("Không thể sửa vì đơn hàng đã được lập phiếu nhập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                strLenhUndo = string.Format("INSERT INTO DBO.CTDDH (MasoDDH, MAVT, SOLUONG, DONGIA) " +
+                    "VALUES ('{0}', '{1}', {2}, {3})", txtMaDDHCuaCTDDH.Text, txtMaVT.Text, txtSoLuong.Value, txtDonGia.Value);
             }
 
             DialogResult dr = XtraMessageBox.Show("Bạn có thực sự muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -443,7 +486,8 @@ namespace QLVT_Nhom38.SubForm
                         this.CTDDHTableAdapter.Connection.ConnectionString = Program.connstr; // đường kết nối đã đăng nhập
                         this.CTDDHTableAdapter.Update(this.QLVTDataSet.CTDDH); // update xuống csdl   
                     }
-                    //this.btnUndo.Enabled = true;
+                    this.btnUndo.Enabled = true;
+                    undoList.Push(strLenhUndo);
                     XtraMessageBox.Show("Xóa thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -457,9 +501,25 @@ namespace QLVT_Nhom38.SubForm
                         this.CTDDHTableAdapter.Fill(this.QLVTDataSet.CTDDH);
                     // lệnh Find trả về index của item trong danh sách với giá trị và tên cột được chỉ định
                     bds.Position = currentPosition; // sau khi fill xong thì con nháy đứng ở dòng đầu tiên nên mình đặt lại theo vị trí ban nãy muốn xóa
-                    //undoList.Pop();
+                    
                     return;
                 }
+            }
+        }
+
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (info.Enabled)
+            {
+                if (XtraMessageBox.Show("Dữ liệu vẫn chưa lưu vào Database!\nBạn có chắn chắn muốn thoát?", "Thông báo",
+                            MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
             }
         }
     }

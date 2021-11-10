@@ -312,6 +312,7 @@ namespace QLVT_Nhom38.SubForm
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // switchCheDo
             // 
@@ -617,6 +618,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.gcCTDDH.DataSource = this.bdsCTDDH;
             this.gcCTDDH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcCTDDH.Enabled = false;
             this.gcCTDDH.Location = new System.Drawing.Point(0, 0);
             this.gcCTDDH.MainView = this.gridView2;
             this.gcCTDDH.MenuManager = this.barManager1;
