@@ -562,33 +562,29 @@ namespace QLVT_Nhom38.SimpleForm
                 XtraMessageBox.Show("Hãy chọn chi nhánh khác chi nhánh bạn đang đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            //
-            String maChiNhanhHienTai = "";
+            
             String maChiNhanhMoi = "";
-            int position = bdsNV.Position;
-            String maNhanVien = ((DataRowView)bdsNV[position])["MANV"].ToString();
 
             if (server.Contains("1"))
-            {
-                maChiNhanhHienTai = "CN2";
                 maChiNhanhMoi = "CN1";
-            }
+
             else if (server.Contains("2"))
-            {
-                maChiNhanhHienTai = "CN1";
                 maChiNhanhMoi = "CN2";
-            }
+
             else
             {
                 XtraMessageBox.Show("Mã chi nhánh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           
-            // bỏ câu lệnh chuyển lại về chi nhánh hiện tại vào undoList
-            String strLenhUndo = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhHienTai + "'";
-            //undoList.Push(strLenhUndo);
-            tenServerChuyenToi = server; // Lấy tên server tới để làm tính năng hoàn tác
+
+            DialogResult dr = XtraMessageBox.Show("Hành động này không thế hoàn tác.\nBạn có chắc chắn muốn chuyển nhân viên này không?", "Thông báo",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            // người dùng chọn cancel thì return không làm gì cả
+            if (dr != DialogResult.OK) return;
+
+            int position = bdsNV.Position;
+            String maNhanVien = ((DataRowView)bdsNV[position])["MANV"].ToString();
 
             // tạo chuỗi lệnh để chuyển nhân viên đến chi nhánh mới
             String strLenh = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhMoi + "'";
@@ -596,14 +592,14 @@ namespace QLVT_Nhom38.SimpleForm
             if (n == 0)
             {
                 
-                MessageBox.Show("Chuyển chi nhánh thành công!", "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Chuyển chi nhánh thành công!", "Thông báo", MessageBoxButtons.OK);
                 //btnUndo.Enabled = true;
                 this.NhanVienTableAdapter.Fill(this.QLVTDataSet.NhanVien);
                 return;
             }
             else
             {
-                MessageBox.Show("Chuyển chi nhánh thất bại!\n", "Thông báo",
+                XtraMessageBox.Show("Chuyển chi nhánh thất bại!\n", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }            
@@ -642,7 +638,7 @@ namespace QLVT_Nhom38.SimpleForm
             // chuyenChiNhanh2 của FormNhanVien
             form.chuyenChiNhanh1 = new FormChuyenChiNhanh.MyDelegate(chuyenChiNhanh2);
 
-            this.btnUndo.Enabled = true;
+            //this.btnUndo.Enabled = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
