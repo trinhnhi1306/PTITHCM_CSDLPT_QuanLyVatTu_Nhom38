@@ -15,6 +15,7 @@ namespace QLVT_Nhom38.SimpleForm
 {
     public partial class FormNhanVien : Form
     {
+        public static String serverMoi = "";
         int checkThem = 0;
         int position = 0; // vị trí trên grid view
         string maCN = "";
@@ -554,15 +555,8 @@ namespace QLVT_Nhom38.SimpleForm
             return null;
         }
 
-        public void chuyenChiNhanh2 (String server)
-        {
-            // Chi nhánh được chọn là chi nhánh đang đăng nhập
-            if (Program.serverName == server)
-            {
-                XtraMessageBox.Show("Hãy chọn chi nhánh khác chi nhánh bạn đang đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            
+        public void chuyenChiNhanh (String server)
+        {  
             String maChiNhanhMoi = "";
 
             if (server.Contains("1"))
@@ -575,13 +569,7 @@ namespace QLVT_Nhom38.SimpleForm
             {
                 XtraMessageBox.Show("Mã chi nhánh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
-
-            DialogResult dr = XtraMessageBox.Show("Hành động này không thế hoàn tác.\nBạn có chắc chắn muốn chuyển nhân viên này không?", "Thông báo",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            // người dùng chọn cancel thì return không làm gì cả
-            if (dr != DialogResult.OK) return;
+            }           
 
             int position = bdsNV.Position;
             String maNhanVien = ((DataRowView)bdsNV[position])["MANV"].ToString();
@@ -592,17 +580,11 @@ namespace QLVT_Nhom38.SimpleForm
             if (n == 0)
             {
                 
-                XtraMessageBox.Show("Chuyển chi nhánh thành công!", "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Chuyển chi nhánh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //btnUndo.Enabled = true;
                 this.NhanVienTableAdapter.Fill(this.QLVTDataSet.NhanVien);
                 return;
-            }
-            else
-            {
-                XtraMessageBox.Show("Chuyển chi nhánh thất bại!\n", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }            
+            }      
         }
 
         private void btnChuyenChiNhanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -632,13 +614,10 @@ namespace QLVT_Nhom38.SimpleForm
                 f.Activate();
             }
             FormChuyenChiNhanh form = new FormChuyenChiNhanh();
-            form.Show();
+            form.ShowDialog();
 
-            // Khởi tạo delegate bên FormChuyenChiNhanh với tham số khởi tạo là phương thức
-            // chuyenChiNhanh2 của FormNhanVien
-            form.chuyenChiNhanh1 = new FormChuyenChiNhanh.MyDelegate(chuyenChiNhanh2);
-
-            //this.btnUndo.Enabled = true;
+            if(!serverMoi.Equals(""))
+                chuyenChiNhanh(serverMoi);
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -54,6 +54,7 @@ namespace QLVT_Nhom38.SimpleForm
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader == null) return;
 
+                Program.myReader.Close();
                 XtraMessageBox.Show("Tạo tài khoản cho nhân viên thành công!", "Thông báo", MessageBoxButtons.OK);
             }
         }
