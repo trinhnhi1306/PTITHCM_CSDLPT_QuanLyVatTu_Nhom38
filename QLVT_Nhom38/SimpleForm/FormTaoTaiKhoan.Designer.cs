@@ -31,6 +31,8 @@ namespace QLVT_Nhom38.SimpleForm
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnChonNV = new System.Windows.Forms.Button();
+            this.txtNhanVien = new DevExpress.XtraEditors.TextEdit();
             this.txtMatKhauXacNhan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
@@ -45,23 +47,20 @@ namespace QLVT_Nhom38.SimpleForm
             this.txtLoginName = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbNhanVien = new System.Windows.Forms.ComboBox();
-            this.bdsNV1 = new System.Windows.Forms.BindingSource(this.components);
-            this.QLVTDataSet = new QLVT_Nhom38.QLVTDataSet();
-            this.HOTEN = new QLVT_Nhom38.QLVTDataSetTableAdapters.HOTEN();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoginName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsNV1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QLVTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.btnChonNV);
+            this.panel1.Controls.Add(this.txtNhanVien);
             this.panel1.Controls.Add(this.txtMatKhauXacNhan);
             this.panel1.Controls.Add(this.txtMatKhau);
             this.panel1.Controls.Add(this.separatorControl1);
@@ -76,7 +75,6 @@ namespace QLVT_Nhom38.SimpleForm
             this.panel1.Controls.Add(this.txtLoginName);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cmbNhanVien);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -84,9 +82,29 @@ namespace QLVT_Nhom38.SimpleForm
             this.panel1.Size = new System.Drawing.Size(929, 432);
             this.panel1.TabIndex = 0;
             // 
+            // btnChonNV
+            // 
+            this.btnChonNV.Location = new System.Drawing.Point(865, 61);
+            this.btnChonNV.Name = "btnChonNV";
+            this.btnChonNV.Size = new System.Drawing.Size(38, 25);
+            this.btnChonNV.TabIndex = 18;
+            this.btnChonNV.Text = "...";
+            this.btnChonNV.UseVisualStyleBackColor = true;
+            this.btnChonNV.Click += new System.EventHandler(this.btnChonNV_Click);
+            // 
+            // txtNhanVien
+            // 
+            this.txtNhanVien.Enabled = false;
+            this.txtNhanVien.Location = new System.Drawing.Point(607, 60);
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNhanVien.Properties.Appearance.Options.UseFont = true;
+            this.txtNhanVien.Size = new System.Drawing.Size(252, 28);
+            this.txtNhanVien.TabIndex = 17;
+            // 
             // txtMatKhauXacNhan
             // 
-            this.txtMatKhauXacNhan.Location = new System.Drawing.Point(628, 202);
+            this.txtMatKhauXacNhan.Location = new System.Drawing.Point(607, 202);
             this.txtMatKhauXacNhan.Name = "txtMatKhauXacNhan";
             this.txtMatKhauXacNhan.Size = new System.Drawing.Size(252, 29);
             this.txtMatKhauXacNhan.TabIndex = 16;
@@ -94,7 +112,7 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(628, 151);
+            this.txtMatKhau.Location = new System.Drawing.Point(607, 151);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(252, 29);
             this.txtMatKhau.TabIndex = 15;
@@ -111,7 +129,7 @@ namespace QLVT_Nhom38.SimpleForm
             // radioButton_User
             // 
             this.radioButton_User.AutoSize = true;
-            this.radioButton_User.Location = new System.Drawing.Point(705, 271);
+            this.radioButton_User.Location = new System.Drawing.Point(684, 271);
             this.radioButton_User.Name = "radioButton_User";
             this.radioButton_User.Size = new System.Drawing.Size(63, 25);
             this.radioButton_User.TabIndex = 13;
@@ -122,7 +140,7 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             this.radioButton_ChiNhanh.AutoSize = true;
             this.radioButton_ChiNhanh.Checked = true;
-            this.radioButton_ChiNhanh.Location = new System.Drawing.Point(536, 271);
+            this.radioButton_ChiNhanh.Location = new System.Drawing.Point(515, 271);
             this.radioButton_ChiNhanh.Name = "radioButton_ChiNhanh";
             this.radioButton_ChiNhanh.Size = new System.Drawing.Size(103, 25);
             this.radioButton_ChiNhanh.TabIndex = 12;
@@ -132,7 +150,7 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(686, 337);
+            this.btnThoat.Location = new System.Drawing.Point(665, 337);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(111, 44);
             this.btnThoat.TabIndex = 11;
@@ -143,7 +161,7 @@ namespace QLVT_Nhom38.SimpleForm
             // btnTao
             // 
             this.btnTao.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnTao.Location = new System.Drawing.Point(523, 337);
+            this.btnTao.Location = new System.Drawing.Point(502, 337);
             this.btnTao.Name = "btnTao";
             this.btnTao.Size = new System.Drawing.Size(111, 44);
             this.btnTao.TabIndex = 10;
@@ -176,7 +194,7 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(442, 210);
+            this.label4.Location = new System.Drawing.Point(421, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 21);
             this.label4.TabIndex = 7;
@@ -186,7 +204,7 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(442, 159);
+            this.label3.Location = new System.Drawing.Point(421, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 6;
@@ -194,7 +212,7 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             // txtLoginName
             // 
-            this.txtLoginName.Location = new System.Drawing.Point(628, 108);
+            this.txtLoginName.Location = new System.Drawing.Point(607, 108);
             this.txtLoginName.Name = "txtLoginName";
             this.txtLoginName.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginName.Properties.Appearance.Options.UseFont = true;
@@ -206,7 +224,7 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(442, 67);
+            this.label2.Location = new System.Drawing.Point(421, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 21);
             this.label2.TabIndex = 2;
@@ -216,37 +234,11 @@ namespace QLVT_Nhom38.SimpleForm
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(442, 111);
+            this.label1.Location = new System.Drawing.Point(421, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Login name";
-            // 
-            // cmbNhanVien
-            // 
-            this.cmbNhanVien.DataSource = this.bdsNV1;
-            this.cmbNhanVien.DisplayMember = "HOTEN";
-            this.cmbNhanVien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNhanVien.FormattingEnabled = true;
-            this.cmbNhanVien.Location = new System.Drawing.Point(628, 64);
-            this.cmbNhanVien.Name = "cmbNhanVien";
-            this.cmbNhanVien.Size = new System.Drawing.Size(252, 29);
-            this.cmbNhanVien.TabIndex = 0;
-            this.cmbNhanVien.ValueMember = "MANV";
-            // 
-            // bdsNV1
-            // 
-            this.bdsNV1.DataMember = "NhanVien1";
-            this.bdsNV1.DataSource = this.QLVTDataSet;
-            // 
-            // QLVTDataSet
-            // 
-            this.QLVTDataSet.DataSetName = "QLVTDataSet";
-            this.QLVTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.ClearBeforeFill = true;
             // 
             // errorProvider1
             // 
@@ -263,11 +255,10 @@ namespace QLVT_Nhom38.SimpleForm
             this.Load += new System.EventHandler(this.FormTaoTaiKhoan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoginName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsNV1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QLVTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -281,7 +272,6 @@ namespace QLVT_Nhom38.SimpleForm
         private DevExpress.XtraEditors.TextEdit txtLoginName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbNhanVien;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnThoat;
@@ -289,11 +279,10 @@ namespace QLVT_Nhom38.SimpleForm
         private System.Windows.Forms.RadioButton radioButton_User;
         private System.Windows.Forms.RadioButton radioButton_ChiNhanh;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
-        private QLVTDataSet QLVTDataSet;
-        private System.Windows.Forms.BindingSource bdsNV1;
-        private QLVTDataSetTableAdapters.HOTEN HOTEN;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtMatKhauXacNhan;
         private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.Button btnChonNV;
+        private DevExpress.XtraEditors.TextEdit txtNhanVien;
     }
 }

@@ -531,6 +531,7 @@ namespace QLVT_Nhom38.SubForm
             this.cmbTenKho.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsDDH, "MAKHO", true));
             this.cmbTenKho.DataSource = this.bdsKho;
             this.cmbTenKho.DisplayMember = "TENKHO";
+            this.cmbTenKho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTenKho.FormattingEnabled = true;
             this.cmbTenKho.Location = new System.Drawing.Point(126, 198);
             this.cmbTenKho.Name = "cmbTenKho";
@@ -766,6 +767,7 @@ namespace QLVT_Nhom38.SubForm
             this.cmbVatTu.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsCTDDH, "MAVT", true));
             this.cmbVatTu.DataSource = this.bdsVT;
             this.cmbVatTu.DisplayMember = "TENVT";
+            this.cmbVatTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVatTu.FormattingEnabled = true;
             this.cmbVatTu.Location = new System.Drawing.Point(103, 99);
             this.cmbVatTu.Name = "cmbVatTu";

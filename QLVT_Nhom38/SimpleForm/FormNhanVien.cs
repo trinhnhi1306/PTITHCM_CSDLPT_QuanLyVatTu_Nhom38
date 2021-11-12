@@ -236,6 +236,10 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (bdsNV.Count == 0)
+                XtraMessageBox.Show("Danh sách trống!", "Thông báo lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             string maNV = ((DataRowView)bdsNV[bdsNV.Position])["MANV"].ToString();
             if (maNV == Program.username)
             {

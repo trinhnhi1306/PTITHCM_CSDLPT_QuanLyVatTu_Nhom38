@@ -228,6 +228,10 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (bdsKho.Count == 0)
+                XtraMessageBox.Show("Danh sách trống!", "Thông báo lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             string maKho = ((DataRowView)bdsKho[bdsKho.Position])["MAKHO"].ToString();
             if (bdsDH.Count > 0)
             {

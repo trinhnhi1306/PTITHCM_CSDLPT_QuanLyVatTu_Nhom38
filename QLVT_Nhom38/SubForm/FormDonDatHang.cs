@@ -285,6 +285,36 @@ namespace QLVT_Nhom38.SubForm
                 bds = bdsDDH;
                 gc = gcDDH;
                 info = infoDDH;
+                if (bdsCTDDH.Count == 0 && txtMaNV.Text == Program.username)
+                {
+                    DialogResult dr = XtraMessageBox.Show("Phiếu này chưa có chi tiết phiếu. Bạn có muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.OK)
+                    {
+                        int currentPosition = -1;
+                        try
+                        {
+                            currentPosition = bds.Position; // giữ lại vị trí grid để phòng trường hợp xóa lỗi
+                            bds.RemoveCurrent(); // xóa trên máy hiện tại trước
+                            
+                            this.DatHangTableAdapter.Connection.ConnectionString = Program.connstr; // đường kết nối đã đăng nhập
+                            this.DatHangTableAdapter.Update(this.QLVTDataSet.DatHang); // update xuống csdl
+                            
+                            Console.WriteLine("Xóa phiếu thành công!");
+                        }
+                        catch (Exception ex)
+                        {
+                            XtraMessageBox.Show("Lỗi xảy ra trong quá trình xóa. Vui lòng thử lại!\n" + ex.Message, "Thông báo lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           
+                            this.DatHangTableAdapter.Fill(this.QLVTDataSet.DatHang); // trên màn hình đã xóa mà csdl chưa xóa nên phải tải lại dữ liệu
+                            
+                            // lệnh Find trả về index của item trong danh sách với giá trị và tên cột được chỉ định
+                            bds.Position = currentPosition; // sau khi fill xong thì con nháy đứng ở dòng đầu tiên nên mình đặt lại theo vị trí ban nãy muốn xóa
+
+                            return;
+                        }
+                    }
+                }
             }    
         }
 
@@ -402,8 +432,7 @@ namespace QLVT_Nhom38.SubForm
                     this.CTDDHTableAdapter.Update(this.QLVTDataSet.CTDDH); // update xuống csdl   
                 }
 
-                XtraMessageBox.Show("Ghi thông tin thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Console.WriteLine("Ghi thông tin thành công!");
                 btnUndo.Enabled = true;
                 undoList.Push(strLenhUndo);
                 checkThem = 0;
@@ -423,10 +452,16 @@ namespace QLVT_Nhom38.SubForm
 
             btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = false;
+            if (cheDo == 1)
+                switchCheDo.Checked = true;
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if(bds.Count == 0)
+                XtraMessageBox.Show("Danh sách trống!", "Thông báo lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             String strLenhUndo = "";
             if (cheDo == 1)
             {

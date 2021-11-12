@@ -13,6 +13,7 @@ namespace QLVT_Nhom38.SimpleForm
 {
     public partial class FormTaoTaiKhoan : Form
     {
+        public static String nhanVien = "";
         String role = "";
         public FormTaoTaiKhoan()
         {
@@ -26,10 +27,6 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void FormTaoTaiKhoan_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLVTDataSet.NhanVien1' table. You can move, or remove it, as needed.
-            this.HOTEN.Connection.ConnectionString = Program.connstr;
-            this.HOTEN.Fill(this.QLVTDataSet.NhanVien1);
-
             txtMatKhau.UseSystemPasswordChar = true;
             txtMatKhauXacNhan.UseSystemPasswordChar = true;
 
@@ -43,24 +40,31 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnTao_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNhanVien.Text))
+            {
+                XtraMessageBox.Show("Vui lòng chọn nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 if (Program.mGroup != "CONGTY")
                     role = (radioButton_ChiNhanh.Checked == true) ? "CHINHANH" : "USER";
 
                 String strLenh = string.Format("exec sp_TaoLogin '{0}', '{1}', '{2}', '{3}'",
-                    txtLoginName.Text, txtMatKhau.Text, cmbNhanVien.SelectedValue.ToString(), role);
+                    txtLoginName.Text, txtMatKhau.Text, txtNhanVien.Text, role);
 
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader == null) return;
 
                 Program.myReader.Close();
-                XtraMessageBox.Show("Tạo tài khoản cho nhân viên thành công!", "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Tạo tài khoản cho nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void txtLoginName_Validating(object sender, CancelEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNhanVien.Text))
+                return;
             if (string.IsNullOrWhiteSpace(txtLoginName.Text))
             {
                 e.Cancel = true;
@@ -98,8 +102,14 @@ namespace QLVT_Nhom38.SimpleForm
                 txtMatKhauXacNhan.Focus();
                 errorProvider1.SetError(txtMatKhauXacNhan, "Mật khẩu xác nhận không đúng!");
             }
+        }        
+
+        private void btnChonNV_Click(object sender, EventArgs e)
+        {            
+            FormChonNhanVien form = new FormChonNhanVien();
+            form.ShowDialog();
+
+            txtNhanVien.Text = nhanVien;
         }
-
-
     }
 }
