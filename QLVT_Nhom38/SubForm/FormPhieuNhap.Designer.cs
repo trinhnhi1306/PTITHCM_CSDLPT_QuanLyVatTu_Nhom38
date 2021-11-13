@@ -50,23 +50,19 @@ namespace QLVT_Nhom38.SubForm
             this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cTDDHGridControl = new DevExpress.XtraGrid.GridControl();
-            this.bds_CTDDH = new System.Windows.Forms.BindingSource(this.components);
+            this.gcDatHang = new DevExpress.XtraGrid.GridControl();
             this.bds_DatHang = new System.Windows.Forms.BindingSource(this.components);
             this.qLVTDataSet = new QLVT_Nhom38.QLVTDataSet();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMasoDDH2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.datHangGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMasoDDH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNhaCC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.phieuNhapGridControl = new DevExpress.XtraGrid.GridControl();
+            this.bds_VatTu = new System.Windows.Forms.BindingSource(this.components);
+            this.bds_CTDDH = new System.Windows.Forms.BindingSource(this.components);
+            this.bcs_CTDDH_Hotro = new System.Windows.Forms.BindingSource(this.components);
+            this.gcPhieuNhap = new DevExpress.XtraGrid.GridControl();
             this.bds_PhieuNhap = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,7 +71,7 @@ namespace QLVT_Nhom38.SubForm
             this.colMANV1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cTPNGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gcCTPN = new DevExpress.XtraGrid.GridControl();
             this.bds_CTPN = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -87,23 +83,27 @@ namespace QLVT_Nhom38.SubForm
             this.cTPNTableAdapter = new QLVT_Nhom38.QLVTDataSetTableAdapters.CTPNTableAdapter();
             this.phieuNhapTableAdapter = new QLVT_Nhom38.QLVTDataSetTableAdapters.PhieuNhapTableAdapter();
             this.cTDDHTableAdapter = new QLVT_Nhom38.QLVTDataSetTableAdapters.CTDDHTableAdapter();
+            this.cTDDH1TableAdapter = new QLVT_Nhom38.QLVTDataSetTableAdapters.CTDDH1TableAdapter();
+            this.fKCTDDHDatHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vattuTableAdapter = new QLVT_Nhom38.QLVTDataSetTableAdapters.VattuTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bds_CTDDH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_DatHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datHangGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_VatTu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_CTDDH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bcs_CTDDH_Hotro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_PhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_CTPN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKCTDDHDatHangBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -153,6 +153,7 @@ namespace QLVT_Nhom38.SubForm
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnGhi
             // 
@@ -161,6 +162,7 @@ namespace QLVT_Nhom38.SubForm
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnXoa
             // 
@@ -169,6 +171,7 @@ namespace QLVT_Nhom38.SubForm
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnUndo
             // 
@@ -177,6 +180,7 @@ namespace QLVT_Nhom38.SubForm
             this.btnUndo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.ImageOptions.Image")));
             this.btnUndo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUndo.ImageOptions.LargeImage")));
             this.btnUndo.Name = "btnUndo";
+            this.btnUndo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUndo_ItemClick);
             // 
             // btnReload
             // 
@@ -185,6 +189,7 @@ namespace QLVT_Nhom38.SubForm
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
@@ -193,12 +198,14 @@ namespace QLVT_Nhom38.SubForm
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // switchCheDo
             // 
             this.switchCheDo.Caption = "Đơn hàng/Chi tiết đơn hàng";
             this.switchCheDo.Id = 8;
             this.switchCheDo.Name = "switchCheDo";
+            this.switchCheDo.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.switchCheDo_CheckedChanged);
             // 
             // barDockControlTop
             // 
@@ -212,7 +219,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 667);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 736);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1365, 0);
             // 
@@ -222,7 +229,7 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 643);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 712);
             // 
             // barDockControlRight
             // 
@@ -230,7 +237,7 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1365, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 643);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 712);
             // 
             // btnSua
             // 
@@ -279,31 +286,26 @@ namespace QLVT_Nhom38.SubForm
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cTDDHGridControl);
-            this.panel2.Controls.Add(this.datHangGridControl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Controls.Add(this.gcDatHang);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 71);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(748, 596);
+            this.panel2.Size = new System.Drawing.Size(1365, 665);
             this.panel2.TabIndex = 5;
             // 
-            // cTDDHGridControl
+            // gcDatHang
             // 
-            this.cTDDHGridControl.DataSource = this.bds_CTDDH;
-            this.cTDDHGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cTDDHGridControl.Location = new System.Drawing.Point(0, 339);
-            this.cTDDHGridControl.MainView = this.gridView4;
-            this.cTDDHGridControl.MenuManager = this.barManager1;
-            this.cTDDHGridControl.Name = "cTDDHGridControl";
-            this.cTDDHGridControl.Size = new System.Drawing.Size(748, 257);
-            this.cTDDHGridControl.TabIndex = 1;
-            this.cTDDHGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
-            // 
-            // bds_CTDDH
-            // 
-            this.bds_CTDDH.DataMember = "FK_CTDDH_DatHang";
-            this.bds_CTDDH.DataSource = this.bds_DatHang;
+            this.gcDatHang.DataSource = this.bds_DatHang;
+            this.gcDatHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcDatHang.EmbeddedNavigator.SizeChanged += new System.EventHandler(this.datHangGridControl_EmbeddedNavigator_SizeChanged);
+            this.gcDatHang.Location = new System.Drawing.Point(0, 0);
+            this.gcDatHang.MainView = this.gridView1;
+            this.gcDatHang.MenuManager = this.barManager1;
+            this.gcDatHang.Name = "gcDatHang";
+            this.gcDatHang.Size = new System.Drawing.Size(1365, 339);
+            this.gcDatHang.TabIndex = 0;
+            this.gcDatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
             // bds_DatHang
             // 
@@ -315,58 +317,6 @@ namespace QLVT_Nhom38.SubForm
             this.qLVTDataSet.DataSetName = "QLVTDataSet";
             this.qLVTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gridView4
-            // 
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMasoDDH2,
-            this.colMAVT,
-            this.colSOLUONG,
-            this.colDONGIA});
-            this.gridView4.GridControl = this.cTDDHGridControl;
-            this.gridView4.Name = "gridView4";
-            // 
-            // colMasoDDH2
-            // 
-            this.colMasoDDH2.FieldName = "MasoDDH";
-            this.colMasoDDH2.Name = "colMasoDDH2";
-            this.colMasoDDH2.Visible = true;
-            this.colMasoDDH2.VisibleIndex = 0;
-            // 
-            // colMAVT
-            // 
-            this.colMAVT.FieldName = "MAVT";
-            this.colMAVT.Name = "colMAVT";
-            this.colMAVT.Visible = true;
-            this.colMAVT.VisibleIndex = 1;
-            // 
-            // colSOLUONG
-            // 
-            this.colSOLUONG.FieldName = "SOLUONG";
-            this.colSOLUONG.Name = "colSOLUONG";
-            this.colSOLUONG.Visible = true;
-            this.colSOLUONG.VisibleIndex = 2;
-            // 
-            // colDONGIA
-            // 
-            this.colDONGIA.FieldName = "DONGIA";
-            this.colDONGIA.Name = "colDONGIA";
-            this.colDONGIA.Visible = true;
-            this.colDONGIA.VisibleIndex = 3;
-            // 
-            // datHangGridControl
-            // 
-            this.datHangGridControl.DataSource = this.bds_DatHang;
-            this.datHangGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.datHangGridControl.EmbeddedNavigator.SizeChanged += new System.EventHandler(this.datHangGridControl_EmbeddedNavigator_SizeChanged);
-            this.datHangGridControl.Location = new System.Drawing.Point(0, 0);
-            this.datHangGridControl.MainView = this.gridView1;
-            this.datHangGridControl.MenuManager = this.barManager1;
-            this.datHangGridControl.Name = "datHangGridControl";
-            this.datHangGridControl.Size = new System.Drawing.Size(748, 339);
-            this.datHangGridControl.TabIndex = 0;
-            this.datHangGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -375,7 +325,7 @@ namespace QLVT_Nhom38.SubForm
             this.colNhaCC,
             this.colMANV,
             this.colMAKHO});
-            this.gridView1.GridControl = this.datHangGridControl;
+            this.gridView1.GridControl = this.gcDatHang;
             this.gridView1.Name = "gridView1";
             // 
             // colMasoDDH
@@ -413,17 +363,32 @@ namespace QLVT_Nhom38.SubForm
             this.colMAKHO.Visible = true;
             this.colMAKHO.VisibleIndex = 4;
             // 
-            // phieuNhapGridControl
+            // bds_VatTu
             // 
-            this.phieuNhapGridControl.DataSource = this.bds_PhieuNhap;
-            this.phieuNhapGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phieuNhapGridControl.Location = new System.Drawing.Point(0, 0);
-            this.phieuNhapGridControl.MainView = this.gridView2;
-            this.phieuNhapGridControl.MenuManager = this.barManager1;
-            this.phieuNhapGridControl.Name = "phieuNhapGridControl";
-            this.phieuNhapGridControl.Size = new System.Drawing.Size(617, 273);
-            this.phieuNhapGridControl.TabIndex = 1;
-            this.phieuNhapGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.bds_VatTu.DataMember = "Vattu";
+            this.bds_VatTu.DataSource = this.qLVTDataSet;
+            // 
+            // bds_CTDDH
+            // 
+            this.bds_CTDDH.DataMember = "FK_CTDDH_DatHang";
+            this.bds_CTDDH.DataSource = this.bds_DatHang;
+            // 
+            // bcs_CTDDH_Hotro
+            // 
+            this.bcs_CTDDH_Hotro.DataMember = "CTDDH1";
+            this.bcs_CTDDH_Hotro.DataSource = this.qLVTDataSet;
+            // 
+            // gcPhieuNhap
+            // 
+            this.gcPhieuNhap.DataSource = this.bds_PhieuNhap;
+            this.gcPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcPhieuNhap.Location = new System.Drawing.Point(0, 0);
+            this.gcPhieuNhap.MainView = this.gridView2;
+            this.gcPhieuNhap.MenuManager = this.barManager1;
+            this.gcPhieuNhap.Name = "gcPhieuNhap";
+            this.gcPhieuNhap.Size = new System.Drawing.Size(566, 309);
+            this.gcPhieuNhap.TabIndex = 1;
+            this.gcPhieuNhap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // bds_PhieuNhap
@@ -439,7 +404,7 @@ namespace QLVT_Nhom38.SubForm
             this.colMasoDDH1,
             this.colMANV1,
             this.colMAKHO1});
-            this.gridView2.GridControl = this.phieuNhapGridControl;
+            this.gridView2.GridControl = this.gcPhieuNhap;
             this.gridView2.Name = "gridView2";
             // 
             // colMAPN
@@ -474,30 +439,31 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.colMAKHO1.FieldName = "MAKHO";
             this.colMAKHO1.Name = "colMAKHO1";
+            this.colMAKHO1.OptionsColumn.ReadOnly = true;
             this.colMAKHO1.Visible = true;
             this.colMAKHO1.VisibleIndex = 4;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.phieuNhapGridControl);
-            this.panel3.Controls.Add(this.cTPNGridControl);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(748, 71);
+            this.panel3.Controls.Add(this.gcPhieuNhap);
+            this.panel3.Controls.Add(this.gcCTPN);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 427);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(617, 596);
+            this.panel3.Size = new System.Drawing.Size(1365, 309);
             this.panel3.TabIndex = 6;
             // 
-            // cTPNGridControl
+            // gcCTPN
             // 
-            this.cTPNGridControl.DataSource = this.bds_CTPN;
-            this.cTPNGridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cTPNGridControl.Location = new System.Drawing.Point(0, 273);
-            this.cTPNGridControl.MainView = this.gridView3;
-            this.cTPNGridControl.MenuManager = this.barManager1;
-            this.cTPNGridControl.Name = "cTPNGridControl";
-            this.cTPNGridControl.Size = new System.Drawing.Size(617, 323);
-            this.cTPNGridControl.TabIndex = 0;
-            this.cTPNGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcCTPN.DataSource = this.bds_CTPN;
+            this.gcCTPN.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gcCTPN.Location = new System.Drawing.Point(566, 0);
+            this.gcCTPN.MainView = this.gridView3;
+            this.gcCTPN.MenuManager = this.barManager1;
+            this.gcCTPN.Name = "gcCTPN";
+            this.gcCTPN.Size = new System.Drawing.Size(799, 309);
+            this.gcCTPN.TabIndex = 0;
+            this.gcCTPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
             // bds_CTPN
@@ -512,13 +478,14 @@ namespace QLVT_Nhom38.SubForm
             this.colMAVT1,
             this.colSOLUONG1,
             this.colDONGIA1});
-            this.gridView3.GridControl = this.cTPNGridControl;
+            this.gridView3.GridControl = this.gcCTPN;
             this.gridView3.Name = "gridView3";
             // 
             // colMAPN1
             // 
             this.colMAPN1.FieldName = "MAPN";
             this.colMAPN1.Name = "colMAPN1";
+            this.colMAPN1.OptionsColumn.ReadOnly = true;
             this.colMAPN1.Visible = true;
             this.colMAPN1.VisibleIndex = 0;
             // 
@@ -526,6 +493,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.colMAVT1.FieldName = "MAVT";
             this.colMAVT1.Name = "colMAVT1";
+            this.colMAVT1.OptionsColumn.ReadOnly = true;
             this.colMAVT1.Visible = true;
             this.colMAVT1.VisibleIndex = 1;
             // 
@@ -574,11 +542,24 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.cTDDHTableAdapter.ClearBeforeFill = true;
             // 
+            // cTDDH1TableAdapter
+            // 
+            this.cTDDH1TableAdapter.ClearBeforeFill = true;
+            // 
+            // fKCTDDHDatHangBindingSource
+            // 
+            this.fKCTDDHDatHangBindingSource.DataMember = "FK_CTDDH_DatHang";
+            this.fKCTDDHDatHangBindingSource.DataSource = this.bds_DatHang;
+            // 
+            // vattuTableAdapter
+            // 
+            this.vattuTableAdapter.ClearBeforeFill = true;
+            // 
             // FormPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1365, 667);
+            this.ClientSize = new System.Drawing.Size(1365, 736);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -593,20 +574,21 @@ namespace QLVT_Nhom38.SubForm
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cTDDHGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bds_CTDDH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDatHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_DatHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datHangGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_VatTu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_CTDDH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bcs_CTDDH_Hotro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPhieuNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_PhieuNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_CTPN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKCTDDHDatHangBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,7 +620,7 @@ namespace QLVT_Nhom38.SubForm
         private System.Windows.Forms.Label label1;
         private QLVTDataSetTableAdapters.DatHangTableAdapter datHangTableAdapter;
         private QLVTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl datHangGridControl;
+        private DevExpress.XtraGrid.GridControl gcDatHang;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMasoDDH;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY;
@@ -647,7 +629,7 @@ namespace QLVT_Nhom38.SubForm
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
         private QLVTDataSetTableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
         private System.Windows.Forms.BindingSource bds_PhieuNhap;
-        private DevExpress.XtraGrid.GridControl phieuNhapGridControl;
+        private DevExpress.XtraGrid.GridControl gcPhieuNhap;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPN;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAY1;
@@ -656,7 +638,7 @@ namespace QLVT_Nhom38.SubForm
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO1;
         private QLVTDataSetTableAdapters.CTPNTableAdapter cTPNTableAdapter;
         private System.Windows.Forms.BindingSource bds_CTPN;
-        private DevExpress.XtraGrid.GridControl cTPNGridControl;
+        private DevExpress.XtraGrid.GridControl gcCTPN;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private System.Windows.Forms.BindingSource bds_CTDDH;
         private QLVTDataSetTableAdapters.CTDDHTableAdapter cTDDHTableAdapter;
@@ -664,11 +646,10 @@ namespace QLVT_Nhom38.SubForm
         private DevExpress.XtraGrid.Columns.GridColumn colMAVT1;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG1;
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA1;
-        private DevExpress.XtraGrid.GridControl cTDDHGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private DevExpress.XtraGrid.Columns.GridColumn colMasoDDH2;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
-        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
+        private System.Windows.Forms.BindingSource bcs_CTDDH_Hotro;
+        private QLVTDataSetTableAdapters.CTDDH1TableAdapter cTDDH1TableAdapter;
+        private System.Windows.Forms.BindingSource fKCTDDHDatHangBindingSource;
+        private System.Windows.Forms.BindingSource bds_VatTu;
+        private QLVTDataSetTableAdapters.VattuTableAdapter vattuTableAdapter;
     }
 }

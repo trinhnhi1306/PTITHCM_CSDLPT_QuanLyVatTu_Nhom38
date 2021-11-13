@@ -263,15 +263,7 @@ namespace QLVT_Nhom38.SubForm
 
         private bool kiemTraCTDDH()
         {
-           String maVT = txtMaVT.Text.ToString();
-            Console.WriteLine(maVT);
-            for (int index = 0; index < bdsCTDDH.Count - 1; index++)
-            {
-                if (((DataRowView)bdsCTDDH[index])["MAVT"].ToString().Equals(maVT))
-                {
-                    XtraMessageBox.Show("vật tư đã có", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
+          
            
            
             

@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 using DevExpress.XtraEditors;
+using QLVT_Nhom38.SubForm;
 
 namespace QLVT_Nhom38
 {
@@ -40,11 +41,23 @@ namespace QLVT_Nhom38
         public static int maNV = 0;
         public static int mChinhanh = 0;
 
+        /* - Phần này giúp load thông tin đơn đặt hàng và lấy thông tin chi tiết đơn đặt hàng vào chi tiết phiếu nhập
+         * + maDDH lấy mã đơn đặt hàng để load thông tin tương ứng với đơn đặt hàng đó
+         * + maVatTuCTDDH là mã vật tư của vật tư trong chi tiết đơn hàng
+         * + SoLuongCTDDH là số lượng khi lập chi tiết phiếu nhập
+         * + DonGiaCTDDH là giá tiền khi lập chi tiết phiếu nhập
+         */
+        public static String maDDH = "";
+        public static String maVatTuCTDDH = "";
+        public static int SoLuongCTDDH = 0;
+        public static int DonGiaCTDDH = 0;
+        public static bool getAll = false;
+
         public static BindingSource bds_dspm = new BindingSource();  // binding source danh sách phân mảnh, giữ bdsPM khi đăng nhập
 
         // -- FORMS --
         public static FormMain formMain;
-
+        public static FormChonCTDDH formChonCTDDH;
         public static int KetNoi()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)
