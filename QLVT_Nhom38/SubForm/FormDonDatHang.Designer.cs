@@ -919,8 +919,8 @@ namespace QLVT_Nhom38.SubForm
         private DevExpress.XtraGrid.GridControl gcCTDDH;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colMasoDDH1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
+        public DevExpress.XtraGrid.Columns.GridColumn colMAVT;
     }
 }

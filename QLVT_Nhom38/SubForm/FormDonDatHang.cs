@@ -320,6 +320,12 @@ namespace QLVT_Nhom38.SubForm
 
         private bool kiemTraCTDDH()
         {
+          
+           
+           
+            
+            //Console.WriteLine(vt);
+
             if (txtMaVT.Text.Equals(""))
             {
                 XtraMessageBox.Show("Vui lòng chọn vật tư", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

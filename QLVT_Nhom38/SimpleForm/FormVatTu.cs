@@ -108,8 +108,8 @@ namespace QLVT_Nhom38.SimpleForm
             txtMaVT.Enabled = true;
  
             // vô hiệu hóa một số nút cho đúng logic
-            btnThem.Enabled = btnXoa.Enabled = gridVatTu.Enabled = btnReload.Enabled = btnUndo.Enabled = false;
-            btnGhi.Enabled = gcInfoVatTu.Enabled = true;
+            btnSua.Enabled = btnThem.Enabled = btnXoa.Enabled = gridVatTu.Enabled = btnReload.Enabled =  false;
+            btnGhi.Enabled = gcInfoVatTu.Enabled = btnUndo.Enabled = true;
             txtSLT.Value = 0;
 
             
@@ -459,7 +459,7 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            this.Dispose();
         }
 
         private void gridVatTu_MouseClick(object sender, MouseEventArgs e)
@@ -470,8 +470,8 @@ namespace QLVT_Nhom38.SimpleForm
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int vitriCu = 0;
-            /* Step 0 */
-            if (checkThem == 1 && this.btnThem.Enabled == false)
+            
+            if ((checkThem == 1 && this.btnThem.Enabled == false)||(checkThem == 2 && this.btnThem.Enabled == false))
             {
                 checkThem = 0;
 
@@ -480,22 +480,23 @@ namespace QLVT_Nhom38.SimpleForm
                 this.btnXoa.Enabled = true;
                 this.btnGhi.Enabled = true;
 
-                this.btnUndo.Enabled = false;
+                this.btnUndo.Enabled = true;
                 this.btnThem.Enabled = true;
                 this.btnThoat.Enabled = true;
 
 
                 this.gridVatTu.Enabled = true;
-                this.gcInfoVatTu.Enabled = true;
+                this.gcInfoVatTu.Enabled = false;
 
                 bdsVatTu.CancelEdit();
-                /*xoa dong hien tai*/
-                bdsVatTu.RemoveCurrent();
-                /* trở về lúc đầu con trỏ đang đứng*/
-                bdsVatTu.Position = int.Parse(viTriList.Pop().ToString());
-                Console.WriteLine("line 465:" + bdsVatTu.Position);
+                errorProviderVT.SetError(txtDVT, null);
+                errorProviderVT.SetError(txtMaVT, null);
+                errorProviderVT.SetError(txtSLT, null);
+                errorProviderVT.SetError(txtTenVT, null);
+
                 return;
             }
+
 
            
             if (undoList.Count == 0)
@@ -509,7 +510,7 @@ namespace QLVT_Nhom38.SimpleForm
             bdsVatTu.CancelEdit();
             String cauTruyVanHoanTac = undoList.Pop().ToString();
            
-            int n = Program.ExecSqlNonQuery(cauTruyVanHoanTac);
+            Program.ExecSqlNonQuery(cauTruyVanHoanTac);
             
             this.vattuTableAdapter.Fill(this.qLVTDataSet.Vattu);
             bdsVatTu.Position = int.Parse(viTriList.Pop().ToString());
@@ -518,7 +519,24 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            checkThem = 2;
+            btnThem.Enabled = btnSua.Enabled = btnReload.Enabled = false;
+            gcInfoVatTu.Enabled = true;
+            gridVatTu.Enabled = false;
+        }
 
+        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                this.vattuTableAdapter.Fill(this.qLVTDataSet.Vattu);
+                this.gcInfoVatTu.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
         }
     }
 }

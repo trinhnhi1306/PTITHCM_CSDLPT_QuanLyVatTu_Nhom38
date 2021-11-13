@@ -137,6 +137,12 @@
     <Compile Include="SimpleForm\FormVatTu.Designer.cs">
       <DependentUpon>FormVatTu.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\FormChonCTDDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\FormChonCTDDH.Designer.cs">
+      <DependentUpon>FormChonCTDDH.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\FormChuyenChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\FormVatTu.resx">
       <DependentUpon>FormVatTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\FormChonCTDDH.resx">
+      <DependentUpon>FormChonCTDDH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\FormChuyenChiNhanh.resx">
       <DependentUpon>FormChuyenChiNhanh.cs</DependentUpon>
