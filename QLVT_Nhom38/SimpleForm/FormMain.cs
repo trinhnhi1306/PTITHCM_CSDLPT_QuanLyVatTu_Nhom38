@@ -89,6 +89,12 @@ namespace QLVT_Nhom38
 
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            ribDanhMuc.Visible = ribNghiepVu.Visible = ribBaoCao.Visible = false;
+            //if trên Program.mGroup để bật tắt menu
+            if (Program.mGroup.Equals("CONGTY") || Program.mGroup.Equals("CHINHANH"))
+            {
+                btnTaoTaiKhoan.Enabled = false;
+            }
             foreach (Form f in this.MdiChildren)
                 f.Dispose();
             btnDangNhap.Enabled = true;
@@ -113,9 +119,14 @@ namespace QLVT_Nhom38
 
         private void btnReportVT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Report_DS_VatTu frm = new Report_DS_VatTu();
-            frm.Show();
-            
+            Form frm = this.CheckExists(typeof(Report_DS_VatTu));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Report_DS_VatTu f = new Report_DS_VatTu();
+                f.MdiParent = this;
+                f.Show();
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -221,6 +232,18 @@ namespace QLVT_Nhom38
             else
             {
                 FormPhieuXuat f = new FormPhieuXuat();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnTaoTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormTaoTaiKhoan));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormTaoTaiKhoan f = new FormTaoTaiKhoan();
                 f.MdiParent = this;
                 f.Show();
             }

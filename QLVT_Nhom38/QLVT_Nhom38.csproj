@@ -113,11 +113,23 @@
     <Compile Include="ReportForm\RePort_TongHopNhapXuat.Designer.cs">
       <DependentUpon>RePort_TongHopNhapXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="SimpleForm\FormChonNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\FormChonNhanVien.Designer.cs">
+      <DependentUpon>FormChonNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimpleForm\FormKho.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SimpleForm\FormKho.Designer.cs">
       <DependentUpon>FormKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm\FormTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleForm\FormTaoTaiKhoan.Designer.cs">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="SimpleForm\FormVatTu.cs">
       <SubType>Form</SubType>
@@ -234,8 +246,14 @@
     <EmbeddedResource Include="ReportForm\RePort_TongHopNhapXuat.resx">
       <DependentUpon>RePort_TongHopNhapXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\FormChonNhanVien.resx">
+      <DependentUpon>FormChonNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\FormKho.resx">
       <DependentUpon>FormKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimpleForm\FormTaoTaiKhoan.resx">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleForm\FormVatTu.resx">
       <DependentUpon>FormVatTu.cs</DependentUpon>
@@ -320,6 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\244268683_606545733710616_7437074407777029452_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\create_account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

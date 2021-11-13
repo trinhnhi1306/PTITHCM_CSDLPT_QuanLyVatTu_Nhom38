@@ -312,6 +312,7 @@ namespace QLVT_Nhom38.SubForm
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // switchCheDo
             // 
@@ -530,6 +531,7 @@ namespace QLVT_Nhom38.SubForm
             this.cmbTenKho.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsDDH, "MAKHO", true));
             this.cmbTenKho.DataSource = this.bdsKho;
             this.cmbTenKho.DisplayMember = "TENKHO";
+            this.cmbTenKho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTenKho.FormattingEnabled = true;
             this.cmbTenKho.Location = new System.Drawing.Point(126, 198);
             this.cmbTenKho.Name = "cmbTenKho";
@@ -617,6 +619,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.gcCTDDH.DataSource = this.bdsCTDDH;
             this.gcCTDDH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcCTDDH.Enabled = false;
             this.gcCTDDH.Location = new System.Drawing.Point(0, 0);
             this.gcCTDDH.MainView = this.gridView2;
             this.gcCTDDH.MenuManager = this.barManager1;
@@ -764,6 +767,7 @@ namespace QLVT_Nhom38.SubForm
             this.cmbVatTu.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsCTDDH, "MAVT", true));
             this.cmbVatTu.DataSource = this.bdsVT;
             this.cmbVatTu.DisplayMember = "TENVT";
+            this.cmbVatTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVatTu.FormattingEnabled = true;
             this.cmbVatTu.Location = new System.Drawing.Point(103, 99);
             this.cmbVatTu.Name = "cmbVatTu";

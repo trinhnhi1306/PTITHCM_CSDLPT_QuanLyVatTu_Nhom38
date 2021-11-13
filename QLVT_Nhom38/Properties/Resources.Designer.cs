@@ -73,6 +73,16 @@ namespace QLVT_Nhom38.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap create_account {
+            get {
+                object obj = ResourceManager.GetObject("create_account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gia_tri_hang_hoa_nhap_kho {
             get {
                 object obj = ResourceManager.GetObject("gia-tri-hang-hoa-nhap-kho", resourceCulture);

@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using QLVT_Nhom38.SimpleForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,17 +49,24 @@ namespace QLVT_Nhom38
         {
             if (cmbChiNhanh1.Text.Trim().Equals(""))
             {
-                XtraMessageBox.Show("Vui lòng chọn chi nhánh", "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Vui lòng chọn chi nhánh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
-            DialogResult dialogResult = XtraMessageBox.Show("Bạn có chắc chắn muốn chuyển nhân viên này đi ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-            if( dialogResult == DialogResult.OK)
+            FormNhanVien.serverMoi = cmbChiNhanh1.SelectedValue.ToString();
+            // Chi nhánh được chọn là chi nhánh đang đăng nhập
+            if (FormNhanVien.serverMoi.Equals(Program.serverName))
             {
-                chuyenChiNhanh1(cmbChiNhanh1.SelectedValue.ToString());
+                XtraMessageBox.Show("Hãy chọn chi nhánh khác chi nhánh bạn đang đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-                
+
+            DialogResult dr = XtraMessageBox.Show("Hành động này không thế hoàn tác.\nBạn có chắc chắn muốn chuyển nhân viên này không?", "Thông báo",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            // người dùng chọn cancel thì return không làm gì cả
+            if (dr != DialogResult.OK) return;
+
             this.Dispose();
         }
     }

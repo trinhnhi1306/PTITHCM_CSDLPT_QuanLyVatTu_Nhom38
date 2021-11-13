@@ -108,6 +108,7 @@ namespace QLVT_Nhom38
             this.btnTaoTaiKhoan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTaoTaiKhoan.ImageOptions.LargeImage")));
             this.btnTaoTaiKhoan.LargeWidth = 100;
             this.btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
+            this.btnTaoTaiKhoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaoTaiKhoan_ItemClick);
             // 
             // btnDangXuat
             // 

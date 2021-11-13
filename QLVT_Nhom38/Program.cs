@@ -116,7 +116,8 @@ namespace QLVT_Nhom38
             }
             catch (SqlException ex)
             {
-                XtraMessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message, "Error Message",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
                 return ex.State;
 
