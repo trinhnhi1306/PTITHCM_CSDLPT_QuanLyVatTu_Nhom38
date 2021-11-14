@@ -85,8 +85,8 @@ namespace QLVT_Nhom38.SubForm
             {
                
                 cmbChiNhanh.Enabled = btnChuyenChiNhanh.Enabled = btnReload.Enabled = true;  // bật tắt theo phân quyền
-                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = btnUndo.Enabled = false;
-
+                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = btnUndo.Enabled= switchCheDo.Enabled = false;
+                gcCTPN.Enabled = true;
             }
             else
             {
@@ -156,6 +156,8 @@ namespace QLVT_Nhom38.SubForm
                 bds = bds_CTPN;
                 gc = gcCTPN;
                 gcDatHang.Enabled = false;
+                btnThem.Enabled = true;
+                btnGhi.Enabled = false;
 
             }
             else
@@ -177,9 +179,9 @@ namespace QLVT_Nhom38.SubForm
             int maNhanVien = int.Parse(((DataRowView)bds_DatHang[bds_DatHang.Position])["MANV"].ToString());
             if (cheDo == 1)
             {
-                this.btnXoa.Enabled = this.btnThoat.Enabled = this.btnReload.Enabled = this.btnThem.Enabled = false;
+                this.btnXoa.Enabled = this.btnThoat.Enabled = this.btnReload.Enabled = false;
                 this.btnUndo.Enabled = this.btnGhi.Enabled = true;
-                if (bds_CTPN.Count == 1)
+                if (bds_PhieuNhap.Count == 1)
                 {
                     MessageBox.Show("Đơn hàng này đã có phiếu nhập, vui lòng vào hiệu chỉnh chi tiết phiếu nhập", "Thông báo", MessageBoxButtons.OK);
                     return;
@@ -278,6 +280,7 @@ namespace QLVT_Nhom38.SubForm
                     Program.myReader.Close();
                     Program.ExecSqlNonQuery(query);
                     cTPNTableAdapter.Fill(this.qLVTDataSet.CTPN);
+                    phieuNhapTableAdapter.Fill(this.qLVTDataSet.PhieuNhap);
                 }
                 else
                 {
@@ -297,10 +300,12 @@ namespace QLVT_Nhom38.SubForm
 
                         Program.ExecSqlNonQuery(query);
                         cTPNTableAdapter.Fill(this.qLVTDataSet.CTPN);
+                        phieuNhapTableAdapter.Fill(this.qLVTDataSet.PhieuNhap);
                         Program.SoLuongCTDDH = 0;
                         Program.DonGiaCTDDH = 0;
                         Program.maDDH = "";
                         Program.maVatTuCTDDH = "";
+                        Program.getAll = false;
 
                     }
                     
@@ -614,7 +619,12 @@ namespace QLVT_Nhom38.SubForm
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.Dispose();
 
+        }
+
+        private void gcCTPN_Click(object sender, EventArgs e)
+        {
 
         }
     }

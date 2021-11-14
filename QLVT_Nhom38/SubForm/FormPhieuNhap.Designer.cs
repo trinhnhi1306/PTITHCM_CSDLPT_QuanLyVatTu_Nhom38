@@ -330,36 +330,46 @@ namespace QLVT_Nhom38.SubForm
             // 
             // colMasoDDH
             // 
+            this.colMasoDDH.Caption = "Mã đơn đặt hàng";
             this.colMasoDDH.FieldName = "MasoDDH";
             this.colMasoDDH.Name = "colMasoDDH";
+            this.colMasoDDH.OptionsColumn.ReadOnly = true;
             this.colMasoDDH.Visible = true;
             this.colMasoDDH.VisibleIndex = 0;
             // 
             // colNGAY
             // 
+            this.colNGAY.Caption = "Ngày";
             this.colNGAY.FieldName = "NGAY";
             this.colNGAY.Name = "colNGAY";
+            this.colNGAY.OptionsColumn.ReadOnly = true;
             this.colNGAY.Visible = true;
             this.colNGAY.VisibleIndex = 1;
             // 
             // colNhaCC
             // 
+            this.colNhaCC.Caption = "Nhà cung cấp";
             this.colNhaCC.FieldName = "NhaCC";
             this.colNhaCC.Name = "colNhaCC";
+            this.colNhaCC.OptionsColumn.ReadOnly = true;
             this.colNhaCC.Visible = true;
             this.colNhaCC.VisibleIndex = 2;
             // 
             // colMANV
             // 
+            this.colMANV.Caption = "Mã nhân viên";
             this.colMANV.FieldName = "MANV";
             this.colMANV.Name = "colMANV";
+            this.colMANV.OptionsColumn.ReadOnly = true;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 3;
             // 
             // colMAKHO
             // 
+            this.colMAKHO.Caption = "Mã Kho";
             this.colMAKHO.FieldName = "MAKHO";
             this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.OptionsColumn.ReadOnly = true;
             this.colMAKHO.Visible = true;
             this.colMAKHO.VisibleIndex = 4;
             // 
@@ -425,6 +435,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.colMasoDDH1.FieldName = "MasoDDH";
             this.colMasoDDH1.Name = "colMasoDDH1";
+            this.colMasoDDH1.OptionsColumn.ReadOnly = true;
             this.colMasoDDH1.Visible = true;
             this.colMasoDDH1.VisibleIndex = 2;
             // 
@@ -432,6 +443,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.colMANV1.FieldName = "MANV";
             this.colMANV1.Name = "colMANV1";
+            this.colMANV1.OptionsColumn.ReadOnly = true;
             this.colMANV1.Visible = true;
             this.colMANV1.VisibleIndex = 3;
             // 
@@ -439,6 +451,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.colMAKHO1.FieldName = "MAKHO";
             this.colMAKHO1.Name = "colMAKHO1";
+            this.colMAKHO1.OptionsColumn.AllowEdit = false;
             this.colMAKHO1.OptionsColumn.ReadOnly = true;
             this.colMAKHO1.Visible = true;
             this.colMAKHO1.VisibleIndex = 4;
@@ -465,6 +478,7 @@ namespace QLVT_Nhom38.SubForm
             this.gcCTPN.TabIndex = 0;
             this.gcCTPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.gcCTPN.Click += new System.EventHandler(this.gcCTPN_Click);
             // 
             // bds_CTPN
             // 
