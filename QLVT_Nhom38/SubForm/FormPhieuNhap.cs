@@ -44,14 +44,7 @@ namespace QLVT_Nhom38.SubForm
         }
 
         private void FormPhieuNhap_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'qLVTDataSet.Vattu' table. You can move, or remove it, as needed.
-            this.vattuTableAdapter.Fill(this.qLVTDataSet.Vattu);
-            // TODO: This line of code loads data into the 'qLVTDataSet.Vattu' table. You can move, or remove it, as needed.
-            this.vattuTableAdapter.Fill(this.qLVTDataSet.Vattu);
-            // TODO: This line of code loads data into the 'qLVTDataSet.CTDDH1' table. You can move, or remove it, as needed.
-
-
+        {            
             qLVTDataSet.EnforceConstraints = false; //không kiểm tra khóa ngoại trên dataset này
 
             // TODO: This line of code loads data into the 'qLVTDataSet.DatHang' table. You can move, or remove it, as needed.

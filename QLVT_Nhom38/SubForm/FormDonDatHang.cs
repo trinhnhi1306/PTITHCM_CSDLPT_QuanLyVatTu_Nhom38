@@ -287,10 +287,10 @@ namespace QLVT_Nhom38.SubForm
                 info = infoDDH;
                 if (bdsCTDDH.Count == 0 && txtMaNV.Text == Program.username)
                 {
-                    DialogResult dr = XtraMessageBox.Show("Phiếu này chưa có chi tiết phiếu. Bạn có muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (dr == DialogResult.OK)
-                    {
-                        int currentPosition = -1;
+                    XtraMessageBox.Show("Phiếu này chưa có chi tiết phiếu nên sẽ bị xóa!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //if (dr == DialogResult.OK)
+                    //{
+                    int currentPosition = -1;
                         try
                         {
                             currentPosition = bds.Position; // giữ lại vị trí grid để phòng trường hợp xóa lỗi
@@ -313,7 +313,7 @@ namespace QLVT_Nhom38.SubForm
 
                             return;
                         }
-                    }
+                    //}
                 }
             }    
         }
@@ -459,7 +459,10 @@ namespace QLVT_Nhom38.SubForm
             btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = false;
             if (cheDo == 1)
+            {
                 switchCheDo.Checked = true;
+                bds = bdsCTDDH;
+            }
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

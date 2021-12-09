@@ -96,7 +96,7 @@
             sOLUONGTONLabel.AutoSize = true;
             sOLUONGTONLabel.Location = new System.Drawing.Point(679, 134);
             sOLUONGTONLabel.Name = "sOLUONGTONLabel";
-            sOLUONGTONLabel.Size = new System.Drawing.Size(68, 13);
+            sOLUONGTONLabel.Size = new System.Drawing.Size(88, 17);
             sOLUONGTONLabel.TabIndex = 6;
             sOLUONGTONLabel.Text = "Số lượng tồn";
             sOLUONGTONLabel.Click += new System.EventHandler(this.sOLUONGTONLabel_Click);
@@ -106,7 +106,7 @@
             tENVTLabel.AutoSize = true;
             tENVTLabel.Location = new System.Drawing.Point(679, 67);
             tENVTLabel.Name = "tENVTLabel";
-            tENVTLabel.Size = new System.Drawing.Size(58, 13);
+            tENVTLabel.Size = new System.Drawing.Size(73, 17);
             tENVTLabel.TabIndex = 7;
             tENVTLabel.Text = "Tên vật tư";
             // 
@@ -115,7 +115,7 @@
             mAVTLabel.AutoSize = true;
             mAVTLabel.Location = new System.Drawing.Point(378, 67);
             mAVTLabel.Name = "mAVTLabel";
-            mAVTLabel.Size = new System.Drawing.Size(54, 13);
+            mAVTLabel.Size = new System.Drawing.Size(67, 17);
             mAVTLabel.TabIndex = 8;
             mAVTLabel.Text = "Mã vật tư";
             mAVTLabel.Click += new System.EventHandler(this.mAVTLabel_Click_1);
@@ -125,7 +125,7 @@
             dVTLabel.AutoSize = true;
             dVTLabel.Location = new System.Drawing.Point(378, 135);
             dVTLabel.Name = "dVTLabel";
-            dVTLabel.Size = new System.Drawing.Size(59, 13);
+            dVTLabel.Size = new System.Drawing.Size(75, 17);
             dVTLabel.TabIndex = 9;
             dVTLabel.Text = "Đơn vị tính";
             // 
@@ -237,7 +237,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1247, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1247, 30);
             // 
             // barDockControlBottom
             // 
@@ -251,17 +251,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 699);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 693);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1247, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1247, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 699);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 693);
             // 
             // btnChuyenChiNhanh
             // 
@@ -281,6 +281,7 @@
             this.gcInfoVatTu.Controls.Add(this.txtTenVT);
             this.gcInfoVatTu.Controls.Add(sOLUONGTONLabel);
             this.gcInfoVatTu.Controls.Add(this.txtSLT);
+            this.gcInfoVatTu.Enabled = false;
             this.gcInfoVatTu.Location = new System.Drawing.Point(0, 356);
             this.gcInfoVatTu.Name = "gcInfoVatTu";
             this.gcInfoVatTu.Size = new System.Drawing.Size(1247, 207);
@@ -294,7 +295,7 @@
             this.txtDVT.Location = new System.Drawing.Point(443, 132);
             this.txtDVT.MenuManager = this.barManager1;
             this.txtDVT.Name = "txtDVT";
-            this.txtDVT.Size = new System.Drawing.Size(130, 20);
+            this.txtDVT.Size = new System.Drawing.Size(130, 22);
             this.txtDVT.TabIndex = 10;
             this.txtDVT.Validating += new System.ComponentModel.CancelEventHandler(this.txtDVT_Validating);
             // 
@@ -314,7 +315,7 @@
             this.txtMaVT.Location = new System.Drawing.Point(443, 64);
             this.txtMaVT.MenuManager = this.barManager1;
             this.txtMaVT.Name = "txtMaVT";
-            this.txtMaVT.Size = new System.Drawing.Size(130, 20);
+            this.txtMaVT.Size = new System.Drawing.Size(130, 22);
             this.txtMaVT.TabIndex = 9;
             this.txtMaVT.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaVT_Validating);
             // 
@@ -324,7 +325,7 @@
             this.txtTenVT.Location = new System.Drawing.Point(750, 64);
             this.txtTenVT.MenuManager = this.barManager1;
             this.txtTenVT.Name = "txtTenVT";
-            this.txtTenVT.Size = new System.Drawing.Size(228, 20);
+            this.txtTenVT.Size = new System.Drawing.Size(228, 22);
             this.txtTenVT.TabIndex = 8;
             this.txtTenVT.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenVT_Validating);
             // 
@@ -338,7 +339,7 @@
             0,
             0});
             this.txtSLT.Name = "txtSLT";
-            this.txtSLT.Size = new System.Drawing.Size(77, 21);
+            this.txtSLT.Size = new System.Drawing.Size(77, 23);
             this.txtSLT.TabIndex = 7;
             this.txtSLT.Value = new decimal(new int[] {
             1,
@@ -370,7 +371,7 @@
             // 
             this.gridVatTu.DataSource = this.bdsVatTu;
             this.gridVatTu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridVatTu.Location = new System.Drawing.Point(0, 24);
+            this.gridVatTu.Location = new System.Drawing.Point(0, 30);
             this.gridVatTu.MainView = this.gridView1;
             this.gridVatTu.MenuManager = this.barManager1;
             this.gridVatTu.Name = "gridVatTu";
@@ -396,6 +397,7 @@
             this.colMAVT.Name = "colMAVT";
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 0;
+            this.colMAVT.Width = 82;
             // 
             // colTENVT
             // 
@@ -451,7 +453,7 @@
             // 
             // FormVatTu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1247, 723);
             this.Controls.Add(this.gridVatTu);

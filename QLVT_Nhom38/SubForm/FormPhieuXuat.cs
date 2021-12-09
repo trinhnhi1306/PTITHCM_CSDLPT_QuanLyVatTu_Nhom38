@@ -250,7 +250,7 @@ namespace QLVT_Nhom38.SubForm
             if (Program.KetNoi() == 0)
                 return;
             int n = Program.ExecSqlNonQuery(strLenhUndo);
-            reload();
+            this.cTPXTableAdapter.Fill(this.qLVTDataSet.CTPX);
             bds.Position = position;
 
             // Nếu sau khi undo mà danh sách undoList trống thì disable nút undo đi
@@ -285,10 +285,10 @@ namespace QLVT_Nhom38.SubForm
                 info = groupControlPX;
                 if (cTPXBindingSource.Count == 0 && mANVTextEdit.Text == Program.username)
                 {
-                    DialogResult dr = XtraMessageBox.Show("Phiếu này chưa có chi tiết phiếu. Bạn có muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (dr == DialogResult.OK)
-                    {
-                        int currentPosition = -1;
+                    XtraMessageBox.Show("Phiếu này chưa có chi tiết phiếu nên sẽ bị xóa!", "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //if (dr == DialogResult.OK)
+                    //{
+                    int currentPosition = -1;
                         try
                         {
                             currentPosition = bds.Position; //Giữ lại vị trí grid để phòng trường hợp xóa lỗi
@@ -310,7 +310,7 @@ namespace QLVT_Nhom38.SubForm
 
                             return;
                         }
-                    }
+                    //}
                 }
             }
         }
@@ -327,7 +327,7 @@ namespace QLVT_Nhom38.SubForm
             else
             {
                 String strLenh = "DECLARE @return_value int " +
-                                "EXEC @return_value = [dbo].[sp_Kiem_Tra_CTDDH] '" +
+                                "EXEC @return_value = [dbo].[sp_Kiem_Tra_CTPX] '" +
                                 mAPXTextBox.Text.Trim() + "', '" + mAVTTextEdit.Text.Trim() + "' " +
                                 "SELECT 'Return Value' = @return_value";
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
@@ -347,6 +347,25 @@ namespace QLVT_Nhom38.SubForm
             {
                 XtraMessageBox.Show("Số lượng phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
+            }
+            else
+            {
+                String strLenh1 = "declare @return_value int " +
+                                    "exec @return_value = [dbo].[SP_Kiem_Tra_SLT_VatTu] '" + mAVTTextEdit.Text + "', " +
+                                    sOLUONGNumericUpDown.Value + " " +
+                                    "select @return_value";
+                Program.myReader = Program.ExecSqlDataReader(strLenh1);
+                if (Program.myReader == null) return false;
+
+                Program.myReader.Read();
+                int result1 = int.Parse(Program.myReader.GetValue(0).ToString());
+                Program.myReader.Close();
+
+                if (result1 == 0)
+                {
+                    XtraMessageBox.Show("Số lượng phải nhỏ hơn hoặc bằng số lượng tồn của vật tư", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
             Console.WriteLine(dONGIATextEdit.EditValue.ToString());
             if (int.Parse(dONGIATextEdit.EditValue.ToString()) <= 0)
@@ -427,55 +446,10 @@ namespace QLVT_Nhom38.SubForm
                     this.phieuXuatTableAdapter.Update(this.qLVTDataSet.PhieuXuat); //Update xuống csdl
                     Console.WriteLine("Thanh cong!");
 
-                    DialogResult dr = XtraMessageBox.Show("Bạn có muốn lập chi tiết phiếu xuất không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (dr == DialogResult.OK)
-                    {
-                        switchCheDo.Checked = true;
-                    }
-                    else
-                    {
-                        DialogResult dr1 = XtraMessageBox.Show("Phiếu này chưa có chi tiết phiếu. Bạn có muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                        if (dr1 == DialogResult.OK)
-                        {
-                            String strLenhUndo1 = "";
-
-                            DateTime ngay = (DateTime)((DataRowView)bds[bds.Position])["NGAY"];
-                            strLenhUndo1 = string.Format("INSERT INTO DBO.PhieuXuat (MAPX, NGAY, HOTENKH, MANV, MAKHO) " +
-                                "VALUES ('{0}', CAST('{1}' AS DATETIME), N'{2}', {3}, '{4}')", mAPXTextBox.Text, ngay.ToString("yyyy-MM-dd"),
-                                hOTENKHTextEdit.Text, mANVTextEdit.Text, mAKHOTextEdit.Text);
-
-                            int currentPosition = -1;
-                            try
-                            {
-                                currentPosition = bds.Position; //Giữ lại vị trí grid để phòng trường hợp xóa lỗi
-                                bds.RemoveCurrent(); //Xóa trên máy hiện tại trước
-
-                                this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr; //Đường kết nối đã đăng nhập
-                                this.phieuXuatTableAdapter.Update(this.qLVTDataSet.PhieuXuat); //Update xuống csdl
-
-                                this.btnUndo.Enabled = true;
-                                undoList.Push(strLenhUndo1);
-                                XtraMessageBox.Show("Xóa thành công!", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            catch (Exception ex)
-                            {
-                                XtraMessageBox.Show("Lỗi xảy ra trong quá trình xóa. Vui lòng thử lại!\n" + ex.Message, "Thông báo lỗi",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                if (cheDo == 1)
-                                    this.phieuXuatTableAdapter.Fill(this.qLVTDataSet.PhieuXuat); //Trên màn hình đã xóa mà csdl chưa xóa nên phải tải lại dữ liệu
-                                if (cheDo == 1)
-                                    this.cTPXTableAdapter.Fill(this.qLVTDataSet.CTPX);
-                                //Lệnh Find trả về index của item trong danh sách với giá trị và tên cột được chỉ định
-                                bds.Position = currentPosition; //Sau khi fill xong thì con nháy đứng ở dòng đầu tiên nên mình đặt lại theo vị trí ban nãy muốn xóa
-
-                                return;
-                            }
-                        }
-                    }
                 }
                 else
                 {
+
                     //Giảm số lượng vật tư
                     String str = "EXEC [dbo].sp_Giam_SL_VT '" +
                                     mAVTTextEdit.Text.Trim() + "', " +
@@ -519,6 +493,10 @@ namespace QLVT_Nhom38.SubForm
 
             btnThem.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = false;
+            if (cheDo == 1) {
+                switchCheDo.Checked = true;
+                bds = cTPXBindingSource;
+            }
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -553,7 +531,7 @@ namespace QLVT_Nhom38.SubForm
                 //}
 
                 strLenhUndo = string.Format("INSERT INTO DBO.CTPX (MAPX, MAVT, SOLUONG, DONGIA) " +
-                    "VALUES ('{0}', '{1}', {2}, {3})", mAPXTextBoxCTPX.Text, mAVTTextEdit.Text, sOLUONGNumericUpDown.Value, int.Parse(dONGIATextEdit.Text)) + "UPDATE DBO.Vattu SET SOLUONGTON = SOLUONGTON - '" + sOLUONGNumericUpDown.Text.Trim() + "' WHERE MAVT = '" + mAVTTextEdit.Text.Trim() + "'"; ;
+                    "VALUES ('{0}', '{1}', {2}, {3})", mAPXTextBoxCTPX.Text, mAVTTextEdit.Text, sOLUONGNumericUpDown.Value, int.Parse(dONGIATextEdit.EditValue.ToString())) + " UPDATE DBO.Vattu SET SOLUONGTON = SOLUONGTON - " + sOLUONGNumericUpDown.Text.Trim() + " WHERE MAVT = '" + mAVTTextEdit.Text.Trim() + "'";
             }
 
             DialogResult dr = XtraMessageBox.Show("Bạn có thực sự muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -618,6 +596,21 @@ namespace QLVT_Nhom38.SubForm
             {
                 this.Close();
             }
+        }
+
+        private void hOTENKHTextEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == '\b')
+                e.Handled = false;
+            else if (e.KeyChar == ' ')
+            {
+                if (hOTENKHTextEdit.Text[hOTENKHTextEdit.Text.Length - 1] == ' ')
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            }
+            else
+                e.Handled = true;
         }
     }
 }

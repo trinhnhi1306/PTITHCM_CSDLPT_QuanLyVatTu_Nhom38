@@ -498,6 +498,7 @@ namespace QLVT_Nhom38.SubForm
             this.hOTENKHTextEdit.Name = "hOTENKHTextEdit";
             this.hOTENKHTextEdit.Size = new System.Drawing.Size(133, 22);
             this.hOTENKHTextEdit.TabIndex = 5;
+            this.hOTENKHTextEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hOTENKHTextEdit_KeyPress);
             // 
             // nGAYDateEdit
             // 
