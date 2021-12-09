@@ -309,7 +309,7 @@ namespace QLVT_Nhom38.SimpleForm
             {
                 XtraMessageBox.Show("Mã nhân viên không được để trống!", "Thông báo lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMaNV.Focus();
+                txtMaNV.Focus(); ////Đưa con nháy về textbox đó
                 return;
             }
             if (txtHo.Text.Trim() == "")
