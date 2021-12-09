@@ -428,6 +428,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.colNGAY1.FieldName = "NGAY";
             this.colNGAY1.Name = "colNGAY1";
+            this.colNGAY1.OptionsColumn.ReadOnly = true;
             this.colNGAY1.Visible = true;
             this.colNGAY1.VisibleIndex = 1;
             // 
@@ -449,7 +450,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             // colMAKHO1
             // 
-            this.colMAKHO1.FieldName = "MAKHO";
+            this.colMAKHO1.FieldName = "MAPN";
             this.colMAKHO1.Name = "colMAKHO1";
             this.colMAKHO1.OptionsColumn.AllowEdit = false;
             this.colMAKHO1.OptionsColumn.ReadOnly = true;

@@ -326,6 +326,7 @@
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Size = new System.Drawing.Size(228, 20);
             this.txtTenVT.TabIndex = 8;
+            this.txtTenVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVT_KeyPress);
             this.txtTenVT.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenVT_Validating);
             // 
             // txtSLT
@@ -394,6 +395,7 @@
             // 
             this.colMAVT.FieldName = "MAVT";
             this.colMAVT.Name = "colMAVT";
+            this.colMAVT.OptionsColumn.ReadOnly = true;
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 0;
             // 
@@ -401,6 +403,7 @@
             // 
             this.colTENVT.FieldName = "TENVT";
             this.colTENVT.Name = "colTENVT";
+            this.colTENVT.OptionsColumn.ReadOnly = true;
             this.colTENVT.Visible = true;
             this.colTENVT.VisibleIndex = 1;
             // 
@@ -408,6 +411,7 @@
             // 
             this.colDVT.FieldName = "DVT";
             this.colDVT.Name = "colDVT";
+            this.colDVT.OptionsColumn.ReadOnly = true;
             this.colDVT.Visible = true;
             this.colDVT.VisibleIndex = 2;
             // 
@@ -415,6 +419,7 @@
             // 
             this.colSOLUONGTON.FieldName = "SOLUONGTON";
             this.colSOLUONGTON.Name = "colSOLUONGTON";
+            this.colSOLUONGTON.OptionsColumn.ReadOnly = true;
             this.colSOLUONGTON.Visible = true;
             this.colSOLUONGTON.VisibleIndex = 3;
             // 

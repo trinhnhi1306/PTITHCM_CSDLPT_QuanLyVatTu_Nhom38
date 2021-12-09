@@ -151,7 +151,7 @@
             this.Controls.Add(this.dateTo);
             this.Controls.Add(this.dateFrom);
             this.Name = "FormChiTietPhieu";
-            this.Text = "FormChiTietPhieu";
+            this.Text = "Báo cáo chi tiết phiếu nhập - xuất";
             ((System.ComponentModel.ISupportInitialize)(this.dateFrom.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo.Properties.CalendarTimeProperties)).EndInit();
