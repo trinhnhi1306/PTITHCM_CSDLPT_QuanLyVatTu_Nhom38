@@ -430,7 +430,7 @@ namespace QLVT_Nhom38.SubForm
                     DialogResult dr = XtraMessageBox.Show("Bạn có muốn lập chi tiết phiếu xuất không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (dr == DialogResult.OK)
                     {
-                        switchCheDo.PerformClick();
+                        switchCheDo.Checked = true;
                     }
                     else
                     {
@@ -497,6 +497,7 @@ namespace QLVT_Nhom38.SubForm
                 else
                 {
                     btnXoa.Enabled = btnUndo.Enabled = true;
+                    groupControlCTPX.Enabled = false;
                 }
 
                 Console.WriteLine("Ghi thông tin thành công!");
