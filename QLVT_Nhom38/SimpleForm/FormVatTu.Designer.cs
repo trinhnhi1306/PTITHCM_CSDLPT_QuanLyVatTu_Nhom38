@@ -94,7 +94,7 @@
             // sOLUONGTONLabel
             // 
             sOLUONGTONLabel.AutoSize = true;
-            sOLUONGTONLabel.Location = new System.Drawing.Point(679, 134);
+            sOLUONGTONLabel.Location = new System.Drawing.Point(661, 134);
             sOLUONGTONLabel.Name = "sOLUONGTONLabel";
             sOLUONGTONLabel.Size = new System.Drawing.Size(88, 17);
             sOLUONGTONLabel.TabIndex = 6;
@@ -104,7 +104,7 @@
             // tENVTLabel
             // 
             tENVTLabel.AutoSize = true;
-            tENVTLabel.Location = new System.Drawing.Point(679, 67);
+            tENVTLabel.Location = new System.Drawing.Point(661, 67);
             tENVTLabel.Name = "tENVTLabel";
             tENVTLabel.Size = new System.Drawing.Size(73, 17);
             tENVTLabel.TabIndex = 7;
@@ -113,7 +113,7 @@
             // mAVTLabel
             // 
             mAVTLabel.AutoSize = true;
-            mAVTLabel.Location = new System.Drawing.Point(378, 67);
+            mAVTLabel.Location = new System.Drawing.Point(356, 67);
             mAVTLabel.Name = "mAVTLabel";
             mAVTLabel.Size = new System.Drawing.Size(67, 17);
             mAVTLabel.TabIndex = 8;
@@ -123,7 +123,7 @@
             // dVTLabel
             // 
             dVTLabel.AutoSize = true;
-            dVTLabel.Location = new System.Drawing.Point(378, 135);
+            dVTLabel.Location = new System.Drawing.Point(356, 134);
             dVTLabel.Name = "dVTLabel";
             dVTLabel.Size = new System.Drawing.Size(75, 17);
             dVTLabel.TabIndex = 9;
@@ -282,7 +282,7 @@
             this.gcInfoVatTu.Controls.Add(sOLUONGTONLabel);
             this.gcInfoVatTu.Controls.Add(this.txtSLT);
             this.gcInfoVatTu.Enabled = false;
-            this.gcInfoVatTu.Location = new System.Drawing.Point(0, 356);
+            this.gcInfoVatTu.Location = new System.Drawing.Point(0, 422);
             this.gcInfoVatTu.Name = "gcInfoVatTu";
             this.gcInfoVatTu.Size = new System.Drawing.Size(1247, 207);
             this.gcInfoVatTu.TabIndex = 5;
@@ -327,6 +327,7 @@
             this.txtTenVT.Name = "txtTenVT";
             this.txtTenVT.Size = new System.Drawing.Size(228, 22);
             this.txtTenVT.TabIndex = 8;
+            this.txtTenVT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenVT_KeyPress);
             this.txtTenVT.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenVT_Validating);
             // 
             // txtSLT
@@ -395,6 +396,7 @@
             // 
             this.colMAVT.FieldName = "MAVT";
             this.colMAVT.Name = "colMAVT";
+            this.colMAVT.OptionsColumn.ReadOnly = true;
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 0;
             this.colMAVT.Width = 82;
@@ -403,6 +405,7 @@
             // 
             this.colTENVT.FieldName = "TENVT";
             this.colTENVT.Name = "colTENVT";
+            this.colTENVT.OptionsColumn.ReadOnly = true;
             this.colTENVT.Visible = true;
             this.colTENVT.VisibleIndex = 1;
             // 
@@ -410,6 +413,7 @@
             // 
             this.colDVT.FieldName = "DVT";
             this.colDVT.Name = "colDVT";
+            this.colDVT.OptionsColumn.ReadOnly = true;
             this.colDVT.Visible = true;
             this.colDVT.VisibleIndex = 2;
             // 
@@ -417,6 +421,7 @@
             // 
             this.colSOLUONGTON.FieldName = "SOLUONGTON";
             this.colSOLUONGTON.Name = "colSOLUONGTON";
+            this.colSOLUONGTON.OptionsColumn.ReadOnly = true;
             this.colSOLUONGTON.Visible = true;
             this.colSOLUONGTON.VisibleIndex = 3;
             // 

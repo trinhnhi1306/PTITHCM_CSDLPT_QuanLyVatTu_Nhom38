@@ -203,7 +203,7 @@
             this.Controls.Add(this.cmbChiNhanh);
             this.Controls.Add(this.label1);
             this.Name = "HoatDongNhanVien";
-            this.Text = "Form1";
+            this.Text = "Báo cáo hoạt động nhân viên";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).EndInit();

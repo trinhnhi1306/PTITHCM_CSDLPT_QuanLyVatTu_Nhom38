@@ -46,6 +46,8 @@
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.lblLoai = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.label1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
@@ -61,8 +63,6 @@
             this.tableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblLoai = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -182,6 +182,24 @@
             this.ReportHeader.HeightF = 102.7083F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // lblLoai
+            // 
+            this.lblLoai.LocationFloat = new DevExpress.Utils.PointFloat(257.2917F, 54.12499F);
+            this.lblLoai.Multiline = true;
+            this.lblLoai.Name = "lblLoai";
+            this.lblLoai.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblLoai.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.lblLoai.Text = "...";
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(115.625F, 54.12499F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel1.Text = "Loại";
+            // 
             // label1
             // 
             this.label1.LocationFloat = new DevExpress.Utils.PointFloat(6F, 6F);
@@ -283,6 +301,7 @@
             this.tableCell5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.tableCell5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[THANGNAM]")});
+            this.tableCell5.Multiline = true;
             this.tableCell5.Name = "tableCell5";
             this.tableCell5.StyleName = "DetailData1";
             this.tableCell5.StylePriority.UseBorders = false;
@@ -309,30 +328,12 @@
             // tableCell8
             // 
             this.tableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TRIGIA]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DONGIA]")});
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.StyleName = "DetailData1";
             this.tableCell8.StylePriority.UseTextAlignment = false;
             this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.tableCell8.Weight = 0.20549823467548076D;
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(115.625F, 54.12499F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel1.Text = "Loại";
-            // 
-            // lblLoai
-            // 
-            this.lblLoai.LocationFloat = new DevExpress.Utils.PointFloat(257.2917F, 54.12499F);
-            this.lblLoai.Multiline = true;
-            this.lblLoai.Name = "lblLoai";
-            this.lblLoai.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.lblLoai.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.lblLoai.Text = "...";
             // 
             // Xrpt_Report_ChiTietPhieu
             // 

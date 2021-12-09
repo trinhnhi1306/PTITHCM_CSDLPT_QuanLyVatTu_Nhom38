@@ -304,7 +304,19 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            String maNV = txtMaNV.Text.Trim();// Trim() de loai bo khoang trang thua
+            DataRowView drv = ((DataRowView)bdsNV[bdsNV.Position]);
+            String ho = drv["HO"].ToString();
+            String ten = drv["TEN"].ToString();
+
+            String diaChi = drv["DIACHI"].ToString();
+
+            DateTime ngaySinh = ((DateTime)drv["NGAYSINH"]);
+
+            int luong = int.Parse(drv["LUONG"].ToString());
+            String maCN = drv["MACN"].ToString();
+            int trangThai = int.Parse(drv["TrangThaiXoa"].ToString());
+
             if (txtMaNV.Text.Trim() == "")
             {
                 XtraMessageBox.Show("Mã nhân viên không được để trống!", "Thông báo lỗi",
@@ -403,19 +415,7 @@ namespace QLVT_Nhom38.SimpleForm
 
             // Trường hợp sửa thì lưu lại dữ liệu cũ để đưa vào stack
             else
-            {                
-                String maNV = txtMaNV.Text.Trim();// Trim() de loai bo khoang trang thua
-                DataRowView drv = ((DataRowView)bdsNV[bdsNV.Position]);
-                String ho = drv["HO"].ToString();
-                String ten = drv["TEN"].ToString();
-
-                String diaChi = drv["DIACHI"].ToString();
-
-                DateTime ngaySinh = ((DateTime)drv["NGAYSINH"]);
-
-                int luong = int.Parse(drv["LUONG"].ToString());
-                String maCN = drv["MACN"].ToString();
-                int trangThai = int.Parse(drv["TrangThaiXoa"].ToString());
+            {                                
 
                 strLenhUndo = "UPDATE DBO.NhanVien " +
                                 "SET " +

@@ -338,7 +338,7 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1776, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1538, 30);
             // 
             // barDockControlBottom
             // 
@@ -347,7 +347,7 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 672);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1776, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1538, 0);
             // 
             // barDockControlLeft
             // 
@@ -362,7 +362,7 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1776, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1538, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 642);
@@ -391,7 +391,7 @@ namespace QLVT_Nhom38.SubForm
             this.panelControl1.Location = new System.Drawing.Point(0, 30);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1776, 46);
+            this.panelControl1.Size = new System.Drawing.Size(1538, 46);
             this.panelControl1.TabIndex = 10;
             // 
             // cmbChiNhanh
@@ -423,7 +423,7 @@ namespace QLVT_Nhom38.SubForm
             this.panelControl2.Location = new System.Drawing.Point(0, 76);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1039, 596);
+            this.panelControl2.Size = new System.Drawing.Size(933, 596);
             this.panelControl2.TabIndex = 11;
             // 
             // groupControlPX
@@ -439,12 +439,12 @@ namespace QLVT_Nhom38.SubForm
             this.groupControlPX.Controls.Add(mAPXLabel);
             this.groupControlPX.Controls.Add(this.mAPXTextBox);
             this.groupControlPX.Controls.Add(this.mANVTextEdit);
-            this.groupControlPX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControlPX.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControlPX.Enabled = false;
-            this.groupControlPX.Location = new System.Drawing.Point(2, 332);
+            this.groupControlPX.Location = new System.Drawing.Point(2, 367);
             this.groupControlPX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControlPX.Name = "groupControlPX";
-            this.groupControlPX.Size = new System.Drawing.Size(1035, 262);
+            this.groupControlPX.Size = new System.Drawing.Size(929, 227);
             this.groupControlPX.TabIndex = 1;
             this.groupControlPX.Text = "Thông tin phiếu";
             // 
@@ -545,7 +545,7 @@ namespace QLVT_Nhom38.SubForm
             this.phieuXuatGridControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phieuXuatGridControl.MenuManager = this.barManager1;
             this.phieuXuatGridControl.Name = "phieuXuatGridControl";
-            this.phieuXuatGridControl.Size = new System.Drawing.Size(1035, 330);
+            this.phieuXuatGridControl.Size = new System.Drawing.Size(929, 330);
             this.phieuXuatGridControl.TabIndex = 0;
             this.phieuXuatGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -627,10 +627,10 @@ namespace QLVT_Nhom38.SubForm
             this.panelControl3.Controls.Add(this.groupControlCTPX);
             this.panelControl3.Controls.Add(this.cTPXGridControl);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl3.Location = new System.Drawing.Point(1047, 76);
+            this.panelControl3.Location = new System.Drawing.Point(971, 76);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(729, 596);
+            this.panelControl3.Size = new System.Drawing.Size(567, 596);
             this.panelControl3.TabIndex = 12;
             // 
             // groupControlCTPX
@@ -644,12 +644,12 @@ namespace QLVT_Nhom38.SubForm
             this.groupControlCTPX.Controls.Add(this.mAVTTextEdit);
             this.groupControlCTPX.Controls.Add(mAPXLabel1);
             this.groupControlCTPX.Controls.Add(this.mAPXTextBoxCTPX);
-            this.groupControlCTPX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControlCTPX.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControlCTPX.Enabled = false;
-            this.groupControlCTPX.Location = new System.Drawing.Point(2, 332);
+            this.groupControlCTPX.Location = new System.Drawing.Point(2, 362);
             this.groupControlCTPX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControlCTPX.Name = "groupControlCTPX";
-            this.groupControlCTPX.Size = new System.Drawing.Size(725, 262);
+            this.groupControlCTPX.Size = new System.Drawing.Size(563, 232);
             this.groupControlCTPX.TabIndex = 1;
             this.groupControlCTPX.Text = "Thông tin chi tiết phiếu";
             // 
@@ -726,7 +726,7 @@ namespace QLVT_Nhom38.SubForm
             this.cTPXGridControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cTPXGridControl.MenuManager = this.barManager1;
             this.cTPXGridControl.Name = "cTPXGridControl";
-            this.cTPXGridControl.Size = new System.Drawing.Size(725, 330);
+            this.cTPXGridControl.Size = new System.Drawing.Size(563, 330);
             this.cTPXGridControl.TabIndex = 0;
             this.cTPXGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -792,10 +792,10 @@ namespace QLVT_Nhom38.SubForm
             this.panelControl4.Appearance.BackColor = System.Drawing.SystemColors.Info;
             this.panelControl4.Appearance.Options.UseBackColor = true;
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Location = new System.Drawing.Point(1039, 76);
+            this.panelControl4.Location = new System.Drawing.Point(933, 76);
             this.panelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(8, 596);
+            this.panelControl4.Size = new System.Drawing.Size(38, 596);
             this.panelControl4.TabIndex = 13;
             // 
             // phieuXuatTableAdapter
@@ -843,7 +843,7 @@ namespace QLVT_Nhom38.SubForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1776, 672);
+            this.ClientSize = new System.Drawing.Size(1538, 672);
             this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);

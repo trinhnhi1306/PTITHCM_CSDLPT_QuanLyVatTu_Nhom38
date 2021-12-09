@@ -65,8 +65,8 @@ namespace QLVT_Nhom38.SubForm
             gc = gcPhieuNhap;
             gcCTPN.Enabled = false;
 
+            gridView2.Columns["MAPN"].OptionsColumn.ReadOnly = true;
 
-         
 
             cmbChiNhanh.DataSource = Program.bds_dspm;  // sao chép bds_dspm đã load ở form đăng nhập qua
             cmbChiNhanh.DisplayMember = "TENCN";
@@ -83,8 +83,8 @@ namespace QLVT_Nhom38.SubForm
             }
             else
             {
-                cmbChiNhanh.Enabled = btnUndo.Enabled  = false;
-                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = btnReload.Enabled = true;
+                cmbChiNhanh.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled  = btnReload.Enabled = true;
             }
 
         }
@@ -169,11 +169,12 @@ namespace QLVT_Nhom38.SubForm
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+            
             int maNhanVien = int.Parse(((DataRowView)bds_DatHang[bds_DatHang.Position])["MANV"].ToString());
             if (cheDo == 1)
             {
-                this.btnXoa.Enabled = this.btnThoat.Enabled = this.btnReload.Enabled = false;
-                this.btnUndo.Enabled = this.btnGhi.Enabled = true;
+                
                 if (bds_PhieuNhap.Count == 1)
                 {
                     MessageBox.Show("Đơn hàng này đã có phiếu nhập, vui lòng vào hiệu chỉnh chi tiết phiếu nhập", "Thông báo", MessageBoxButtons.OK);
@@ -185,7 +186,8 @@ namespace QLVT_Nhom38.SubForm
                     XtraMessageBox.Show("Không thể thêm phiếu nhập trên phiếu người khác lập", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                this.btnThem.Enabled = this.btnXoa.Enabled =  this.btnReload.Enabled = false;
+                this.btnThoat.Enabled =  this.btnUndo.Enabled = this.btnGhi.Enabled = true;
                 this.bds_PhieuNhap.AddNew();
                 gcPhieuNhap.Enabled =  true;
                 gcDatHang.Enabled = gcCTPN.Enabled = false;
@@ -308,6 +310,7 @@ namespace QLVT_Nhom38.SubForm
                 undoList.Push(queryUndo );
                
             }
+            gridView2.Columns["MAPN"].OptionsColumn.ReadOnly = false;
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -500,7 +503,7 @@ namespace QLVT_Nhom38.SubForm
            
 
             
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa không ?", "Thông báo",
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa phiếu nhập này không ?", "Thông báo",
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try

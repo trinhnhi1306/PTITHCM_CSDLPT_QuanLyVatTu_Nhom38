@@ -70,10 +70,16 @@ namespace QLVT_Nhom38.SimpleForm
             
             if (Program.mGroup == "CONGTY")
             {
-                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = false;
+
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = btnUndo.Enabled  = false;
+            }
+            else
+            {
+                gcInfoVatTu.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnReload.Enabled = true;
             }
 
-            txtMaVT.Enabled = btnUndo.Enabled = false;
+            
 
         }
 
@@ -124,6 +130,11 @@ namespace QLVT_Nhom38.SimpleForm
          */
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DataRowView drv = ((DataRowView)bdsVatTu[bdsVatTu.Position]);
+            String maVatTu = drv["MAVT"].ToString();
+            String tenVatTuCu = drv["TENVT"].ToString();
+            String donViTinhCu = drv["DVT"].ToString();
+            String soLuongTonCu = (drv["SOLUONGTON"].ToString());
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 // câu lệnh kiểm tra vật tư đã được sử dụng hay chưa
@@ -132,12 +143,7 @@ namespace QLVT_Nhom38.SimpleForm
                                "'" + txtMaVT.Text.Trim() + "' " +
                                "SELECT 'Return Value' = @return_value";
 
-                // lấy dữ liệu phục vụ hoàn tác
-                DataRowView drv = ((DataRowView)bdsVatTu[bdsVatTu.Position]);
-                String maVatTu = drv["MAVT"].ToString();
-                String tenVatTuCu = drv["TENVT"].ToString();
-                String donViTinhCu = drv["DVT"].ToString();
-                String soLuongTonCu = (drv["SOLUONGTON"].ToString());
+                
                 try
                 {
                     Program.myReader = Program.ExecSqlDataReader(strLenh);
@@ -159,6 +165,7 @@ namespace QLVT_Nhom38.SimpleForm
                 {
                     MessageBox.Show("Vật tư đang được sử dụng ở chi nhánh khác!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
                 DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào Database không?", "Thông báo",
@@ -175,11 +182,13 @@ namespace QLVT_Nhom38.SimpleForm
                         {
                             cauTruyVanHoanTac = "" +
                                 "DELETE DBO.VATTU " +
-                                "WHERE MAVT = '" + maVatTu + "'";
+                                "WHERE MAVT = '" + txtMaVT.Text.Trim() + "'";
                         }
                         /*trước khi ấn btnGHI là sửa thông tin nhân viên*/
                         else
                         {
+                            // lấy dữ liệu phục vụ hoàn tác
+                            
                             cauTruyVanHoanTac =
                                 "UPDATE DBO.VATTU " +
                                 "SET " +
@@ -193,18 +202,21 @@ namespace QLVT_Nhom38.SimpleForm
                         undoList.Push(cauTruyVanHoanTac);
                         viTriList.Push(bdsVatTu.Position +"");
                         Console.WriteLine("btnThem line 176: " + bdsVatTu.Position);
+                        this.bdsVatTu.EndEdit(); // kết thúc edit
+                        this.bdsVatTu.ResetCurrentItem(); // đưa thông tin vào grid
+                        this.vattuTableAdapter.Connection.ConnectionString = Program.connstr; // đường kết nối đã đăng nhập
                         // sử dụng vattuTableAdapter cập nhật thông tin với dữ liệu ở qLVTDataSet
                         this.vattuTableAdapter.Update(this.qLVTDataSet.Vattu); 
 
                         // cập nhật trạng thái thêm mới
                         checkThem = 0;
-                        btnUndo.Enabled =btnThem.Enabled = btnXoa.Enabled = gridVatTu.Enabled = btnReload.Enabled = btnGhi.Enabled = gcInfoVatTu.Enabled = true;
+                        btnThoat.Enabled = btnUndo.Enabled =btnThem.Enabled = btnXoa.Enabled = gridVatTu.Enabled = btnReload.Enabled = btnSua.Enabled = gcInfoVatTu.Enabled = true;
+                        btnGhi.Enabled = false;
                         
-                        this.bdsVatTu.EndEdit(); // kết thúc edit
                         
                         bdsVatTu.Position = position;
                         this.txtMaVT.Enabled = false;
-                        this.gcInfoVatTu.Enabled = true;
+                        this.gcInfoVatTu.Enabled = false;
                         
                       
                         MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
@@ -308,7 +320,7 @@ namespace QLVT_Nhom38.SimpleForm
 
                 txtMaVT.Focus();
             }
-            var regexItem = new Regex("^\\p{L}+$");
+            
             if (txtTenVT.Text.Length > 30)
             {
                 e.Cancel = true;
@@ -319,12 +331,6 @@ namespace QLVT_Nhom38.SimpleForm
                 e.Cancel = true;
                 txtTenVT.Focus();
                 errorProviderVT.SetError(txtTenVT, "Tên vật tư không được để trống!");
-            }
-            else if (!regexItem.IsMatch(txtTenVT.Text.Trim()))
-            {
-                e.Cancel = true;
-                txtTenVT.Focus();
-                errorProviderVT.SetError(txtTenVT, "Tên vật tư không được chứa ký tự đặc biệt!");
             }
             else
             {
@@ -478,12 +484,12 @@ namespace QLVT_Nhom38.SimpleForm
                 this.txtMaVT.Enabled = false;
                 this.btnThem.Enabled = true;
                 this.btnXoa.Enabled = true;
-                this.btnGhi.Enabled = true;
+                this.btnGhi.Enabled = false;
 
                 this.btnUndo.Enabled = true;
                 this.btnThem.Enabled = true;
                 this.btnThoat.Enabled = true;
-
+                this.btnSua.Enabled = true;
 
                 this.gridVatTu.Enabled = true;
                 this.gcInfoVatTu.Enabled = false;
@@ -520,9 +526,13 @@ namespace QLVT_Nhom38.SimpleForm
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             checkThem = 2;
-            btnThem.Enabled = btnSua.Enabled = btnReload.Enabled = false;
+
+            position = bdsVatTu.Position;
+            gridVatTu.Enabled = txtMaVT.Enabled = false;
             gcInfoVatTu.Enabled = true;
-            gridVatTu.Enabled = false;
+
+            btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
+            btnGhi.Enabled = btnUndo.Enabled = true;
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -537,6 +547,21 @@ namespace QLVT_Nhom38.SimpleForm
                 MessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
                 return;
             }
+        }
+
+        private void txtTenVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || e.KeyChar == '\b')
+                e.Handled = false;
+            else if (e.KeyChar == ' ')
+            {
+                if (txtTenVT.Text[txtTenVT.Text.Length - 1] == ' ')
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            }
+            else
+                e.Handled = true;
         }
     }
 }

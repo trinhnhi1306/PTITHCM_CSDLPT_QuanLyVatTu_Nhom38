@@ -17,6 +17,7 @@ namespace QLVT_Nhom38.SimpleForm
     {
         int checkThem = 0;
         int position = 0; // vị trí trên grid view
+        String ten_kho = "";
         string maCN = "";
         Stack undoList = new Stack();
 
@@ -213,6 +214,7 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            ten_kho = txtTenKho.Text;
             position = bdsKho.Position;
             gcKho.Enabled = txtMaKho.Enabled = false;
             infoKho.Enabled = true;
@@ -287,6 +289,12 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            String maKho = txtMaKho.Text.Trim();// Trim() de loai bo khoang trang thua
+            DataRowView drv = ((DataRowView)bdsKho[bdsKho.Position]);
+            String tenKho = ten_kho;
+
+            String diaChi = drv["DIACHI"].ToString();
+            String maCN = drv["MACN"].ToString();
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
 
@@ -299,13 +307,7 @@ namespace QLVT_Nhom38.SimpleForm
 
                 // Trường hợp sửa thì lưu lại dữ liệu cũ để đưa vào stack
                 else
-                {
-                    String maKho = txtMaKho.Text.Trim();// Trim() de loai bo khoang trang thua
-                    DataRowView drv = ((DataRowView)bdsKho[bdsKho.Position]);
-                    String tenKho = drv["TENKHO"].ToString();
-
-                    String diaChi = drv["DIACHI"].ToString();
-                    String maCN = drv["MACN"].ToString();
+                {                   
 
                     strLenhUndo = "UPDATE DBO.KHO " +
                                     "SET " +
