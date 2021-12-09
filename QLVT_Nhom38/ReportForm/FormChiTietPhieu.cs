@@ -17,16 +17,17 @@ namespace QLVT_Nhom38.ReportForm
         public FormChiTietPhieu()
         {
             InitializeComponent();
-            dateFrom.Properties.Mask.EditMask = "MM-yyyy";
 
-            dateFrom.Properties.Mask.UseMaskAsDisplayFormat = true;
-            dateFrom.DateTime = DateTime.Today.AddYears(-5);
-            dateFrom.Properties.VistaCalendarViewStyle = DevExpress.XtraEditors.VistaCalendarViewStyle.YearView;
+            cmbLoai.SelectedIndex = 0;
             dateTo.Properties.Mask.EditMask = "MM-yyyy";
-
             dateTo.Properties.Mask.UseMaskAsDisplayFormat = true;
             dateTo.DateTime = DateTime.Today.AddYears(0);
             dateTo.Properties.VistaCalendarViewStyle = DevExpress.XtraEditors.VistaCalendarViewStyle.YearView;
+
+            dateFrom.Properties.Mask.EditMask = "MM-yyyy";
+            dateFrom.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateFrom.DateTime = DateTime.Today.AddYears(-5);
+            dateFrom.Properties.VistaCalendarViewStyle = DevExpress.XtraEditors.VistaCalendarViewStyle.YearView;
         }
 
         private void label3_Click(object sender, EventArgs e)

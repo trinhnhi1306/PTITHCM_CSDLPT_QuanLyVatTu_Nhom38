@@ -73,7 +73,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "FormDSDH_Chua_Co_PN";
-            this.Text = "FormDSDH_Chua_Co_PN";
+            this.Text = "Danh sách đơn hàng chưa có phiếu nhập";
             this.ResumeLayout(false);
             this.PerformLayout();
 
