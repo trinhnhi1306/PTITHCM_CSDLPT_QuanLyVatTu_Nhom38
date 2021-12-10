@@ -71,6 +71,11 @@ namespace QLVT_Nhom38.SimpleForm
                 txtLoginName.Focus();
                 errorProvider1.SetError(txtLoginName, "Vui lòng điền Login name!");
             }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txtLoginName, "");
+            }
         }
 
         private void txtMatKhau_Validating(object sender, CancelEventArgs e)
@@ -83,6 +88,11 @@ namespace QLVT_Nhom38.SimpleForm
                 e.Cancel = true;
                 txtMatKhau.Focus();
                 errorProvider1.SetError(txtMatKhau, "Vui lòng điền mật khẩu!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txtMatKhau, "");
             }
         }
 
@@ -101,6 +111,11 @@ namespace QLVT_Nhom38.SimpleForm
                 e.Cancel = true;
                 txtMatKhauXacNhan.Focus();
                 errorProvider1.SetError(txtMatKhauXacNhan, "Mật khẩu xác nhận không đúng!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txtMatKhauXacNhan, "");
             }
         }        
 

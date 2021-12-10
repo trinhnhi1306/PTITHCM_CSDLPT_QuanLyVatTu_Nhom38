@@ -380,25 +380,28 @@ namespace QLVT_Nhom38.SimpleForm
                     e.Cancel = true;
                     txtMaKho.Focus();
                     errorProviderKho.SetError(txtMaKho, "Mã kho không được để trống!");
+                    return;
                 }
                 else if (txtMaKho.Text.Length > 4)
                 {
                     e.Cancel = true;
                     txtMaKho.Focus();
                     errorProviderKho.SetError(txtMaKho, "Mã kho không được quá 4 kí tự!");
-
+                    return;
                 }                
                 else if (txtMaKho.Text.Trim().Contains(" "))
                 {
                     e.Cancel = true;
                     txtMaKho.Focus();
                     errorProviderKho.SetError(txtMaKho, "Mã kho không được chứa khoảng trắng!");
+                    return;
                 }
                 else if (!regexItem.IsMatch(txtMaKho.Text.Trim()))
                 {
                     e.Cancel = true;
                     txtMaKho.Focus();
                     errorProviderKho.SetError(txtMaKho, "Mã kho chỉ được gồm chữ cái và số!");
+                    return;
                 }
                 else
                 {
@@ -433,9 +436,12 @@ namespace QLVT_Nhom38.SimpleForm
                             XtraMessageBox.Show("Mã kho này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
                             txtMaKho.Focus();
                             errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng!");
+                            return;
                         }
                     }
-                }              
+                }
+                e.Cancel = false;
+                errorProviderKho.SetError(txtMaKho, "");
             }            
         }
 
@@ -451,6 +457,7 @@ namespace QLVT_Nhom38.SimpleForm
                 e.Cancel = true;
                 txtTenKho.Focus();
                 errorProviderKho.SetError(txtTenKho, "Tên kho không được để trống!");
+                return;
             }
             else
             {
@@ -488,8 +495,12 @@ namespace QLVT_Nhom38.SimpleForm
                     //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
                     txtTenKho.Focus();
                     errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng ở chi nhánh khác!");
+                    return;
                 }
             }
+            
+            e.Cancel = false;
+            errorProviderKho.SetError(txtTenKho, "");
         }
 
         private void txtDiaChi_Validating(object sender, CancelEventArgs e)
@@ -499,6 +510,11 @@ namespace QLVT_Nhom38.SimpleForm
                 e.Cancel = true;
                 txtDiaChi.Focus();
                 errorProviderKho.SetError(txtDiaChi, "Địa chỉ không được để trống!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProviderKho.SetError(txtDiaChi, "");
             }
         }
 

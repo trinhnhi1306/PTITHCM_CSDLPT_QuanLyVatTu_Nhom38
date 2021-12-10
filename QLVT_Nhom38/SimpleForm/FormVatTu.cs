@@ -490,6 +490,7 @@ namespace QLVT_Nhom38.SimpleForm
                 this.btnThem.Enabled = true;
                 this.btnThoat.Enabled = true;
                 this.btnSua.Enabled = true;
+                this.btnReload.Enabled = true;
 
                 this.gridVatTu.Enabled = true;
                 this.gcInfoVatTu.Enabled = false;

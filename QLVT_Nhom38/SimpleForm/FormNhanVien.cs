@@ -21,6 +21,17 @@ namespace QLVT_Nhom38.SimpleForm
         string maCN = "";
         string tenServerChuyenToi = "";
         Stack undoList = new Stack();
+        /*Lưu lại thông tin cũ để undu*/
+        String maNVCu = "";
+        String hoCu = "";
+        String tenCu = "";
+
+        String diaChiCu = "";
+
+        DateTime ngaySinhCu;
+
+        int luongCu;
+        int trangThaiCu;
 
         public FormNhanVien()
         {
@@ -204,6 +215,19 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            maNVCu = txtMaNV.Text.Trim();// Trim() de loai bo khoang trang thua
+            DataRowView drv = ((DataRowView)bdsNV[bdsNV.Position]);
+            hoCu = drv["HO"].ToString();
+            tenCu = drv["TEN"].ToString();
+
+            diaChiCu = drv["DIACHI"].ToString();
+
+            ngaySinhCu = ((DateTime)drv["NGAYSINH"]);
+
+            luongCu = int.Parse(drv["LUONG"].ToString());
+            maCN = drv["MACN"].ToString();
+            trangThaiCu = int.Parse(drv["TrangThaiXoa"].ToString());
+
             position = bdsNV.Position;
             gcNhanVien.Enabled = txtMaNV.Enabled = false;
             infoNhanVien.Enabled = true;
@@ -304,18 +328,7 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            String maNV = txtMaNV.Text.Trim();// Trim() de loai bo khoang trang thua
-            DataRowView drv = ((DataRowView)bdsNV[bdsNV.Position]);
-            String ho = drv["HO"].ToString();
-            String ten = drv["TEN"].ToString();
-
-            String diaChi = drv["DIACHI"].ToString();
-
-            DateTime ngaySinh = ((DateTime)drv["NGAYSINH"]);
-
-            int luong = int.Parse(drv["LUONG"].ToString());
-            String maCN = drv["MACN"].ToString();
-            int trangThai = int.Parse(drv["TrangThaiXoa"].ToString());
+            
 
             if (txtMaNV.Text.Trim() == "")
             {
@@ -370,7 +383,7 @@ namespace QLVT_Nhom38.SimpleForm
             {
                 XtraMessageBox.Show("Lương nhân viên phải từ 4,000,000 trở lên!", "Thông báo lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDiaChi.Focus();
+                txtLuong.Focus();
                 return;
             }
 
@@ -419,13 +432,13 @@ namespace QLVT_Nhom38.SimpleForm
 
                 strLenhUndo = "UPDATE DBO.NhanVien " +
                                 "SET " +
-                                "HO = N'" + ho + "'," +
-                                "TEN = N'" + ten + "'," +
-                                "DIACHI = N'" + diaChi + "'," +
-                                "NGAYSINH = CAST('" + ngaySinh.ToString("yyyy-MM-dd") + "' AS DATETIME)," +
-                                "LUONG = '" + luong + "'," +
-                                "TrangThaiXoa = " + trangThai + " " +
-                                "WHERE MANV = " + maNV;
+                                "HO = N'" + hoCu + "'," +
+                                "TEN = N'" + tenCu + "'," +
+                                "DIACHI = N'" + diaChiCu + "'," +
+                                "NGAYSINH = CAST('" + ngaySinhCu.ToString("yyyy-MM-dd") + "' AS DATETIME)," +
+                                "LUONG = '" + luongCu + "'," +
+                                "TrangThaiXoa = " + trangThaiCu + " " +
+                                "WHERE MANV = " + maNVCu;
             }    
 
             try
