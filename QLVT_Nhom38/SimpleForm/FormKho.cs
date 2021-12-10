@@ -405,39 +405,29 @@ namespace QLVT_Nhom38.SimpleForm
                 }
                 else
                 {
-                    /* kiểm tra mã nhân viên có trùng không 
+                    /* kiểm tra mã kho có trùng không 
                      * kiểm tra trên phân mảnh hiện tại trước, nếu không có mới lên server3 để tra cứu
                      * soạn sẵn câu lệnh để đưa vào hàm ExecSqlDataReader
                      * sau đó đọc kết quả trong myReader
                      */
+                                        
+                    String strLenh = "DECLARE @return_value int " +
+                                        "EXEC @return_value = [dbo].[sp_TraCuu_NhanVien_Kho] '" +
+                                        txtMaKho.Text.Trim() + "', 'MAKHO' " +
+                                        "SELECT 'Return Value' = @return_value";
+                    Program.myReader = Program.ExecSqlDataReader(strLenh);
+                    if (Program.myReader == null) return;
 
-                    int viTriMaKho = bdsKho.Find("MAKHO", txtMaKho.Text);
-                    if (viTriMaKho != -1)
+                    Program.myReader.Read();
+                    int result = int.Parse(Program.myReader.GetValue(0).ToString());
+                    Program.myReader.Close();
+
+                    if (result == 1)
                     {
                         XtraMessageBox.Show("Mã kho này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
                         txtMaKho.Focus();
                         errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng!");
-                    }
-                    else
-                    {
-                        String strLenh = "DECLARE @return_value int " +
-                                         "EXEC @return_value = [dbo].[sp_TraCuu_NhanVien_Kho] '" +
-                                         txtMaKho.Text.Trim() + "', 'MAKHO' " +
-                                         "SELECT 'Return Value' = @return_value";
-                        Program.myReader = Program.ExecSqlDataReader(strLenh);
-                        if (Program.myReader == null) return;
-
-                        Program.myReader.Read();
-                        int result = int.Parse(Program.myReader.GetValue(0).ToString());
-                        Program.myReader.Close();
-
-                        if (result == 1)
-                        {
-                            XtraMessageBox.Show("Mã kho này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
-                            txtMaKho.Focus();
-                            errorProviderKho.SetError(txtMaKho, "Mã kho này đã được sử dụng!");
-                            return;
-                        }
+                        return;
                     }
                 }
                 e.Cancel = false;
@@ -447,7 +437,7 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void txtTenKho_Validating(object sender, CancelEventArgs e)
         {            
-            /* kiểm tra mã nhân viên có trùng không 
+            /* kiểm tra tên kho có trùng không 
             * kiểm tra trên phân mảnh hiện tại trước, nếu không có mới lên server3 để tra cứu
             * soạn sẵn câu lệnh để đưa vào hàm ExecSqlDataReader
             * sau đó đọc kết quả trong myReader
@@ -462,23 +452,6 @@ namespace QLVT_Nhom38.SimpleForm
             else
             {
                 int viTriTenKho = bdsKho.Find("TENKHO", txtTenKho.Text);
-
-                if (checkThem == 1 && viTriTenKho != -1)
-                {
-                    //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
-                    txtTenKho.Focus();
-                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng!");
-                    return;
-                }
-
-                if (checkThem == 0 && viTriTenKho != -1 && viTriTenKho != bdsKho.Position)
-                {
-                    //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
-                    txtTenKho.Focus();
-                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng!");
-                    return;
-                }
-
                 String strLenh = "DECLARE @return_value int " +
                                 "EXEC @return_value = [dbo].[sp_TraCuu_NhanVien_Kho] '" +
                                 txtTenKho.Text.Trim() + "', 'TENKHO' " +
@@ -490,11 +463,24 @@ namespace QLVT_Nhom38.SimpleForm
                 int result = int.Parse(Program.myReader.GetValue(0).ToString());
                 Program.myReader.Close();
 
-                if (result == 1)
+                /*Trường hợp thêm mới mà lại tìm được tên kho (result = 1) thì có nghĩa tên kho bị trùng*/
+                if (checkThem == 1 && result == 1) 
                 {
-                    //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh khác!", "Thông báo", MessageBoxButtons.OK);
+                    //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
                     txtTenKho.Focus();
-                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng ở chi nhánh khác!");
+                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng!");
+                    return;
+                }
+                /*
+                 * Trường hợp chỉnh sửa mà lại tìm được tên kho (result = 1)
+                 * nhưng tên kho đó lại không phải tên kho của row đang chỉnh
+                 * sửa thì có nghĩa là bị trùng                 
+                 */
+                if (checkThem == 0 && result == 1 && viTriTenKho != bdsKho.Position)
+                {
+                    //XtraMessageBox.Show("Tên kho này đã được sử dụng ở chi nhánh này!", "Thông báo", MessageBoxButtons.OK);
+                    txtTenKho.Focus();
+                    errorProviderKho.SetError(txtTenKho, "Tên kho này đã được sử dụng!");
                     return;
                 }
             }
@@ -520,10 +506,6 @@ namespace QLVT_Nhom38.SimpleForm
 
         private void txtTenKho_KeyPress(object sender, KeyPressEventArgs e)
         {
-            String maKho = txtMaKho.Text.Trim();// Trim() de loai bo khoang trang thua
-            DataRowView drv = ((DataRowView)bdsKho[bdsKho.Position]);
-            String tenKho = drv["TENKHO"].ToString();
-            Console.WriteLine(tenKho);
             if (Char.IsLetter(e.KeyChar) || e.KeyChar == '\b' || char.IsDigit(e.KeyChar))
                 e.Handled = false;
             else if (e.KeyChar == ' ')
