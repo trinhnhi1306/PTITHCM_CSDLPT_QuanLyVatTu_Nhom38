@@ -216,6 +216,12 @@
     <Compile Include="Xrpt_Report_ChiTietPhieu.Designer.cs">
       <DependentUpon>Xrpt_Report_ChiTietPhieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_Report_DSNhanVienTheoHoTen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_Report_DSNhanVienTheoHoTen.Designer.cs">
+      <DependentUpon>Xrpt_Report_DSNhanVienTheoHoTen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xrpt_Report_DS_VatTu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_Report_ChiTietPhieu.resx">
       <DependentUpon>Xrpt_Report_ChiTietPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_Report_DSNhanVienTheoHoTen.resx">
+      <DependentUpon>Xrpt_Report_DSNhanVienTheoHoTen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_Report_DS_VatTu.resx">
       <DependentUpon>Xrpt_Report_DS_VatTu.cs</DependentUpon>

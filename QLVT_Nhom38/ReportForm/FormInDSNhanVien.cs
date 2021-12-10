@@ -50,7 +50,7 @@ namespace QLVT_Nhom38.ReportForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Xrpt_DanhSachNhanVien reportDSNV = new Xrpt_DanhSachNhanVien();
+            Xrpt_Report_DSNhanVienTheoHoTen reportDSNV = new Xrpt_Report_DSNhanVienTheoHoTen();
             ReportPrintTool rpt = new ReportPrintTool(reportDSNV);
             reportDSNV.lblChiNhanh.Text = chiNhanh;
             reportDSNV.ShowPreviewDialog();
