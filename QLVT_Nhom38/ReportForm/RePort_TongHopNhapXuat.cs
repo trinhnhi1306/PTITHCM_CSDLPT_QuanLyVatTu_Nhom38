@@ -27,6 +27,14 @@ namespace QLVT_Nhom38.ReportForm
                 cmbChiNhanh.Enabled = true;  // bật tắt theo phân quyền
             else cmbChiNhanh.Enabled = false;
             chiNhanh = cmbChiNhanh.Text;
+
+            dateEnd.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateEnd.DateTime = DateTime.Today.AddYears(0);
+
+
+
+            dateStart.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateStart.DateTime = DateTime.Today.AddYears(-5);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +42,19 @@ namespace QLVT_Nhom38.ReportForm
             
             DateTime fromDate = (DateTime)dateStart.DateTime;
             DateTime toDate = (DateTime)dateEnd.DateTime;
+            if (fromDate > toDate)
+            {
+                MessageBox.Show("ngày bắt đầu phải bé hơn ngày kết thúc",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            DateTime today = DateTime.Today;
+            if ((fromDate > today) || (toDate > today))
+            {
+                MessageBox.Show("ngày chọn không quá ngày hiện tại",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
             Xrpt_RePort_TongHopNhapXuat reportTHNX = new Xrpt_RePort_TongHopNhapXuat(fromDate, toDate);
             reportTHNX.lblStart.Text = fromDate.ToString();
             reportTHNX.lblEnd.Text = dateEnd.EditValue.ToString();
@@ -46,6 +67,19 @@ namespace QLVT_Nhom38.ReportForm
         {
             DateTime fromDate = (DateTime)dateStart.DateTime;
             DateTime toDate = (DateTime)dateEnd.DateTime;
+            if (fromDate > toDate)
+            {
+                MessageBox.Show("ngày bắt đầu phải bé hơn ngày kết thúc",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            DateTime today = DateTime.Today;
+            if ((fromDate > today) || (toDate > today))
+            {
+                MessageBox.Show("ngày chọn không quá ngày hiện tại",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
             Xrpt_RePort_TongHopNhapXuat reportTHNX = new Xrpt_RePort_TongHopNhapXuat(fromDate, toDate);
             reportTHNX.lblStart.Text = fromDate.ToString();
             reportTHNX.lblEnd.Text = dateEnd.EditValue.ToString();

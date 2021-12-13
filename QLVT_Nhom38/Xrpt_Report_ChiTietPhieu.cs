@@ -12,8 +12,8 @@ namespace QLVT_Nhom38
         {
             InitializeComponent();
             this.sqlDataSource1.Connection.ConnectionString = Program.connstr;
-            this.sqlDataSource1.Queries[0].Parameters[2].Value = role;
-            this.sqlDataSource1.Queries[0].Parameters[2].Value = loai.Contains("N") ? "NHAP" : "XUAT";
+            this.sqlDataSource1.Queries[0].Parameters[0].Value = role;
+            this.sqlDataSource1.Queries[0].Parameters[1].Value = loai.Contains("N") ? "NHAP" : "XUAT";
             this.sqlDataSource1.Queries[0].Parameters[2].Value = dateStart.ToString("yyyy-MM-dd");
             this.sqlDataSource1.Queries[0].Parameters[3].Value = dateEnd.ToString("yyyy-MM-dd");
             this.sqlDataSource1.Fill();

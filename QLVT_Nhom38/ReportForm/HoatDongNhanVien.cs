@@ -36,6 +36,16 @@ namespace QLVT_Nhom38.ReportForm
                 cmbChiNhanh.Enabled = true;  // bật tắt theo phân quyền
             else cmbChiNhanh.Enabled = false;
             chiNhanh = cmbChiNhanh.Text;
+
+
+            dateEnd.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateEnd.DateTime = DateTime.Today.AddYears(0);
+
+
+
+            dateStart.Properties.Mask.UseMaskAsDisplayFormat = true;
+            dateStart.DateTime = DateTime.Today.AddYears(-5);
+           
         }
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,6 +92,10 @@ namespace QLVT_Nhom38.ReportForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
+
             String strLenh = "[dbo].[sp_ThongTinNhanVien] " +
                                  int.Parse(cmbHoTen.SelectedValue.ToString())  ;
             Program.myReader = Program.ExecSqlDataReader(strLenh);
@@ -96,6 +110,20 @@ namespace QLVT_Nhom38.ReportForm
 
             DateTime fromDate = (DateTime)dateStart.DateTime;
             DateTime toDate = (DateTime)dateEnd.DateTime;
+
+            if (fromDate > toDate)
+            {
+                MessageBox.Show("ngày bắt đầu phải bé hơn ngày kết thúc",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            if ((fromDate > DateTime.Today.AddYears(0)) || (toDate > DateTime.Today.AddYears(0)))
+            {
+                MessageBox.Show("ngày chọn không quá ngày hiện tại",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+
             Xrpt_HoatDongNhanVien reportHDNV = new Xrpt_HoatDongNhanVien(int.Parse(cmbHoTen.SelectedValue.ToString()), fromDate, toDate);
             reportHDNV.lblMaNV.Text = cmbHoTen.SelectedValue.ToString();
             reportHDNV.lblDiaChi.Text = DAICHI;
@@ -124,6 +152,19 @@ namespace QLVT_Nhom38.ReportForm
 
             DateTime fromDate = (DateTime)dateStart.DateTime;
             DateTime toDate = (DateTime)dateEnd.DateTime;
+            if (fromDate > toDate)
+            {
+                MessageBox.Show("ngày bắt đầu phải bé hơn ngày kết thúc",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            DateTime today = DateTime.Today;
+            if ((fromDate > today) || (toDate > today))
+            {
+                MessageBox.Show("ngày chọn không quá ngày hiện tại",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
             Xrpt_HoatDongNhanVien reportHDNV = new Xrpt_HoatDongNhanVien(int.Parse(cmbHoTen.SelectedValue.ToString()), fromDate, toDate);
             reportHDNV.lblMaNV.Text = cmbHoTen.SelectedValue.ToString();
             reportHDNV.lblDiaChi.Text = DAICHI;
