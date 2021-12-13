@@ -272,11 +272,13 @@ namespace QLVT_Nhom38.SubForm
                 bds = cTPXBindingSource;
                 gc = cTPXGridControl;
                 info = groupControlCTPX;
+                btnThem.Enabled = false;
             }
             else
             {
                 Console.WriteLine("Phieu xuat");
                 cheDo = 1;
+                btnThem.Enabled = true;
                 phieuXuatGridControl.Enabled = true; //Bật grid control PX
                 cTPXGridControl.Enabled = false; //Tắt grid control CTPX
                 btnXoa.Enabled = false;
@@ -496,6 +498,7 @@ namespace QLVT_Nhom38.SubForm
             if (cheDo == 1) {
                 switchCheDo.Checked = true;
                 bds = cTPXBindingSource;
+                btnThem.Enabled = true;
             }
         }
 
