@@ -19,7 +19,7 @@ namespace QLVT_Nhom38.ReportForm
         public RePort_TongHopNhapXuat()
         {
             InitializeComponent();
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,6 +27,19 @@ namespace QLVT_Nhom38.ReportForm
             
             DateTime fromDate = (DateTime)dateStart.DateTime;
             DateTime toDate = (DateTime)dateEnd.DateTime;
+            if (fromDate > toDate)
+            {
+                MessageBox.Show("ngày bắt đầu phải bé hơn ngày kết thúc",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            DateTime today = DateTime.Today;
+            if ((fromDate > today) || (toDate > today))
+            {
+                MessageBox.Show("ngày chọn không quá ngày hiện tại",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
             Xrpt_RePort_TongHopNhapXuat reportTHNX = new Xrpt_RePort_TongHopNhapXuat(fromDate, toDate);
             reportTHNX.lblStart.Text = fromDate.ToString();
             reportTHNX.lblEnd.Text = dateEnd.EditValue.ToString();
@@ -39,6 +52,19 @@ namespace QLVT_Nhom38.ReportForm
         {
             DateTime fromDate = (DateTime)dateStart.DateTime;
             DateTime toDate = (DateTime)dateEnd.DateTime;
+            if (fromDate > toDate)
+            {
+                MessageBox.Show("ngày bắt đầu phải bé hơn ngày kết thúc",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            DateTime today = DateTime.Today;
+            if ((fromDate > today) || (toDate > today))
+            {
+                MessageBox.Show("ngày chọn không quá ngày hiện tại",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
             Xrpt_RePort_TongHopNhapXuat reportTHNX = new Xrpt_RePort_TongHopNhapXuat(fromDate, toDate);
             reportTHNX.lblStart.Text = fromDate.ToString();
             reportTHNX.lblEnd.Text = dateEnd.EditValue.ToString();
