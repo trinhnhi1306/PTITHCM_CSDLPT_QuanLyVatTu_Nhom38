@@ -246,7 +246,10 @@ namespace QLVT_Nhom38.SubForm
             khoBindingSource.CancelEdit();
             String strLenhUndo = undoList.Pop().ToString();
             Console.WriteLine(strLenhUndo);
-
+            if (strLenhUndo.Contains("PhieuXuat"))
+            {
+                switchCheDo.Checked = false;
+            }
             if (Program.KetNoi() == 0)
                 return;
             int n = Program.ExecSqlNonQuery(strLenhUndo);

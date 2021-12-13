@@ -31,12 +31,13 @@ namespace QLVT_Nhom38.ReportForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             DateTime fromDate = (DateTime)dateStart.DateTime;
             DateTime toDate = (DateTime)dateEnd.DateTime;
             Xrpt_RePort_TongHopNhapXuat reportTHNX = new Xrpt_RePort_TongHopNhapXuat(fromDate, toDate);
             reportTHNX.lblStart.Text = fromDate.ToString();
             reportTHNX.lblEnd.Text = dateEnd.EditValue.ToString();
-            
+            reportTHNX.lbChiNhanh.Text = chiNhanh;
             ReportPrintTool rpt = new ReportPrintTool(reportTHNX);
             reportTHNX.ShowPreviewDialog();
         }
@@ -108,6 +109,11 @@ namespace QLVT_Nhom38.ReportForm
             {
                 chiNhanh = cmbChiNhanh.Text;
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

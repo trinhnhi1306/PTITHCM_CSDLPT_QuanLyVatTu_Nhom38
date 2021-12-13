@@ -249,11 +249,14 @@ namespace QLVT_Nhom38.SubForm
             bdsKho.CancelEdit();
             String strLenhUndo = undoList.Pop().ToString();
             Console.WriteLine(strLenhUndo);
-
+            if (strLenhUndo.Contains("DatHang"))
+            {
+                switchCheDo.Checked = false;
+            }
             if (Program.KetNoi() == 0)
                 return;
             int n = Program.ExecSqlNonQuery(strLenhUndo);
-            reload();
+            this.CTDDHTableAdapter.Fill(this.QLVTDataSet.CTDDH);
             bds.Position = position;
 
             // Nếu sau khi undo mà danh sách undoList trống thì disable nút undo đi

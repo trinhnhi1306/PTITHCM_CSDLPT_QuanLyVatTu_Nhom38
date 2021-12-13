@@ -551,6 +551,7 @@ namespace QLVT_Nhom38.SubForm
             this.txtMaKho.Location = new System.Drawing.Point(320, 198);
             this.txtMaKho.MenuManager = this.barManager1;
             this.txtMaKho.Name = "txtMaKho";
+            this.txtMaKho.Properties.ReadOnly = true;
             this.txtMaKho.Size = new System.Drawing.Size(60, 20);
             this.txtMaKho.TabIndex = 10;
             // 
@@ -759,6 +760,7 @@ namespace QLVT_Nhom38.SubForm
             this.txtMaVT.Location = new System.Drawing.Point(322, 99);
             this.txtMaVT.MenuManager = this.barManager1;
             this.txtMaVT.Name = "txtMaVT";
+            this.txtMaVT.Properties.ReadOnly = true;
             this.txtMaVT.Size = new System.Drawing.Size(62, 20);
             this.txtMaVT.TabIndex = 8;
             // 
