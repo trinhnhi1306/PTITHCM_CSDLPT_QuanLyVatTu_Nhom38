@@ -133,6 +133,7 @@
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Chi nhánh";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // RePort_TongHopNhapXuat
             // 

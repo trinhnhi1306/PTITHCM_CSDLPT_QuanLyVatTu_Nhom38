@@ -58,8 +58,6 @@
             this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblMaNV = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblGioiTinh = new DevExpress.XtraReports.UI.XRLabel();
             this.lblNgaySinh = new DevExpress.XtraReports.UI.XRLabel();
             this.lblTenNV = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
@@ -259,8 +257,6 @@
             this.xrLabel14,
             this.xrLabel15,
             this.lblMaNV,
-            this.xrLabel6,
-            this.lblGioiTinh,
             this.lblNgaySinh,
             this.lblTenNV,
             this.xrLabel7,
@@ -349,23 +345,6 @@
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblMaNV.SizeF = new System.Drawing.SizeF(156.2501F, 23F);
-            // 
-            // xrLabel6
-            // 
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(450.7406F, 131.375F);
-            this.xrLabel6.Multiline = true;
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel6.Text = "Giới tính";
-            // 
-            // lblGioiTinh
-            // 
-            this.lblGioiTinh.LocationFloat = new DevExpress.Utils.PointFloat(569.0323F, 131.375F);
-            this.lblGioiTinh.Multiline = true;
-            this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblGioiTinh.SizeF = new System.Drawing.SizeF(156.2501F, 23F);
             // 
             // lblNgaySinh
             // 
@@ -962,7 +941,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
         private DevExpress.XtraReports.UI.XRLabel xrLabel14;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
         private DevExpress.XtraReports.UI.XRLine xrLine1;
@@ -973,7 +951,6 @@
         public DevExpress.XtraReports.UI.XRLabel lblDiaChi;
         public DevExpress.XtraReports.UI.XRLabel lblChiNhanh;
         public DevExpress.XtraReports.UI.XRLabel lblMaNV;
-        public DevExpress.XtraReports.UI.XRLabel lblGioiTinh;
         public DevExpress.XtraReports.UI.XRLabel lblNgaySinh;
         public DevExpress.XtraReports.UI.XRLabel lblTenNV;
     }
