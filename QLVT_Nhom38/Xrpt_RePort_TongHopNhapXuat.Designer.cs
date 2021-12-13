@@ -74,6 +74,8 @@
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbChiNhanh = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -183,6 +185,8 @@
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lbChiNhanh,
+            this.xrLabel4,
             this.lblEnd,
             this.xrLabel5,
             this.lblStart,
@@ -193,7 +197,7 @@
             // 
             // lblEnd
             // 
-            this.lblEnd.LocationFloat = new DevExpress.Utils.PointFloat(459.375F, 75.99999F);
+            this.lblEnd.LocationFloat = new DevExpress.Utils.PointFloat(460.4167F, 85.37499F);
             this.lblEnd.Multiline = true;
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -203,7 +207,7 @@
             // 
             // xrLabel5
             // 
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(348.4583F, 75.99999F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(349.5F, 85.37499F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -212,7 +216,7 @@
             // 
             // lblStart
             // 
-            this.lblStart.LocationFloat = new DevExpress.Utils.PointFloat(142.7083F, 75.99999F);
+            this.lblStart.LocationFloat = new DevExpress.Utils.PointFloat(143.75F, 85.37499F);
             this.lblStart.Multiline = true;
             this.lblStart.Name = "lblStart";
             this.lblStart.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -222,7 +226,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(32.29167F, 75.99999F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(33.33333F, 85.37499F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -517,6 +521,24 @@
             this.calculatedField1.DataMember = "SP_RePort_TongHopNhapXuat";
             this.calculatedField1.Name = "calculatedField1";
             // 
+            // xrLabel4
+            // 
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(110.9839F, 42.49999F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel4.Text = "Chi nhánh";
+            // 
+            // lbChiNhanh
+            // 
+            this.lbChiNhanh.LocationFloat = new DevExpress.Utils.PointFloat(245.8333F, 42.49999F);
+            this.lbChiNhanh.Multiline = true;
+            this.lbChiNhanh.Name = "lbChiNhanh";
+            this.lbChiNhanh.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.lbChiNhanh.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.lbChiNhanh.Text = "...";
+            // 
             // Xrpt_RePort_TongHopNhapXuat
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -599,5 +621,7 @@
         public DevExpress.XtraReports.UI.XRLabel lblEnd;
         public DevExpress.XtraReports.UI.XRLabel lblStart;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
+        private DevExpress.XtraReports.UI.XRLabel lbChiNhanh;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
     }
 }
