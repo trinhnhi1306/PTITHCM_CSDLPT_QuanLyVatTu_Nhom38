@@ -19,22 +19,7 @@ namespace QLVT_Nhom38.ReportForm
         public RePort_TongHopNhapXuat()
         {
             InitializeComponent();
-            cmbChiNhanh.DataSource = Program.bds_dspm;  // sao chép bds_dspm đã load ở form đăng nhập qua
-            cmbChiNhanh.DisplayMember = "TENCN";
-            cmbChiNhanh.ValueMember = "TENSERVER";
-            cmbChiNhanh.SelectedIndex = Program.mChinhanh;
-            if (Program.mGroup == "CONGTY")
-                cmbChiNhanh.Enabled = true;  // bật tắt theo phân quyền
-            else cmbChiNhanh.Enabled = false;
-            chiNhanh = cmbChiNhanh.Text;
 
-            dateEnd.Properties.Mask.UseMaskAsDisplayFormat = true;
-            dateEnd.DateTime = DateTime.Today.AddYears(0);
-
-
-
-            dateStart.Properties.Mask.UseMaskAsDisplayFormat = true;
-            dateStart.DateTime = DateTime.Today.AddYears(-5);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -148,6 +133,18 @@ namespace QLVT_Nhom38.ReportForm
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void RePort_TongHopNhapXuat_Load(object sender, EventArgs e)
+        {
+            cmbChiNhanh.DataSource = Program.bds_dspm;  // sao chép bds_dspm đã load ở form đăng nhập qua
+            cmbChiNhanh.DisplayMember = "TENCN";
+            cmbChiNhanh.ValueMember = "TENSERVER";
+            cmbChiNhanh.SelectedIndex = Program.mChinhanh;
+            if (Program.mGroup == "CONGTY")
+                cmbChiNhanh.Enabled = true;  // bật tắt theo phân quyền
+            else cmbChiNhanh.Enabled = false;
+            chiNhanh = cmbChiNhanh.Text;
         }
     }
 }

@@ -40,18 +40,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(126, 39);
+            this.label1.Location = new System.Drawing.Point(168, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(578, 31);
+            this.label1.Size = new System.Drawing.Size(723, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh sách các đơn đặt hàng chưa có phiếu nhập";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(212, 173);
+            this.button1.Location = new System.Drawing.Point(283, 213);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.Size = new System.Drawing.Size(133, 37);
             this.button1.TabIndex = 1;
             this.button1.Text = "Preview";
             this.button1.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(478, 173);
+            this.button2.Location = new System.Drawing.Point(637, 213);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 30);
+            this.button2.Size = new System.Drawing.Size(133, 37);
             this.button2.TabIndex = 2;
             this.button2.Text = "Print";
             this.button2.UseVisualStyleBackColor = true;
@@ -71,33 +74,37 @@
             // 
             this.cmbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChiNhanh.FormattingEnabled = true;
-            this.cmbChiNhanh.Location = new System.Drawing.Point(344, 118);
+            this.cmbChiNhanh.Location = new System.Drawing.Point(459, 145);
+            this.cmbChiNhanh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
-            this.cmbChiNhanh.Size = new System.Drawing.Size(181, 21);
+            this.cmbChiNhanh.Size = new System.Drawing.Size(240, 24);
             this.cmbChiNhanh.TabIndex = 10;
             this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(264, 121);
+            this.label4.Location = new System.Drawing.Point(352, 149);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(72, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Chi nhánh";
             // 
             // FormDSDH_Chua_Co_PN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 257);
+            this.ClientSize = new System.Drawing.Size(1051, 316);
             this.Controls.Add(this.cmbChiNhanh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormDSDH_Chua_Co_PN";
             this.Text = "Danh sách đơn hàng chưa có phiếu nhập";
+            this.Load += new System.EventHandler(this.FormDSDH_Chua_Co_PN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
