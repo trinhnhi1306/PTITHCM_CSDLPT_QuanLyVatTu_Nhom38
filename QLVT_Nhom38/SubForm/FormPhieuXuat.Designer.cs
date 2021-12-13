@@ -143,8 +143,8 @@ namespace QLVT_Nhom38.SubForm
             // mAPXLabel
             // 
             mAPXLabel.AutoSize = true;
-            mAPXLabel.Location = new System.Drawing.Point(43, 47);
-            mAPXLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            mAPXLabel.Location = new System.Drawing.Point(54, 59);
+            mAPXLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             mAPXLabel.Name = "mAPXLabel";
             mAPXLabel.Size = new System.Drawing.Size(99, 17);
             mAPXLabel.TabIndex = 0;
@@ -153,8 +153,8 @@ namespace QLVT_Nhom38.SubForm
             // nGAYLabel
             // 
             nGAYLabel.AutoSize = true;
-            nGAYLabel.Location = new System.Drawing.Point(100, 94);
-            nGAYLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nGAYLabel.Location = new System.Drawing.Point(125, 118);
+            nGAYLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             nGAYLabel.Name = "nGAYLabel";
             nGAYLabel.Size = new System.Drawing.Size(45, 17);
             nGAYLabel.TabIndex = 2;
@@ -163,8 +163,8 @@ namespace QLVT_Nhom38.SubForm
             // hOTENKHLabel
             // 
             hOTENKHLabel.AutoSize = true;
-            hOTENKHLabel.Location = new System.Drawing.Point(13, 138);
-            hOTENKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            hOTENKHLabel.Location = new System.Drawing.Point(16, 172);
+            hOTENKHLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             hOTENKHLabel.Name = "hOTENKHLabel";
             hOTENKHLabel.Size = new System.Drawing.Size(130, 17);
             hOTENKHLabel.TabIndex = 4;
@@ -173,8 +173,8 @@ namespace QLVT_Nhom38.SubForm
             // mANVLabel
             // 
             mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(69, 182);
-            mANVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            mANVLabel.Location = new System.Drawing.Point(86, 228);
+            mANVLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             mANVLabel.Name = "mANVLabel";
             mANVLabel.Size = new System.Drawing.Size(74, 17);
             mANVLabel.TabIndex = 6;
@@ -183,8 +183,8 @@ namespace QLVT_Nhom38.SubForm
             // mAKHOLabel
             // 
             mAKHOLabel.AutoSize = true;
-            mAKHOLabel.Location = new System.Drawing.Point(109, 228);
-            mAKHOLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            mAKHOLabel.Location = new System.Drawing.Point(136, 285);
+            mAKHOLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             mAKHOLabel.Name = "mAKHOLabel";
             mAKHOLabel.Size = new System.Drawing.Size(37, 17);
             mAKHOLabel.TabIndex = 8;
@@ -193,8 +193,8 @@ namespace QLVT_Nhom38.SubForm
             // mAPXLabel1
             // 
             mAPXLabel1.AutoSize = true;
-            mAPXLabel1.Location = new System.Drawing.Point(52, 47);
-            mAPXLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            mAPXLabel1.Location = new System.Drawing.Point(65, 59);
+            mAPXLabel1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             mAPXLabel1.Name = "mAPXLabel1";
             mAPXLabel1.Size = new System.Drawing.Size(99, 17);
             mAPXLabel1.TabIndex = 0;
@@ -203,8 +203,8 @@ namespace QLVT_Nhom38.SubForm
             // mAVTLabel
             // 
             mAVTLabel.AutoSize = true;
-            mAVTLabel.Location = new System.Drawing.Point(103, 94);
-            mAVTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            mAVTLabel.Location = new System.Drawing.Point(129, 118);
+            mAVTLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             mAVTLabel.Name = "mAVTLabel";
             mAVTLabel.Size = new System.Drawing.Size(51, 17);
             mAVTLabel.TabIndex = 2;
@@ -213,8 +213,8 @@ namespace QLVT_Nhom38.SubForm
             // sOLUONGLabel
             // 
             sOLUONGLabel.AutoSize = true;
-            sOLUONGLabel.Location = new System.Drawing.Point(87, 138);
-            sOLUONGLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            sOLUONGLabel.Location = new System.Drawing.Point(109, 172);
+            sOLUONGLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             sOLUONGLabel.Name = "sOLUONGLabel";
             sOLUONGLabel.Size = new System.Drawing.Size(68, 17);
             sOLUONGLabel.TabIndex = 4;
@@ -223,8 +223,8 @@ namespace QLVT_Nhom38.SubForm
             // dONGIALabel
             // 
             dONGIALabel.AutoSize = true;
-            dONGIALabel.Location = new System.Drawing.Point(93, 182);
-            dONGIALabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dONGIALabel.Location = new System.Drawing.Point(116, 228);
+            dONGIALabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             dONGIALabel.Name = "dONGIALabel";
             dONGIALabel.Size = new System.Drawing.Size(60, 17);
             dONGIALabel.TabIndex = 6;
@@ -338,16 +338,16 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1538, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1896, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 672);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 651);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1538, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1896, 0);
             // 
             // barDockControlLeft
             // 
@@ -356,16 +356,16 @@ namespace QLVT_Nhom38.SubForm
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 642);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 621);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1538, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1896, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 642);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 621);
             // 
             // btnSua
             // 
@@ -389,27 +389,27 @@ namespace QLVT_Nhom38.SubForm
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 30);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1538, 46);
+            this.panelControl1.Size = new System.Drawing.Size(1896, 58);
             this.panelControl1.TabIndex = 10;
             // 
             // cmbChiNhanh
             // 
             this.cmbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChiNhanh.FormattingEnabled = true;
-            this.cmbChiNhanh.Location = new System.Drawing.Point(153, 11);
-            this.cmbChiNhanh.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbChiNhanh.Location = new System.Drawing.Point(191, 14);
+            this.cmbChiNhanh.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
-            this.cmbChiNhanh.Size = new System.Drawing.Size(240, 24);
+            this.cmbChiNhanh.Size = new System.Drawing.Size(299, 24);
             this.cmbChiNhanh.TabIndex = 1;
             this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(59, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 17);
             this.label1.TabIndex = 0;
@@ -420,10 +420,10 @@ namespace QLVT_Nhom38.SubForm
             this.panelControl2.Controls.Add(this.groupControlPX);
             this.panelControl2.Controls.Add(this.phieuXuatGridControl);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(0, 76);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.panelControl2.Location = new System.Drawing.Point(0, 88);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(933, 596);
+            this.panelControl2.Size = new System.Drawing.Size(1166, 563);
             this.panelControl2.TabIndex = 11;
             // 
             // groupControlPX
@@ -441,10 +441,10 @@ namespace QLVT_Nhom38.SubForm
             this.groupControlPX.Controls.Add(this.mANVTextEdit);
             this.groupControlPX.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlPX.Enabled = false;
-            this.groupControlPX.Location = new System.Drawing.Point(2, 332);
-            this.groupControlPX.Margin = new System.Windows.Forms.Padding(4);
+            this.groupControlPX.Location = new System.Drawing.Point(2, 414);
+            this.groupControlPX.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.groupControlPX.Name = "groupControlPX";
-            this.groupControlPX.Size = new System.Drawing.Size(929, 262);
+            this.groupControlPX.Size = new System.Drawing.Size(1162, 147);
             this.groupControlPX.TabIndex = 1;
             this.groupControlPX.Text = "Thông tin phiếu";
             // 
@@ -455,10 +455,10 @@ namespace QLVT_Nhom38.SubForm
             this.cmbTenKho.DisplayMember = "TENKHO";
             this.cmbTenKho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTenKho.FormattingEnabled = true;
-            this.cmbTenKho.Location = new System.Drawing.Point(156, 224);
-            this.cmbTenKho.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTenKho.Location = new System.Drawing.Point(195, 280);
+            this.cmbTenKho.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cmbTenKho.Name = "cmbTenKho";
-            this.cmbTenKho.Size = new System.Drawing.Size(249, 24);
+            this.cmbTenKho.Size = new System.Drawing.Size(310, 24);
             this.cmbTenKho.TabIndex = 12;
             this.cmbTenKho.ValueMember = "MAKHO";
             this.cmbTenKho.SelectedIndexChanged += new System.EventHandler(this.cmbTenKho_SelectedIndexChanged);
@@ -481,22 +481,22 @@ namespace QLVT_Nhom38.SubForm
             // mAKHOTextEdit
             // 
             this.mAKHOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuXuatBindingSource, "MAKHO", true));
-            this.mAKHOTextEdit.Location = new System.Drawing.Point(415, 225);
-            this.mAKHOTextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.mAKHOTextEdit.Location = new System.Drawing.Point(519, 281);
+            this.mAKHOTextEdit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.mAKHOTextEdit.MenuManager = this.barManager1;
             this.mAKHOTextEdit.Name = "mAKHOTextEdit";
             this.mAKHOTextEdit.Properties.ReadOnly = true;
-            this.mAKHOTextEdit.Size = new System.Drawing.Size(105, 22);
+            this.mAKHOTextEdit.Size = new System.Drawing.Size(131, 22);
             this.mAKHOTextEdit.TabIndex = 9;
             // 
             // hOTENKHTextEdit
             // 
             this.hOTENKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuXuatBindingSource, "HOTENKH", true));
-            this.hOTENKHTextEdit.Location = new System.Drawing.Point(156, 134);
-            this.hOTENKHTextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.hOTENKHTextEdit.Location = new System.Drawing.Point(195, 168);
+            this.hOTENKHTextEdit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.hOTENKHTextEdit.MenuManager = this.barManager1;
             this.hOTENKHTextEdit.Name = "hOTENKHTextEdit";
-            this.hOTENKHTextEdit.Size = new System.Drawing.Size(133, 22);
+            this.hOTENKHTextEdit.Size = new System.Drawing.Size(166, 22);
             this.hOTENKHTextEdit.TabIndex = 5;
             this.hOTENKHTextEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hOTENKHTextEdit_KeyPress);
             // 
@@ -504,48 +504,48 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.nGAYDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuXuatBindingSource, "NGAY", true));
             this.nGAYDateEdit.EditValue = null;
-            this.nGAYDateEdit.Location = new System.Drawing.Point(156, 90);
-            this.nGAYDateEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.nGAYDateEdit.Location = new System.Drawing.Point(195, 112);
+            this.nGAYDateEdit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.nGAYDateEdit.MenuManager = this.barManager1;
             this.nGAYDateEdit.Name = "nGAYDateEdit";
             this.nGAYDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nGAYDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nGAYDateEdit.Size = new System.Drawing.Size(133, 22);
+            this.nGAYDateEdit.Size = new System.Drawing.Size(166, 22);
             this.nGAYDateEdit.TabIndex = 3;
             // 
             // mAPXTextBox
             // 
             this.mAPXTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.phieuXuatBindingSource, "MAPX", true));
-            this.mAPXTextBox.Location = new System.Drawing.Point(156, 43);
-            this.mAPXTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mAPXTextBox.Location = new System.Drawing.Point(195, 54);
+            this.mAPXTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.mAPXTextBox.Name = "mAPXTextBox";
-            this.mAPXTextBox.Size = new System.Drawing.Size(132, 23);
+            this.mAPXTextBox.Size = new System.Drawing.Size(164, 23);
             this.mAPXTextBox.TabIndex = 1;
             this.mAPXTextBox.Text = "cạu";
             // 
             // mANVTextEdit
             // 
             this.mANVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.phieuXuatBindingSource, "MANV", true));
-            this.mANVTextEdit.Location = new System.Drawing.Point(156, 178);
-            this.mANVTextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.mANVTextEdit.Location = new System.Drawing.Point(195, 222);
+            this.mANVTextEdit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.mANVTextEdit.MenuManager = this.barManager1;
             this.mANVTextEdit.Name = "mANVTextEdit";
-            this.mANVTextEdit.Size = new System.Drawing.Size(105, 22);
+            this.mANVTextEdit.Size = new System.Drawing.Size(131, 22);
             this.mANVTextEdit.TabIndex = 7;
             // 
             // phieuXuatGridControl
             // 
             this.phieuXuatGridControl.DataSource = this.phieuXuatBindingSource;
             this.phieuXuatGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.phieuXuatGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.phieuXuatGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.phieuXuatGridControl.Location = new System.Drawing.Point(2, 2);
             this.phieuXuatGridControl.MainView = this.gridView1;
-            this.phieuXuatGridControl.Margin = new System.Windows.Forms.Padding(4);
+            this.phieuXuatGridControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.phieuXuatGridControl.MenuManager = this.barManager1;
             this.phieuXuatGridControl.Name = "phieuXuatGridControl";
-            this.phieuXuatGridControl.Size = new System.Drawing.Size(929, 330);
+            this.phieuXuatGridControl.Size = new System.Drawing.Size(1162, 412);
             this.phieuXuatGridControl.TabIndex = 0;
             this.phieuXuatGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -558,7 +558,7 @@ namespace QLVT_Nhom38.SubForm
             this.colHOTENKH,
             this.colMANV,
             this.colMAKHO});
-            this.gridView1.DetailHeight = 431;
+            this.gridView1.DetailHeight = 539;
             this.gridView1.GridControl = this.phieuXuatGridControl;
             this.gridView1.Name = "gridView1";
             // 
@@ -566,56 +566,56 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.colMAPX.Caption = "Mã phiếu xuất";
             this.colMAPX.FieldName = "MAPX";
-            this.colMAPX.MinWidth = 27;
+            this.colMAPX.MinWidth = 34;
             this.colMAPX.Name = "colMAPX";
             this.colMAPX.OptionsColumn.ReadOnly = true;
             this.colMAPX.Visible = true;
             this.colMAPX.VisibleIndex = 0;
-            this.colMAPX.Width = 100;
+            this.colMAPX.Width = 125;
             // 
             // colNGAY
             // 
             this.colNGAY.Caption = "Ngày";
             this.colNGAY.FieldName = "NGAY";
-            this.colNGAY.MinWidth = 27;
+            this.colNGAY.MinWidth = 34;
             this.colNGAY.Name = "colNGAY";
             this.colNGAY.OptionsColumn.ReadOnly = true;
             this.colNGAY.Visible = true;
             this.colNGAY.VisibleIndex = 1;
-            this.colNGAY.Width = 100;
+            this.colNGAY.Width = 125;
             // 
             // colHOTENKH
             // 
             this.colHOTENKH.Caption = "Họ tên khách hàng";
             this.colHOTENKH.FieldName = "HOTENKH";
-            this.colHOTENKH.MinWidth = 27;
+            this.colHOTENKH.MinWidth = 34;
             this.colHOTENKH.Name = "colHOTENKH";
             this.colHOTENKH.OptionsColumn.ReadOnly = true;
             this.colHOTENKH.Visible = true;
             this.colHOTENKH.VisibleIndex = 2;
-            this.colHOTENKH.Width = 100;
+            this.colHOTENKH.Width = 125;
             // 
             // colMANV
             // 
             this.colMANV.Caption = "Mã Nhân viên";
             this.colMANV.FieldName = "MANV";
-            this.colMANV.MinWidth = 27;
+            this.colMANV.MinWidth = 34;
             this.colMANV.Name = "colMANV";
             this.colMANV.OptionsColumn.ReadOnly = true;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 3;
-            this.colMANV.Width = 100;
+            this.colMANV.Width = 125;
             // 
             // colMAKHO
             // 
             this.colMAKHO.Caption = "Mã kho";
             this.colMAKHO.FieldName = "MAKHO";
-            this.colMAKHO.MinWidth = 27;
+            this.colMAKHO.MinWidth = 34;
             this.colMAKHO.Name = "colMAKHO";
             this.colMAKHO.OptionsColumn.ReadOnly = true;
             this.colMAKHO.Visible = true;
             this.colMAKHO.VisibleIndex = 4;
-            this.colMAKHO.Width = 100;
+            this.colMAKHO.Width = 125;
             // 
             // cTPXBindingSource
             // 
@@ -627,10 +627,10 @@ namespace QLVT_Nhom38.SubForm
             this.panelControl3.Controls.Add(this.groupControlCTPX);
             this.panelControl3.Controls.Add(this.cTPXGridControl);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl3.Location = new System.Drawing.Point(954, 76);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(4);
+            this.panelControl3.Location = new System.Drawing.Point(1166, 88);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(584, 596);
+            this.panelControl3.Size = new System.Drawing.Size(730, 563);
             this.panelControl3.TabIndex = 12;
             // 
             // groupControlCTPX
@@ -646,10 +646,10 @@ namespace QLVT_Nhom38.SubForm
             this.groupControlCTPX.Controls.Add(this.mAPXTextBoxCTPX);
             this.groupControlCTPX.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlCTPX.Enabled = false;
-            this.groupControlCTPX.Location = new System.Drawing.Point(2, 332);
-            this.groupControlCTPX.Margin = new System.Windows.Forms.Padding(4);
+            this.groupControlCTPX.Location = new System.Drawing.Point(2, 414);
+            this.groupControlCTPX.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.groupControlCTPX.Name = "groupControlCTPX";
-            this.groupControlCTPX.Size = new System.Drawing.Size(580, 262);
+            this.groupControlCTPX.Size = new System.Drawing.Size(726, 147);
             this.groupControlCTPX.TabIndex = 1;
             this.groupControlCTPX.Text = "Thông tin chi tiết phiếu";
             // 
@@ -660,10 +660,10 @@ namespace QLVT_Nhom38.SubForm
             this.cmbVatTu.DisplayMember = "TENVT";
             this.cmbVatTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVatTu.FormattingEnabled = true;
-            this.cmbVatTu.Location = new System.Drawing.Point(165, 89);
-            this.cmbVatTu.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbVatTu.Location = new System.Drawing.Point(206, 111);
+            this.cmbVatTu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cmbVatTu.Name = "cmbVatTu";
-            this.cmbVatTu.Size = new System.Drawing.Size(267, 24);
+            this.cmbVatTu.Size = new System.Drawing.Size(333, 24);
             this.cmbVatTu.TabIndex = 9;
             this.cmbVatTu.ValueMember = "MAVT";
             this.cmbVatTu.SelectedIndexChanged += new System.EventHandler(this.cmbTenVatTu_SelectedIndexChanged);
@@ -676,57 +676,57 @@ namespace QLVT_Nhom38.SubForm
             // dONGIATextEdit
             // 
             this.dONGIATextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cTPXBindingSource, "DONGIA", true));
-            this.dONGIATextEdit.Location = new System.Drawing.Point(165, 178);
-            this.dONGIATextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.dONGIATextEdit.Location = new System.Drawing.Point(206, 222);
+            this.dONGIATextEdit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dONGIATextEdit.MenuManager = this.barManager1;
             this.dONGIATextEdit.Name = "dONGIATextEdit";
             this.dONGIATextEdit.Properties.DisplayFormat.FormatString = "n0";
             this.dONGIATextEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.dONGIATextEdit.Size = new System.Drawing.Size(133, 22);
+            this.dONGIATextEdit.Size = new System.Drawing.Size(166, 22);
             this.dONGIATextEdit.TabIndex = 7;
             // 
             // sOLUONGNumericUpDown
             // 
             this.sOLUONGNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.cTPXBindingSource, "SOLUONG", true));
-            this.sOLUONGNumericUpDown.Location = new System.Drawing.Point(165, 135);
-            this.sOLUONGNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.sOLUONGNumericUpDown.Location = new System.Drawing.Point(206, 169);
+            this.sOLUONGNumericUpDown.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.sOLUONGNumericUpDown.Name = "sOLUONGNumericUpDown";
-            this.sOLUONGNumericUpDown.Size = new System.Drawing.Size(160, 23);
+            this.sOLUONGNumericUpDown.Size = new System.Drawing.Size(200, 23);
             this.sOLUONGNumericUpDown.TabIndex = 5;
             // 
             // mAVTTextEdit
             // 
             this.mAVTTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cTPXBindingSource, "MAVT", true));
-            this.mAVTTextEdit.Location = new System.Drawing.Point(441, 90);
-            this.mAVTTextEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.mAVTTextEdit.Location = new System.Drawing.Point(551, 112);
+            this.mAVTTextEdit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.mAVTTextEdit.MenuManager = this.barManager1;
             this.mAVTTextEdit.Name = "mAVTTextEdit";
             this.mAVTTextEdit.Properties.ReadOnly = true;
-            this.mAVTTextEdit.Size = new System.Drawing.Size(120, 22);
+            this.mAVTTextEdit.Size = new System.Drawing.Size(150, 22);
             this.mAVTTextEdit.TabIndex = 3;
             // 
             // mAPXTextBoxCTPX
             // 
             this.mAPXTextBoxCTPX.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cTPXBindingSource, "MAPX", true));
-            this.mAPXTextBoxCTPX.Location = new System.Drawing.Point(165, 43);
-            this.mAPXTextBoxCTPX.Margin = new System.Windows.Forms.Padding(4);
+            this.mAPXTextBoxCTPX.Location = new System.Drawing.Point(206, 54);
+            this.mAPXTextBoxCTPX.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.mAPXTextBoxCTPX.Name = "mAPXTextBoxCTPX";
             this.mAPXTextBoxCTPX.ReadOnly = true;
-            this.mAPXTextBoxCTPX.Size = new System.Drawing.Size(132, 23);
+            this.mAPXTextBoxCTPX.Size = new System.Drawing.Size(164, 23);
             this.mAPXTextBoxCTPX.TabIndex = 1;
             // 
             // cTPXGridControl
             // 
             this.cTPXGridControl.DataSource = this.cTPXBindingSource;
             this.cTPXGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cTPXGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.cTPXGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cTPXGridControl.Enabled = false;
             this.cTPXGridControl.Location = new System.Drawing.Point(2, 2);
             this.cTPXGridControl.MainView = this.gridView2;
-            this.cTPXGridControl.Margin = new System.Windows.Forms.Padding(4);
+            this.cTPXGridControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cTPXGridControl.MenuManager = this.barManager1;
             this.cTPXGridControl.Name = "cTPXGridControl";
-            this.cTPXGridControl.Size = new System.Drawing.Size(580, 330);
+            this.cTPXGridControl.Size = new System.Drawing.Size(726, 412);
             this.cTPXGridControl.TabIndex = 0;
             this.cTPXGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -738,7 +738,7 @@ namespace QLVT_Nhom38.SubForm
             this.colMAVT,
             this.colSOLUONG,
             this.colDONGIA});
-            this.gridView2.DetailHeight = 431;
+            this.gridView2.DetailHeight = 539;
             this.gridView2.GridControl = this.cTPXGridControl;
             this.gridView2.Name = "gridView2";
             // 
@@ -746,34 +746,34 @@ namespace QLVT_Nhom38.SubForm
             // 
             this.colMAPX1.Caption = "Mã phiếu xuất";
             this.colMAPX1.FieldName = "MAPX";
-            this.colMAPX1.MinWidth = 27;
+            this.colMAPX1.MinWidth = 34;
             this.colMAPX1.Name = "colMAPX1";
             this.colMAPX1.OptionsColumn.ReadOnly = true;
             this.colMAPX1.Visible = true;
             this.colMAPX1.VisibleIndex = 0;
-            this.colMAPX1.Width = 100;
+            this.colMAPX1.Width = 125;
             // 
             // colMAVT
             // 
             this.colMAVT.Caption = "Mã vật tư";
             this.colMAVT.FieldName = "MAVT";
-            this.colMAVT.MinWidth = 27;
+            this.colMAVT.MinWidth = 34;
             this.colMAVT.Name = "colMAVT";
             this.colMAVT.OptionsColumn.ReadOnly = true;
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 1;
-            this.colMAVT.Width = 100;
+            this.colMAVT.Width = 125;
             // 
             // colSOLUONG
             // 
             this.colSOLUONG.Caption = "Số lượng";
             this.colSOLUONG.FieldName = "SOLUONG";
-            this.colSOLUONG.MinWidth = 27;
+            this.colSOLUONG.MinWidth = 34;
             this.colSOLUONG.Name = "colSOLUONG";
             this.colSOLUONG.OptionsColumn.ReadOnly = true;
             this.colSOLUONG.Visible = true;
             this.colSOLUONG.VisibleIndex = 2;
-            this.colSOLUONG.Width = 100;
+            this.colSOLUONG.Width = 125;
             // 
             // colDONGIA
             // 
@@ -781,22 +781,22 @@ namespace QLVT_Nhom38.SubForm
             this.colDONGIA.DisplayFormat.FormatString = "n0";
             this.colDONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDONGIA.FieldName = "DONGIA";
-            this.colDONGIA.MinWidth = 27;
+            this.colDONGIA.MinWidth = 34;
             this.colDONGIA.Name = "colDONGIA";
             this.colDONGIA.OptionsColumn.ReadOnly = true;
             this.colDONGIA.Visible = true;
             this.colDONGIA.VisibleIndex = 3;
-            this.colDONGIA.Width = 100;
+            this.colDONGIA.Width = 125;
             // 
             // panelControl4
             // 
             this.panelControl4.Appearance.BackColor = System.Drawing.SystemColors.Info;
             this.panelControl4.Appearance.Options.UseBackColor = true;
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Location = new System.Drawing.Point(933, 76);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(4);
+            this.panelControl4.Location = new System.Drawing.Point(1166, 88);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(21, 596);
+            this.panelControl4.Size = new System.Drawing.Size(0, 563);
             this.panelControl4.TabIndex = 13;
             // 
             // phieuXuatTableAdapter
