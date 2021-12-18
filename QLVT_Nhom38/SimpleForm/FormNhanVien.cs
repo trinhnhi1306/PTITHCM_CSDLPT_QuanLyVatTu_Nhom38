@@ -92,8 +92,10 @@ namespace QLVT_Nhom38.SimpleForm
             else
             {
                 cmbChiNhanh.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
-                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnChuyenChiNhanh.Enabled = btnReload.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled =  btnReload.Enabled = true;
             }
+            if (Program.mGroup == "USER")
+                btnChuyenChiNhanh.Enabled = false;
 
         }
 
